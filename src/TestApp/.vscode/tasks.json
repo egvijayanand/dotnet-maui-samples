@@ -1,0 +1,98 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "${input:project}",
+                "-t:${input:target}",
+                "-f:${input:targetFramework}",
+                "-c:${input:configuration}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "${input:project}",
+                "-f:${input:targetFramework}",
+                "-c:${input:configuration}",
+                "-p:AndroidAttachDebugger=${input:attachDebugger}",
+                "-p:AndroidSdbHostPort=10000",
+                "-t:Run",
+                "--no-restore"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "project",
+            "type": "pickString",
+            "default": "TestApp.csproj",
+            "description": "Select the project to build / run",
+            "options": [
+                "TestApp.csproj"
+            ]
+        },
+        {
+            "id": "configuration",
+            "type": "pickString",
+            "default": "Debug",
+            "description": "Select MSBuild configuration",
+            "options": [
+                "Debug",
+                "Release"
+            ]
+        },
+        {
+            "id": "target",
+            "type": "pickString",
+            "default": "Build",
+            "description": "Select MSBuild target",
+            "options": [
+                "Build",
+                "Rebuild",
+                "Clean"
+            ]
+        },
+        {
+            "id": "targetFramework",
+            "type": "pickString",
+            "default": "net6.0-android",
+            "description": "Select target framework (TFM)",
+            "options": [
+                "net6.0-android"
+            ]
+        },
+        {
+            "id": "attachDebugger",
+            "type": "pickString",
+            "default": "true",
+            "description": "Attach debugger?",
+            "options": [
+                "true",
+                "false"
+            ]
+        }
+    ]
+}
