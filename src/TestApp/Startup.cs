@@ -4,14 +4,13 @@ using Microsoft.Maui.Controls.Compatibility;
 
 namespace TestApp
 {
-    public class Startup : IStartup
-    {
-        public void Configure(IAppHostBuilder appBuilder)
-        {
-            appBuilder
-                .RegisterCompatibilityForms()
-                .RegisterCompatibilityRenderers()
-                .UseMauiApp<App>();
-        }
-    }
+	public class Startup : IStartup
+	{
+		public void Configure(IAppHostBuilder appBuilder)
+		{
+			appBuilder
+				.UseFormsCompatibility()
+				.UseMauiApp<App>();
+		}
+	}
 }

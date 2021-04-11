@@ -5,12 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach",
-            "type": "mono",
-            "request": "attach",
-            "address": "localhost",
-            "port": 10000,
-            "preLaunchTask": "Run"
+            "name": "Debug",
+            "type": "comet",
+            "request": "launch",
+            "preLaunchTask": "comet: Run"
         }
     ]
 }
