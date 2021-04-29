@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-vscode.mono-debug",
+        "clancey.comet-debug"
+    ]
+}
