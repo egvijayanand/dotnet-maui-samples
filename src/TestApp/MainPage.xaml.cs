@@ -1,26 +1,23 @@
-﻿using System;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
+using System;
+using TestApp.Core;
 using Microsoft.Maui.Controls.Xaml;
 
 namespace TestApp
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : ContentPage, IPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage : MauiPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
 
-		int count = 0;
+        int count = 0;
 
-		private void OnButtonClicked(object sender, EventArgs e)
-		{
-			count++;
-			CountLabel.Text = $"You clicked {count} times!";
-		}
-
-		public IView View { get => (IView)Content; set => Content = (View)value; }
-	}
+        private void OnButtonClicked(object sender, EventArgs e)
+        {
+            count++;
+            CountLabel.Text = $"You clicked {count} times!";
+        }
+    }
 }

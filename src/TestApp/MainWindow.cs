@@ -1,16 +1,12 @@
-﻿using Microsoft.Maui;
+using TestApp.Core;
 
 namespace TestApp
 {
-	public class MainWindow : IWindow
+    public class MainWindow : Window
 	{
 		public MainWindow()
 		{
 			Page = new MainPage();
 		}
-
-		public IPage Page { get; set; }
-
-		public IMauiContext MauiContext { get; set; }
 	}
 }
