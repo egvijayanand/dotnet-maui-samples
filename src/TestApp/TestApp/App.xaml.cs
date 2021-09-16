@@ -11,7 +11,7 @@ namespace TestApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new AppShell();
         }
     }
 }
