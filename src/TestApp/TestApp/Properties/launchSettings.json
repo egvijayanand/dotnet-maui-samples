@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "TestApp.WinUI": {
+    "Windows Machine": {
       "commandName": "MsixPackage",
       "nativeDebugging": false
     }
