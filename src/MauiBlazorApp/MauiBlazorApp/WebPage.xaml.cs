@@ -1,20 +1,35 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
+using RazorLib;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MauiBlazorApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WebPage : ContentPage
+    public partial class WebPage : ContentPage, IDisposable
     {
-        public WebPage()
+        private readonly AppState _state;
+
+        public WebPage(AppState appState)
         {
             InitializeComponent();
+            _state = appState;
+            _state.OnChanged += OnStateChanged;
+        }
+
+        private void OnStateChanged()
+        {
+            lblCounter.Text = $"The current count is: {_state.CurrentCount}";
+        }
+
+        private void Counter_Clicked(object sender, EventArgs e)
+        {
+            _state.IncrementCount();
+        }
+
+        public void Dispose()
+        {
+            _state.OnChanged -= OnStateChanged;
         }
     }
 }

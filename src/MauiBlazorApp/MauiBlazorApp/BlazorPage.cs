@@ -1,26 +1,33 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
+using RazorLib;
+using System;
 
 namespace MauiBlazorApp
 {
-    public class BlazorPage : ContentPage
+    public partial class BlazorPage : ContentPage, IDisposable
     {
-        public BlazorPage()
+        private readonly AppState _state;
+
+        public BlazorPage(AppState appState)
         {
-            SetDynamicResource(BackgroundColorProperty, "SecondaryColor");
+            InitializeComponent();
+            _state = appState;
+            _state.OnChanged += OnStateChanged;
+        }
 
-            var blazor = new BlazorWebView()
-            {
-                HostPage = "wwwroot/index.html"
-            };
+        private void OnStateChanged()
+        {
+            lblCounter.Text = $"The current count is: {_state.CurrentCount}";
+        }
 
-            blazor.RootComponents.Add(new()
-            {
-                ComponentType = typeof(Gateway),
-                Selector = "#app"
-            });
+        private void Counter_Clicked(object sender, EventArgs e)
+        {
+            _state.IncrementCount();
+        }
 
-            Content = blazor;
+        public void Dispose()
+        {
+            _state.OnChanged -= OnStateChanged;
         }
     }
 }

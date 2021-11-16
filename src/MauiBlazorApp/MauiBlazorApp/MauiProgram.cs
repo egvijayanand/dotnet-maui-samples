@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
+using RazorLib;
 
 namespace MauiBlazorApp
 {
@@ -19,6 +20,10 @@ namespace MauiBlazorApp
                    });
 
             builder.Services.AddBlazorWebView();
+
+            builder.Services.AddSingleton<AppState>();
+            builder.Services.AddSingleton<BlazorPage>();
+            builder.Services.AddSingleton<WebPage>();
 
             return builder.Build();
         }

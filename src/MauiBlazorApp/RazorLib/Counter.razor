@@ -1,0 +1,51 @@
+@* Parameter with its type specified *@
+@page "/counter/{startWith:int}"
+@inject AppState appState
+@implements IDisposable
+
+<h2>@message</h2>
+
+<div>
+	<p hidden="@Embedded">The incoming start parameter value is: @StartWith</p>
+	<p>The current count is: @appState.CurrentCount</p>
+	<button @onclick="IncrementCount">Increment</button>
+</div>
+
+<div class="spacer"></div>
+
+<div hidden="@Embedded">
+	<a href="/">Back to Home</a>
+</div>
+
+@code {
+	[Parameter]
+	public int StartWith { get; init; }
+
+	[Parameter]
+	public bool Embedded { get; init; }
+
+	private string? message;
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		// Subscribe to changes
+		appState.OnChanged += StateHasChanged;
+
+		message = StartWith > 0 ? "Random Counter" : "Counter";
+		appState.InitCount(StartWith);
+	}
+
+	int currentCount;
+
+	void IncrementCount()
+	{
+		appState.IncrementCount();
+	}
+
+	public void Dispose()
+	{
+		// Unsubscribe from changes
+		appState.OnChanged -= StateHasChanged;
+	}
+}

@@ -10,14 +10,16 @@
             <Color x:Key="PrimaryColor">#512BDF</Color>
             <Color x:Key="SecondaryColor">White</Color>
 
-            <Style TargetType="Label">
+            <Style TargetType="Label"
+                   ApplyToDerivedTypes="True">
                 <Setter Property="TextColor"
                         Value="{DynamicResource PrimaryColor}" />
                 <Setter Property="FontFamily"
                         Value="OpenSansRegular" />
             </Style>
 
-            <Style TargetType="Button">
+            <Style TargetType="Button"
+                   ApplyToDerivedTypes="True">
                 <Setter Property="TextColor"
                         Value="{DynamicResource SecondaryColor}" />
                 <Setter Property="FontFamily"

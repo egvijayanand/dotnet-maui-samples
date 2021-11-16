@@ -1,0 +1,24 @@
+﻿@page "/"
+@inject NavigationManager navigator
+
+<Counter Embedded="true" />
+
+@*Passes a random number between 1 and 10 as an input to the Counter component*@
+<button @onclick="() => Navigate(Random.Shared.Next(1, 11))">Navigate with a Random value</button>
+
+<br />
+<br />
+
+This is a <a href="#" @onclick="Invalid">Broken Link</a>.
+
+@code {
+	private void Navigate(int startWith)
+	{
+		navigator.NavigateTo($"/counter/{startWith}");
+	}
+
+	private void Invalid()
+	{
+		navigator.NavigateTo("/random-counter");
+	}
+}
