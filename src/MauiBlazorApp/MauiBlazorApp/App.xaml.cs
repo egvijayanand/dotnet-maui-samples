@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui;
+﻿using BlazorApp.Services;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
 using Application = Microsoft.Maui.Controls.Application;
@@ -12,10 +13,10 @@ namespace MauiBlazorApp
             InitializeComponent();
 
             // C# definition
-            MainPage = new BlazorPage();
+            MainPage = AppService.GetService<BlazorPage>();
 
             // XAML definition
-            //MainPage = new WebPage();
+            //MainPage = AppService.GetService<WebPage>();
         }
     }
 }

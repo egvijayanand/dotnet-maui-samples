@@ -6,11 +6,26 @@
              xmlns:local="clr-namespace:MauiBlazorApp"
              BackgroundColor="{DynamicResource SecondaryColor}">
 
-    <b:BlazorWebView HostPage="wwwroot/index.html">
-        <b:BlazorWebView.RootComponents>
-            <b:RootComponent ComponentType="{x:Type local:Gateway}"
-                             Selector="#app" />
-        </b:BlazorWebView.RootComponents>
-    </b:BlazorWebView>
+    <Grid RowDefinitions="Auto, *"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+        <StackLayout Grid.Row="0"
+                     Padding="20">
+            <Label x:Name="lblCounter"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center" />
+            <Button Text="Increment"
+                    Clicked="Counter_Clicked"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+        </StackLayout>
+        <b:BlazorWebView Grid.Row="1"
+                         HostPage="wwwroot/index.html">
+            <b:BlazorWebView.RootComponents>
+                <b:RootComponent ComponentType="{x:Type local:Gateway}"
+                                 Selector="#app" />
+            </b:BlazorWebView.RootComponents>
+        </b:BlazorWebView>
+    </Grid>
 
 </ContentPage>
