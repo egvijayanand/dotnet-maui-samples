@@ -3,6 +3,7 @@ using MauiBlazorApp.Controls;
 using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Maui.Controls;
 using static CommunityToolkit.Maui.Markup.GridRowsColumns;
+using MauiBlazorApp.Extensions;
 
 namespace MauiBlazorApp
 {
@@ -33,16 +34,13 @@ namespace MauiBlazorApp
                      .Row(BodyRow.Top),
                     new BlazorWebView()
                     {
-                        HostPage = "wwwroot/index.html",
                         RootComponents =
                         {
-                            new()
-                            {
-                                ComponentType = typeof(Gateway),
-                                Selector = "#app"
-                            },
+                            new RootComponent().ComponentType(typeof(Gateway))
+                                               .Selector("#app"),
                         },
-                    }.Row(BodyRow.Bottom),
+                    }.HostPage("wwwroot/index.html")
+                     .Row(BodyRow.Bottom),
                 }
             }.FillExpand();
         }
