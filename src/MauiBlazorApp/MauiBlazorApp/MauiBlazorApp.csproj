@@ -68,6 +68,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Content Update="wwwroot\styles\bootstrap\bootstrap.min.css">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<MauiXaml Update="App.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

@@ -3,18 +3,18 @@
 @inject AppState appState
 @implements IDisposable
 
-<h2>@message</h2>
+<h1 class="display-6">@message</h1>
 
 <div>
 	<p hidden="@Embedded">The incoming start parameter value is: @StartWith</p>
 	<p>The current count is: @appState.CurrentCount</p>
-	<button @onclick="IncrementCount">Increment</button>
+	<button class="btn btn-primary" @onclick="IncrementCount">Increment</button>
 </div>
 
 <div class="spacer"></div>
 
 <div hidden="@Embedded">
-	<a href="/">Back to Home</a>
+	<a class="link-primary" href="/">Back to Home</a>
 </div>
 
 @code {
@@ -36,7 +36,7 @@
 		appState.InitCount(StartWith);
 	}
 
-	int currentCount;
+	//int currentCount;
 
 	void IncrementCount()
 	{
