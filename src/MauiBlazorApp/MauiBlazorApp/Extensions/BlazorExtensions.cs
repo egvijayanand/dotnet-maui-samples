@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using System;
-using System.Collections.Generic;
 
 namespace MauiBlazorApp.Extensions
 {

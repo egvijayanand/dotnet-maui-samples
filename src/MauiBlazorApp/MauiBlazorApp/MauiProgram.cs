@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
 using RazorLib;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace MauiBlazorApp
 {

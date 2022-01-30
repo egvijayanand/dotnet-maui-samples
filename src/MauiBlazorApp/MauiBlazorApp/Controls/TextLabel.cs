@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace MauiBlazorApp.Controls
+﻿namespace MauiBlazorApp.Controls
 {
     public class TextLabel : Label
     {
