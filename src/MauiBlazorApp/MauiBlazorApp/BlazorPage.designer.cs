@@ -23,7 +23,7 @@ namespace MauiBlazorApp
                     {
                         Children =
                         {
-                            new TextLabel("The current count is: 0").StartExpand()
+                            new TextLabel("The current count is: 0").Start()
                                                                     .CenterVertical()
                                                                     .Assign(out lblCounter),
                             new TextButton("Increment").End()
@@ -42,7 +42,7 @@ namespace MauiBlazorApp
                     }.HostPage("wwwroot/index.html")
                      .Row(BodyRow.Bottom),
                 }
-            }.FillExpand();
+            }.Fill();
         }
 
         #region Variables

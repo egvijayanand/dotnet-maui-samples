@@ -8,6 +8,7 @@
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<RootNamespace>MauiBlazorApp</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<Nullable>enable</Nullable>
@@ -16,7 +17,7 @@
 		<ApplicationTitle>MauiBlazorApp</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.MauiBlazorApp</ApplicationId>
+		<ApplicationId>com.companyname.mauiblazorapp</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationVersion>1</ApplicationVersion>
@@ -32,10 +33,9 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiImage Include="Resources\appicon.svg"
-				   ForegroundFile="Resources\appiconfg.svg"
-				   IsAppIcon="true"
-				   Color="#512BD4" />
+		<MauiIcon Include="Resources\appicon.svg"
+				  ForegroundFile="Resources\appiconfg.svg"
+				  Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\appiconfg.svg"
@@ -50,17 +50,17 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui.Markup"
-						  Version="1.0.0-pre2" />
+						  Version="1.0.0-pre5" />
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded"
-						  Version="6.0.0" />
+						  Version="6.0.1" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
 		<PackageReference Include="Microsoft.WindowsAppSDK"
-						  Version="1.0.0-preview3" />
+						  Version="1.0.0" />
 		<PackageReference Include="Microsoft.Graphics.Win2D"
-						  Version="1.0.0.29-preview3" />
+						  Version="1.0.0.30" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -84,7 +84,7 @@
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<OutputType>WinExe</OutputType>
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
 	</PropertyGroup>
 
 </Project>

@@ -1,12 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui;
-using System;
-
-namespace BlazorApp.Services
+﻿namespace BlazorApp.Services
 {
     public static class AppService
     {
-        public static TService GetService<TService>() => Current.GetService<TService>();
+        public static TService? GetService<TService>() => Current.GetService<TService>();
 
         public static IServiceProvider Current =>
 #if ANDROID

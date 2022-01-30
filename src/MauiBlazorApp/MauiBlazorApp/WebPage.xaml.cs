@@ -1,11 +1,7 @@
-﻿using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Xaml;
-using RazorLib;
-using System;
+﻿using RazorLib;
 
 namespace MauiBlazorApp
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WebPage : ContentPage, IDisposable
     {
         private readonly AppState _state;

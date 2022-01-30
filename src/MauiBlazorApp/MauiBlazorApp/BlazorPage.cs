@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using RazorLib;
-using System;
+﻿using RazorLib;
 
 namespace MauiBlazorApp
 {
