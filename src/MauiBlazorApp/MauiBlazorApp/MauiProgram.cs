@@ -15,7 +15,7 @@ namespace MauiBlazorApp
                    .UseMauiApp<App>()
                    .ConfigureFonts(fonts =>
                    {
-                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                       fonts.AddFont("OpenSansRegular.ttf", "OpenSansRegular");
                    });
 
             builder.Services.AddBlazorWebView();
