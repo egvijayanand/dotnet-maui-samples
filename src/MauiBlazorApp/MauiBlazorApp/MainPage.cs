@@ -7,10 +7,10 @@
 
         public MainPage()
         {
-            Build();
+            InitializeComponent();
         }
 
-        private void Build()
+        private void InitializeComponent()
         {
             SetDynamicResource(BackgroundColorProperty, "SecondaryColor");
             var grid1 = new Grid()
@@ -21,14 +21,7 @@
                     Device.iOS => new Thickness(30, 60, 30, 30),
                     _ => new Thickness(30),
                 },
-                RowDefinitions =
-                {
-                    new() { Height = GridLength.Auto },
-                    new() { Height = GridLength.Auto },
-                    new() { Height = GridLength.Auto },
-                    new() { Height = GridLength.Auto },
-                    new()
-                }
+                RowDefinitions = Rows.Define(Auto, Auto, Auto, Auto, Star)
             };
 
             var label1 = new Label()
