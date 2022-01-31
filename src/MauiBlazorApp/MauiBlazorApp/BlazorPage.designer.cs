@@ -1,9 +1,10 @@
-using CommunityToolkit.Maui.Markup;
 using MauiBlazorApp.Controls;
 using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.Maui.Controls;
-using static CommunityToolkit.Maui.Markup.GridRowsColumns;
-using MauiBlazorApp.Extensions;
+using VijayAnand.MauiBlazor.Markup;
+
+using static MauiBlazorApp.Extensions.GenericExtensions;
+
+#nullable enable
 
 namespace MauiBlazorApp
 {
@@ -19,28 +20,23 @@ namespace MauiBlazorApp
                 RowDefinitions = Rows.Define(Auto, Star),
                 Children =
                 {
-                    new StackLayout()
+                    new HStack(10)
                     {
                         Children =
                         {
                             new TextLabel("The current count is: 0").Start()
                                                                     .CenterVertical()
+                                                                    .Bold()
                                                                     .Assign(out lblCounter),
-                            new TextButton("Increment").End()
+                            new TextButton("Increment").Start()
                                                        .CenterVertical()
                                                        .Invoke(btn => btn.Clicked += Counter_Clicked),
                         },
                     }.Padding(20)
                      .Row(BodyRow.Top),
-                    new BlazorWebView()
-                    {
-                        RootComponents =
-                        {
-                            new RootComponent().ComponentType(typeof(Gateway))
-                                               .Selector("#app"),
-                        },
-                    }.HostPage("wwwroot/index.html")
-                     .Row(BodyRow.Bottom),
+                    new BlazorWebView().Configure("wwwroot/index.html",
+                                                  ("#app", typeof(Gateway), CreateDictionary<string, object?>((nameof(Gateway.Foo), "Bar"))))
+                                       .Row(BodyRow.Bottom),
                 }
             }.Fill();
         }

@@ -53,6 +53,8 @@
 						  Version="1.0.0-pre5" />
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded"
 						  Version="6.0.1" />
+		<PackageReference Include="VijayAnand.MauiBlazor.Markup"
+						  Version="1.0.0-pre2" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
