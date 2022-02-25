@@ -7,12 +7,11 @@ namespace TestApp
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSansRegular.ttf", "OpenSansRegular");
-                });
+            builder.UseMauiApp<App>()
+                   .ConfigureFonts(fonts =>
+                   {
+                       fonts.AddFont("OpenSansRegular.ttf", "OpenSansRegular");
+                   });
 
             return builder.Build();
         }

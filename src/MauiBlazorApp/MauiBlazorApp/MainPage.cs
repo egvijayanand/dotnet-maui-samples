@@ -1,4 +1,6 @@
-﻿namespace MauiBlazorApp
+﻿using MauiBlazorApp.Extensions;
+
+namespace MauiBlazorApp
 {
     public partial class MainPage : ContentPage
     {
@@ -12,80 +14,39 @@
 
         private void InitializeComponent()
         {
-            SetDynamicResource(BackgroundColorProperty, "SecondaryColor");
-            var grid1 = new Grid()
-            {
-                RowSpacing = 25,
-                Padding = Device.RuntimePlatform switch
-                {
-                    Device.iOS => new Thickness(30, 60, 30, 30),
-                    _ => new Thickness(30),
-                },
-                RowDefinitions = Rows.Define(Auto, Auto, Auto, Auto, Star)
-            };
-
-            var label1 = new Label()
-            {
-                Text = "Hello, World!",
-                FontSize = 32,
-                HorizontalOptions = LayoutOptions.Center
-            };
-
-            GridLayout.SetRow(label1, 0);
-            SemanticProperties.SetHeadingLevel(label1, SemanticHeadingLevel.Level1);
-
-            var label2 = new Label()
-            {
-                Text = "Welcome to .NET Multi-platform App UI",
-                FontSize = 16,
-                HorizontalOptions = LayoutOptions.Center
-            };
-
-            GridLayout.SetRow(label2, 1);
-            SemanticProperties.SetHeadingLevel(label2, SemanticHeadingLevel.Level1);
-            SemanticProperties.SetDescription(label2, "Welcome to dot net Multi platform App U I");
-
-            counter = new Label()
-            {
-                Text = "Current count: 0",
-                FontSize = 18,
-                FontAttributes = FontAttributes.Bold,
-                HorizontalOptions = LayoutOptions.Center
-            };
-
-            GridLayout.SetRow(counter, 2);
-
-            var button1 = new Button()
-            {
-                Text = "Click me",
-                FontAttributes = FontAttributes.Bold,
-                HorizontalOptions = LayoutOptions.Center
-            };
-
-            button1.Clicked += OnCounterClicked;
-            GridLayout.SetRow(button1, 3);
-            SemanticProperties.SetHint(button1, "Counts the number of times you click");
-
-            var image1 = new Image()
-            {
-                Source = "dotnet_bot.png",
-                HorizontalOptions = LayoutOptions.Center,
-                WidthRequest = 250,
-                HeightRequest = 310
-            };
-
-            GridLayout.SetRow(image1, 4);
-            SemanticProperties.SetDescription(image1, "Cute dotnet bot waving hi to you!");
-
-            grid1.Add(label1);
-            grid1.Add(label2);
-            grid1.Add(counter);
-            grid1.Add(button1);
-            grid1.Add(image1);
-
             Content = new ScrollView()
             {
-                Content = grid1
+                Content = new Grid()
+                {
+                    RowSpacing = 25,
+                    RowDefinitions = Rows.Define(Auto, Auto, Auto, Auto, Star),
+                    Children =
+                    {
+                        new Label() { Text = "Hello, World!" }.Row(0)
+                                                              .FontSize(32)
+                                                              .CenterHorizontal()
+                                                              .SemanticHeading(SemanticHeadingLevel.Level1),
+                        new Label() { Text = "Welcome to .NET Multi-platform App UI" }.Row(1)
+                                                                                      .FontSize(18)
+                                                                                      .CenterHorizontal()
+                                                                                      .SemanticHeading(SemanticHeadingLevel.Level1)
+                                                                                      .SemanticDesc("Welcome to dot net Multi platform App U I"),
+                        new Label() { Text = "Current count: 0" }.Row(2)
+                                                                 .Bold()
+                                                                 .FontSize(18)
+                                                                 .CenterHorizontal()
+                                                                 .Assign(out counter),
+                        new Button() { Text = "Click me" }.Row(3)
+                                                          .Bold()
+                                                          .CenterHorizontal()
+                                                          .Invoke(btn => btn.Clicked += OnCounterClicked)
+                                                          .SemanticHint("Counts the number of times you click"),
+                        new Image() { Source = "dotnet_bot.png" }.Row(4)
+                                                                 .Size(250, 310)
+                                                                 .CenterHorizontal()
+                                                                 .SemanticDesc("Cute dot net bot waving hi to you!"),
+                    }
+                }.Padding(Device.RuntimePlatform switch { Device.iOS => new Thickness(30, 60, 30, 30), _ => new Thickness(30) })
             };
         }
 

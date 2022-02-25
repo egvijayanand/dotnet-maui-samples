@@ -1,14 +1,21 @@
-﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              xmlns:local="clr-namespace:MauiBlazorApp"
-             x:Class="MauiBlazorApp.App"
-             windows:Application.ImageDirectory="Assets">
+             x:Class="MauiBlazorApp.App">
     <Application.Resources>
         <ResourceDictionary>
 
+            <x:Double x:Key="ItemSpacing">10</x:Double>
+
             <Color x:Key="PrimaryColor">#512BDF</Color>
             <Color x:Key="SecondaryColor">White</Color>
+
+            <Style TargetType="StackBase"
+                   ApplyToDerivedTypes="True">
+                <Setter Property="Spacing"
+                        Value="{StaticResource ItemSpacing}" />
+            </Style>
 
             <Style TargetType="Label"
                    ApplyToDerivedTypes="True">
