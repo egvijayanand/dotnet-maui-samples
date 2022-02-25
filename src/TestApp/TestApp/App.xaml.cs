@@ -1,6 +1,4 @@
-﻿using Application = Microsoft.Maui.Controls.Application;
-
-namespace TestApp
+﻿namespace TestApp
 {
     public partial class App : Application
     {

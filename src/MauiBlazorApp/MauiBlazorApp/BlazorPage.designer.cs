@@ -20,7 +20,7 @@ namespace MauiBlazorApp
                 RowDefinitions = Rows.Define(Auto, Star),
                 Children =
                 {
-                    new HStack(10)
+                    new HStack()
                     {
                         Children =
                         {
@@ -28,8 +28,7 @@ namespace MauiBlazorApp
                                                                     .CenterVertical()
                                                                     .Bold()
                                                                     .Assign(out lblCounter),
-                            new TextButton("Increment").Start()
-                                                       .CenterVertical()
+                            new TextButton("Increment").CenterVertical()
                                                        .Invoke(btn => btn.Clicked += Counter_Clicked),
                         },
                     }.Padding(20)

@@ -2,7 +2,12 @@
 {
     public class HStack : HorizontalStackLayout
     {
-        public HStack(double spacing = 0)
+        public HStack()
+        {
+
+        }
+
+        public HStack(double spacing)
         {
             Spacing = spacing;
         }

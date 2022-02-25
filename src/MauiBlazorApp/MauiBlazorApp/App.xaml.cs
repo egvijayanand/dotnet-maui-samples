@@ -1,5 +1,4 @@
 ﻿using BlazorApp.Services;
-using Application = Microsoft.Maui.Controls.Application;
 
 namespace MauiBlazorApp
 {
