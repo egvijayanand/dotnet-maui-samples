@@ -1,4 +1,4 @@
-﻿using BlazorApp.Services;
+﻿using VijayAnand.MauiToolkit.Services;
 
 namespace MauiBlazorApp
 {
