@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="TestApp.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TestApp"
+    Title="Settings">
+    <Grid Style="{StaticResource ContentArea}">
+        <StackLayout
+            HorizontalOptions="Center"
+            RadioButtonGroup.GroupName="AppTheme"
+            VerticalOptions="Center">
+            <RadioButton
+                Content="Use System"
+                IsChecked="{Binding UseSystem}"
+                Value="system" />
+            <RadioButton
+                Content="Light"
+                IsChecked="{Binding LightTheme}"
+                Value="light" />
+            <RadioButton
+                Content="Dark"
+                IsChecked="{Binding DarkTheme}"
+                Value="dark" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

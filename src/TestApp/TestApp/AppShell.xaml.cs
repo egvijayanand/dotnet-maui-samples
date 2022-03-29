@@ -7,10 +7,9 @@
             InitializeComponent();
         }
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
+        private void OnLogoutClicked(object sender, EventArgs e)
         {
-            await Current.GoToAsync("//login");
+            App.Instance!.User.Authenticated = false;
         }
-
     }
 }

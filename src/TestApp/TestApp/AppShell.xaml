@@ -1,67 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell x:Class="TestApp.AppShell"
-       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:TestApp">
+<Shell
+    x:Class="TestApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TestApp"
+    FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                            Light={StaticResource BackgroundLight}}">
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Style x:Key="BaseStyle"
-                   TargetType="Element">
-                <Setter Property="Shell.BackgroundColor"
-                        Value="{StaticResource PrimaryColor}" />
-                <Setter Property="Shell.ForegroundColor"
-                        Value="White" />
-                <Setter Property="Shell.TitleColor"
-                        Value="White" />
-                <Setter Property="Shell.DisabledColor"
-                        Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor"
-                        Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor"
-                        Value="{StaticResource PrimaryColor}" />
-                <Setter Property="Shell.TabBarForegroundColor"
-                        Value="White" />
-                <Setter Property="Shell.TabBarUnselectedColor"
-                        Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarTitleColor"
-                        Value="White" />
+
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="White" />
             </Style>
-            <Style BasedOn="{StaticResource BaseStyle}"
-                   TargetType="TabBar" />
-            <Style BasedOn="{StaticResource BaseStyle}"
-                   TargetType="FlyoutItem" />
+
+            <Style
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource BaseStyle}"
+                TargetType="ShellItem" />
 
             <!--
                 Default Styles for all Flyout Items
             -->
-            <Style Class="FlyoutItemLabelStyle"
-                   TargetType="Label">
-                <Setter Property="TextColor"
-                        Value="White" />
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
             </Style>
-            <Style ApplyToDerivedTypes="True"
-                   Class="FlyoutItemLayoutStyle"
-                   TargetType="Layout">
+            <Style
+                ApplyToDerivedTypes="True"
+                Class="FlyoutItemLayoutStyle"
+                TargetType="Layout">
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor"
-                                            Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
-                                    <Setter TargetName="FlyoutItemLabel"
-                                            Property="Label.TextColor"
-                                            Value="{StaticResource PrimaryColor}" />
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, Android=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor"
-                                            Value="{StaticResource PrimaryColor}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="White" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -72,17 +63,16 @@
             <!--
                 Custom Style you can apply to any Flyout Item
             -->
-            <Style ApplyToDerivedTypes="True"
-                   Class="MenuItemLayoutStyle"
-                   TargetType="Layout">
+            <Style
+                ApplyToDerivedTypes="True"
+                Class="MenuItemLayoutStyle"
+                TargetType="Layout">
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter TargetName="FlyoutItemLabel"
-                                            Property="Label.TextColor"
-                                            Value="{StaticResource PrimaryColor}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource PrimaryColor}" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -97,20 +87,20 @@
     -->
 
     <FlyoutItem Title="Home">
-        <ShellContent ContentTemplate="{DataTemplate local:HomePage}"
-                      Route="home" />
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
     </FlyoutItem>
     <FlyoutItem Title="Search">
-        <ShellContent ContentTemplate="{DataTemplate local:SearchPage}"
-                      Route="search" />
+        <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" Route="search" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings">
+        <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" Route="settings" />
     </FlyoutItem>
 
     <!--
         When the Flyout is visible this will be a menu item you can tie a click behavior to
     -->
 
-    <MenuItem Clicked="OnMenuItemClicked"
-              Text="Logout" />
+    <MenuItem Clicked="OnLogoutClicked" Text="Logout" />
 
     <!--
         TabBar lets you define content that won't show up in a Flyout menu. When this content is active
@@ -121,8 +111,7 @@
     -->
 
     <TabBar>
-        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"
-                      Route="login" />
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" Route="login" />
     </TabBar>
 
     <!-- Optional Templates
