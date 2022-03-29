@@ -5,19 +5,26 @@
 		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
 		<OutputType>Exe</OutputType>
+
+		<!-- .NET MAUI -->
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+
+		<!-- Project Options -->
+		<Nullable>enable</Nullable>
 		<RootNamespace>TestApp</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<!-- Display name -->
 		<ApplicationTitle>TestApp</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.testapp</ApplicationId>
+		<ApplicationId Condition="$(TargetFramework.Contains('-windows'))">ddf6acdf-63c8-4550-a5ad-d225a2822643</ApplicationId>
 
 		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<!-- Required for C# Hot Reload -->
@@ -32,27 +39,26 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\appicon.svg"
-				  ForegroundFile="Resources\appiconfg.svg"
-				  Color="#512BD4" />
-
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg"
-						  Color="#512BD4" />
-
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
-		<PackageReference Include="Microsoft.WindowsAppSDK"
-						  Version="1.0.0" />
-		<PackageReference Include="Microsoft.Graphics.Win2D"
-						  Version="1.0.0.30" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -67,6 +73,9 @@
 		</MauiXaml>
 		<MauiXaml Update="SearchPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="SettingsPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 	</ItemGroup>
 

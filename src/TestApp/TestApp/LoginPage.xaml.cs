@@ -7,9 +7,9 @@
             InitializeComponent();
         }
 
-        private async void Login_Clicked(object sender, EventArgs e)
+        private void OnLoginClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//home");
+            App.Instance!.User.Authenticated = true;
         }
     }
 }

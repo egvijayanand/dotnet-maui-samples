@@ -1,4 +1,7 @@
-﻿[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+﻿using Microsoft.Maui.Essentials.Implementations;
+using TestApp.Services;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace TestApp
 {
@@ -10,9 +13,11 @@ namespace TestApp
             builder.UseMauiApp<App>()
                    .ConfigureFonts(fonts =>
                    {
-                       fonts.AddFont("OpenSansRegular.ttf", "OpenSansRegular");
+                       fonts.AddFont("OpenSansRegular.ttf", "OSR");
                    });
 
+            builder.Services.AddSingleton<IPreferences, PreferencesImplementation>();
+            builder.Services.AddSingleton<IThemeService, ThemeService>();
             return builder.Build();
         }
     }
