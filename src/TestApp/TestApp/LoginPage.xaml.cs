@@ -9,7 +9,10 @@
 
         private void OnLoginClicked(object sender, EventArgs e)
         {
-            App.Instance!.User.Authenticated = true;
+            if (App.Instance is not null)
+            {
+                App.Instance.User.Authenticated = true;
+            }
         }
     }
 }

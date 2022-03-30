@@ -9,7 +9,10 @@
 
         private void OnLogoutClicked(object sender, EventArgs e)
         {
-            App.Instance!.User.Authenticated = false;
+            if (App.Instance is not null)
+            {
+                App.Instance.User.Authenticated = false;
+            }
         }
     }
 }
