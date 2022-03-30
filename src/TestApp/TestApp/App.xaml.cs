@@ -6,22 +6,10 @@ namespace TestApp
 {
     public partial class App : Application
     {
-        private static readonly object locker = new();
         private readonly IThemeService? themeService;
 
         public App()
         {
-            if (Instance == null)
-            {
-                lock (locker)
-                {
-                    if (Instance == null)
-                    {
-                        Instance = this;
-                    }
-                }
-            }
-
             InitializeComponent();
             MainPage = new AppShell();
 
@@ -32,7 +20,7 @@ namespace TestApp
             User.Authenticated = false;
         }
 
-        public static App? Instance { get; private set; }
+        public static App? Instance => Current as App;
 
         public UserModel User { get; internal set; }
 
