@@ -58,7 +58,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre3" />
+	  <PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre4" />
 	</ItemGroup>
 
 	<ItemGroup>
