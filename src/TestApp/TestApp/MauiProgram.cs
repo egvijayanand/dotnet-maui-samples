@@ -10,7 +10,7 @@ namespace TestApp
         {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
-                   .UseVijayAnandMauiToolkit(ServiceRegistrations.Theme)
+                   .UseVijayAnandMauiToolkit(ServiceRegistrations.Navigation | ServiceRegistrations.Theme)
                    .ConfigureFonts(fonts =>
                    {
                        fonts.AddFont("OpenSansRegular.ttf", "OSR");
