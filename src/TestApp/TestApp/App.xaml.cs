@@ -1,6 +1,4 @@
-﻿using TestApp.Models;
-using TestApp.Services;
-using VijayAnand.MauiToolkit.Services;
+﻿using VijayAnand.MauiToolkit.Services;
 
 namespace TestApp
 {

@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Essentials.Implementations;
-using TestApp.Services;
+﻿using VijayAnand.MauiToolkit;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -11,13 +10,14 @@ namespace TestApp
         {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
+                   .UseVijayAnandMauiToolkit(ServiceRegistrations.Theme)
                    .ConfigureFonts(fonts =>
                    {
                        fonts.AddFont("OpenSansRegular.ttf", "OSR");
                    });
 
-            builder.Services.AddSingleton<IPreferences, PreferencesImplementation>();
-            builder.Services.AddSingleton<IThemeService, ThemeService>();
+            builder.Services.AddSingleton<SettingsViewModel>();
+            builder.Services.AddSingleton<SettingsPage>();
             return builder.Build();
         }
     }
