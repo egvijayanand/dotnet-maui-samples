@@ -1,6 +1,4 @@
-﻿using TestApp.Models;
-
-namespace TestApp.ViewModels
+﻿namespace TestApp.ViewModels
 {
     public class ViewModelBase : ObservableObject
     {

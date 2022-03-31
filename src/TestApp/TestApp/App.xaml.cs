@@ -1,6 +1,4 @@
-﻿using VijayAnand.MauiToolkit.Services;
-
-namespace TestApp
+﻿namespace TestApp
 {
     public partial class App : Application
     {
