@@ -3,8 +3,9 @@
     x:Class="TestApp.SettingsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TestApp"
-    Title="Settings">
+    xmlns:vm="clr-namespace:TestApp.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="vm:SettingsViewModel">
     <Grid Style="{StaticResource ContentArea}">
         <StackLayout
             HorizontalOptions="Center"
