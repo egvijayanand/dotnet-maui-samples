@@ -2,7 +2,7 @@
 
 Completed samples will be uploaded into this repository so that it is accessible to everyone.
 
-Join me on [Developer Thoughts](https://egvijayanand.in/) for articles on working with these samples.
+Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog for .NET MAUI and Blazor, for articles on working with these samples.
 
 Available under the `src` directory:
 
