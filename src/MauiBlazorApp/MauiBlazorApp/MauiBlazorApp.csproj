@@ -9,7 +9,6 @@
 		<!-- .NET MAUI -->
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
-		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<!-- Project Options -->
 		<Nullable>enable</Nullable>
@@ -26,9 +25,6 @@
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
-
-		<!-- Required for C# Hot Reload -->
-		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
 
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -52,16 +48,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre8" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0-pre9" />
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.2" />
-		<PackageReference Include="VijayAnand.MauiBlazor.Markup" Version="1.0.0-pre4" />
-		<PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre2" />
-	</ItemGroup>
-
-	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
-		<!-- Required - WinUI does not yet have buildTransitive for everything -->
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
-		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
+		<PackageReference Include="VijayAnand.MauiBlazor.Markup" Version="1.0.0-pre5" />
+		<PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre7" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,14 +68,12 @@
 		<MauiXaml Update="App.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Resources\Styles.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="WebPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 	</ItemGroup>
-
-	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
-		<OutputType>WinExe</OutputType>
-		<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
-	</PropertyGroup>
 
 </Project>

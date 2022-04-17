@@ -18,6 +18,12 @@
             NotifyStateChanged();
         }
 
+        public void ResetCount()
+        {
+            CurrentCount = 0;
+            NotifyStateChanged();
+        }
+
         private void NotifyStateChanged()
         {
             OnChanged?.Invoke();

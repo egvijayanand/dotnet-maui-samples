@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage x:Class="MauiBlazorApp.WebPage"
-             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
-             xmlns:local="clr-namespace:MauiBlazorApp"
-             BackgroundColor="{DynamicResource SecondaryColor}">
+<ContentPage
+    x:Class="MauiBlazorApp.WebPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
+    xmlns:local="clr-namespace:MauiBlazorApp">
 
-    <Grid RowDefinitions="Auto, *"
-          HorizontalOptions="Fill"
-          VerticalOptions="Fill">
-        <HorizontalStackLayout Grid.Row="0"
-                               Padding="20">
-            <Label x:Name="lblCounter"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Start"
-                   VerticalOptions="Center" />
-            <Button Text="Increment"
-                    Clicked="Counter_Clicked"
-                    VerticalOptions="Center" />
-        </HorizontalStackLayout>
-        <b:BlazorWebView Grid.Row="1"
-                         HostPage="wwwroot/index.html">
+    <Grid
+        HorizontalOptions="Fill"
+        RowDefinitions="Auto, *"
+        Style="{StaticResource ContentArea}"
+        VerticalOptions="Fill">
+        <StackLayout
+            Grid.Row="0"
+            Padding="20"
+            Orientation="Horizontal">
+            <Label
+                x:Name="lblCounter"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Style="{StaticResource MauiLabel}"
+                VerticalOptions="Center" />
+            <Button
+                Clicked="Counter_Clicked"
+                Style="{StaticResource PrimaryAction}"
+                Text="Increment"
+                VerticalOptions="Center" />
+        </StackLayout>
+        <b:BlazorWebView Grid.Row="1" HostPage="wwwroot/index.html">
             <b:BlazorWebView.RootComponents>
-                <b:RootComponent ComponentType="{x:Type local:Gateway}"
-                                 Selector="#app" />
+                <b:RootComponent ComponentType="{x:Type local:Gateway}" Selector="#app" />
             </b:BlazorWebView.RootComponents>
         </b:BlazorWebView>
     </Grid>
