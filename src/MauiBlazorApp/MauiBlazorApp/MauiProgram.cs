@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using RazorLib;
+﻿using RazorLib;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -11,14 +10,18 @@ namespace MauiBlazorApp
         {
             var builder = MauiApp.CreateBuilder();
 
-            builder.RegisterBlazorMauiWebView()
-                   .UseMauiApp<App>()
+            builder.UseMauiApp<App>()
                    .ConfigureFonts(fonts =>
                    {
-                       fonts.AddFont("OpenSansRegular.ttf", "OpenSansRegular");
+                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSans400");
+                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSans600");
                    });
 
-            builder.Services.AddBlazorWebView();
+            builder.Services.AddMauiBlazorWebView();
+
+#if DEBUG
+            builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
 
             builder.Services.AddSingleton<AppState>();
             builder.Services.AddSingleton<BlazorPage>();

@@ -16,41 +16,42 @@ namespace MauiBlazorApp
         {
             Content = new ScrollView()
             {
-                Content = new Grid()
+                Content = new StackLayout()
                 {
-                    RowSpacing = 25,
-                    RowDefinitions = Rows.Define(Auto, Auto, Auto, Auto, Star),
+                    Spacing = 25,
                     Children =
                     {
-                        new Label() { Text = "Hello, World!" }.Row(0)
-                                                              .FontSize(32)
-                                                              .CenterHorizontal()
-                                                              .SemanticHeading(SemanticHeadingLevel.Level1),
-                        new Label() { Text = "Welcome to .NET Multi-platform App UI" }.Row(1)
-                                                                                      .FontSize(18)
-                                                                                      .CenterHorizontal()
-                                                                                      .SemanticHeading(SemanticHeadingLevel.Level1)
-                                                                                      .SemanticDesc("Welcome to dot net Multi platform App U I"),
-                        new Label() { Text = "Current count: 0" }.Row(2)
-                                                                 .Bold()
-                                                                 .FontSize(18)
-                                                                 .CenterHorizontal()
-                                                                 .Assign(out counter),
-                        new Button() { Text = "Click me" }.Row(3)
-                                                          .Bold()
-                                                          .CenterHorizontal()
-                                                          .Invoke(btn => btn.Clicked += OnCounterClicked)
-                                                          .SemanticHint("Counts the number of times you click"),
-                        new Image() { Source = "dotnet_bot.png" }.Row(4)
-                                                                 .Size(250, 310)
-                                                                 .CenterHorizontal()
-                                                                 .SemanticDesc("Cute dot net bot waving hi to you!"),
+                        new Label()
+                        {
+                            Style = AppResource<Style>("MauiLabel"),
+                            Text = "Hello, World!",
+                        }.FontSize(32).CenterHorizontal().SemanticHeading(SemanticHeadingLevel.Level1),
+                        new Label()
+                        {
+                            Style = AppResource<Style>("MauiLabel"),
+                            Text = "Welcome to .NET Multi-platform App UI",
+                        }.FontSize(18).CenterHorizontal().SemanticDesc("Welcome to dot net Multi platform App U I").SemanticHeading(SemanticHeadingLevel.Level1),
+                        new Label()
+                        {
+                            FontAttributes = FontAttributes.Bold,
+                            Style = AppResource<Style>("MauiLabel"),
+                            Text = "Current count: 0",
+                        }.FontSize(18).CenterHorizontal().Assign(out counter),
+                        new Button()
+                        {
+                            Style = AppResource<Style>("PrimaryAction"),
+                            Text = "Click me",
+                        }.CenterHorizontal().Invoke(btn => btn.Clicked += OnCounterClicked).SemanticHint("Counts the number of times you click"),
+                        new Image()
+                        {
+                            Source = "dotnet_bot.png",
+                        }.Height(310).Width(250).CenterHorizontal().SemanticDesc("Cute dot net bot waving hi to you!"),
                     }
-                }.Padding(Device.RuntimePlatform switch { Device.iOS => new Thickness(30, 60, 30, 30), _ => new Thickness(30) })
+                }.Padding(30)
             };
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnCounterClicked(object? sender, EventArgs e)
         {
             count++;
             counter.Text = $"Current count: {count}";

@@ -18,7 +18,7 @@ namespace MauiBlazorApp
             lblCounter.Text = $"The current count is: {_state.CurrentCount}";
         }
 
-        private void Counter_Clicked(object sender, EventArgs e)
+        private void Counter_Clicked(object? sender, EventArgs e)
         {
             _state.IncrementCount();
         }

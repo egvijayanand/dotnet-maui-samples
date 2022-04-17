@@ -1,8 +1,25 @@
 ﻿@inherits LayoutComponentBase
+@inject AppState appState
 
 <div>
 	@Body
 	<p>
-		Would you like to visit the <a class="link-primary" href="/">Home</a> page instead?
+		Would you like to visit the <a href="/">Home</a> page instead?
 	</p>
 </div>
+
+@code {
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		// Subscribe to changes
+		appState.OnChanged += StateHasChanged;
+		appState.ResetCount();
+	}
+
+	public void Dispose()
+	{
+		// Unsubscribe from changes
+		appState.OnChanged -= StateHasChanged;
+	}
+}

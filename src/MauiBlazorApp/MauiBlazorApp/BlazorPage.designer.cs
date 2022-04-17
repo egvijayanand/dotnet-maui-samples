@@ -1,7 +1,6 @@
-using MauiBlazorApp.Controls;
 using Microsoft.AspNetCore.Components.WebView.Maui;
 using VijayAnand.MauiBlazor.Markup;
-
+using VijayAnand.MauiToolkit.Markup;
 using static MauiBlazorApp.Extensions.GenericExtensions;
 
 #nullable enable
@@ -14,24 +13,33 @@ namespace MauiBlazorApp
 
         public void InitializeComponent()
         {
-            SetDynamicResource(ContentPage.BackgroundColorProperty, "SecondaryColor");
             Content = new Grid()
             {
                 RowDefinitions = Rows.Define(Auto, Star),
+                Style = AppResource<Style>("ContentArea"),
                 Children =
                 {
-                    new HStack()
+                    new StackLayout()
                     {
                         Children =
                         {
-                            new TextLabel("The current count is: 0").Start()
-                                                                    .CenterVertical()
-                                                                    .Bold()
-                                                                    .Assign(out lblCounter),
-                            new TextButton("Increment").CenterVertical()
-                                                       .Invoke(btn => btn.Clicked += Counter_Clicked),
+                            new Label()
+                            {
+                                Style = AppResource<Style>("MauiLabel"),
+                                Text = "The current count is: 0"
+                            }.Start()
+                             .CenterVertical()
+                             .Bold()
+                             .Assign(out lblCounter),
+                            new Button()
+                            {
+                                Style = AppResource<Style>("PrimaryAction"),
+                                Text = "Increment"
+                            }.CenterVertical()
+                             .Invoke(btn => btn.Clicked += Counter_Clicked),
                         },
-                    }.Padding(20)
+                    }.InHorizontal()
+                     .Padding(20)
                      .Row(BodyRow.Top),
                     new BlazorWebView().Configure("wwwroot/index.html",
                                                   ("#app", typeof(Gateway), CreateDictionary<string, object?>((nameof(Gateway.Foo), "Bar"))))

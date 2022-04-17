@@ -14,6 +14,16 @@
     color: red;
 }
 
+a, .btn-link {
+    color: #0077cc;
+}
+
+@media (prefers-color-scheme: dark) {
+    a, .btn-link {
+        color: #cc5500;
+    }
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
