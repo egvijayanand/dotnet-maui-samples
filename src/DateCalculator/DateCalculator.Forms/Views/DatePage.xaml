@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DateCalculator.Views.DatePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DateCalculator"
+    xmlns:vm="clr-namespace:DateCalculator.ViewModels;assembly=DateCalculator.Shared"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Name="CurrentPage"
+    Title="{Binding Title}"
+    Padding="20"
+    x:DataType="vm:DateViewModel">
+    <!--<Shell.TitleView>
+        <local:AppTitleView PageTitle="{Binding Title}" />
+    </Shell.TitleView>-->
+    <ContentPage.BindingContext>
+        <vm:DateViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <xct:InvertedBoolConverter x:Key="InverseBoolConverter" />
+        <xct:IntToBoolConverter x:Key="IntToBoolConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="30" VerticalOptions="StartAndExpand">
+            <Picker HorizontalOptions="Start" SelectedIndex="{Binding Option}">
+                <Picker.Items>
+                    <x:String>Difference between dates</x:String>
+                    <x:String>Add or subtract days</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout HorizontalOptions="StartAndExpand">
+                <Label Style="{StaticResource Caption}" Text="From" />
+                <DatePicker Date="{Binding StartDate}">
+                    <DatePicker.Behaviors>
+                        <xct:EventToCommandBehavior Command="{Binding DateDiffCommand}" EventName="DateSelected" />
+                    </DatePicker.Behaviors>
+                </DatePicker>
+            </StackLayout>
+            <StackLayout HorizontalOptions="StartAndExpand" IsVisible="{Binding DiffMode}">
+                <Label Style="{StaticResource Caption}" Text="To" />
+                <DatePicker Date="{Binding EndDate}">
+                    <DatePicker.Behaviors>
+                        <xct:EventToCommandBehavior Command="{Binding DateDiffCommand}" EventName="DateSelected" />
+                    </DatePicker.Behaviors>
+                </DatePicker>
+            </StackLayout>
+            <StackLayout HorizontalOptions="StartAndExpand" IsVisible="{Binding DiffMode, Converter={StaticResource InverseBoolConverter}}">
+                <StackLayout
+                    Orientation="Horizontal"
+                    RadioButtonGroup.GroupName="modes"
+                    RadioButtonGroup.SelectedValue="{Binding SelectedMode}">
+                    <BindableLayout.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Add</x:String>
+                            <x:String>Subtract</x:String>
+                        </x:Array>
+                    </BindableLayout.ItemsSource>
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type x:String}">
+                            <RadioButton Content="{Binding}" Value="{Binding}" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <StackLayout>
+                        <Label Text="Years" />
+                        <Picker ItemsSource="{Binding Range}" SelectedIndex="{Binding SelectedYear}" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Months" />
+                        <Picker ItemsSource="{Binding Range}" SelectedIndex="{Binding SelectedMonth}" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Days" />
+                        <Picker ItemsSource="{Binding Range}" SelectedIndex="{Binding SelectedDay}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="StartAndExpand">
+                <Label Style="{StaticResource Caption}" Text="{Binding ResultCaption}" />
+                <Label Style="{StaticResource BoldText}" Text="{Binding DiffResult}" />
+                <Label Text="{Binding DiffInDays}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

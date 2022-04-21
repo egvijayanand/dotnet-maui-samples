@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DateCalculator.Views.BasePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fas="clr-namespace:FontAwesome.Solid;assembly=VijayAnand.FontAwesome"
+    x:Name="currentPage">
+    <Shell.TitleView>
+        <Grid>
+            <!--<Image
+                Grid.Column="0"
+                HorizontalOptions="Start"
+                Source="{FontImage Glyph={x:Static fas:IconFont.Bars},
+                                   FontFamily=FAS,
+                                   Color=White}"
+                VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Hamburger_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>-->
+            <Label
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                Style="{StaticResource TitleText}"
+                Text="{Binding Title, Source={x:Reference currentPage}}"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+    </Shell.TitleView>
+    <ContentPage.Content />
+</ContentPage>
