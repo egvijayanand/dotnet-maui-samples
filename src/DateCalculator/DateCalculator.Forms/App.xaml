@@ -10,6 +10,8 @@
             <x:String x:Key="AppFont">Roboto400</x:String>
             <x:Double x:Key="AppFontSize">14</x:Double>
 
+            <x:Double x:Key="ItemSpacing">5</x:Double>
+
             <Color x:Key="Primary">#3700B3</Color>
             <Color x:Key="White">White</Color>
             <Color x:Key="Black">Black</Color>
@@ -26,6 +28,10 @@
 
             <Style ApplyToDerivedTypes="True" TargetType="Page">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+            </Style>
+
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
             </Style>
 
             <Style TargetType="Label">
