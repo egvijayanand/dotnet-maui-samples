@@ -16,5 +16,7 @@
 
             SemanticScreenReader.Announce(CounterLabel.Text);
         }
+
+        protected override bool OnBackButtonPressed() => false;
     }
 }

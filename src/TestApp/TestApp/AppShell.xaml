@@ -3,6 +3,7 @@
     x:Class="TestApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fas="clr-namespace:FontAwesome.Solid;assembly=VijayAnand.FontAwesome"
     xmlns:local="clr-namespace:TestApp"
     FlyoutBackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                             Light={StaticResource BackgroundLight}}">
@@ -13,7 +14,7 @@
     <Shell.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="BaseStyle" TargetType="Element">
+            <!--<Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryColor}" />
                 <Setter Property="Shell.ForegroundColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="Shell.TitleColor" Value="{StaticResource PrimaryTextColor}" />
@@ -28,13 +29,14 @@
             <Style
                 ApplyToDerivedTypes="True"
                 BasedOn="{StaticResource BaseStyle}"
-                TargetType="ShellItem" />
+                TargetType="ShellItem" />-->
 
             <!--
                 Default Styles for all Flyout Items
             -->
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="{StaticResource AppFont}" />
+                <Setter Property="TextColor" Value="{StaticResource TextLight}" />
             </Style>
             <Style
                 ApplyToDerivedTypes="True"
@@ -45,14 +47,16 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, Android=Transparent, iOS=White}" />
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
+                                    <Setter Property="BackgroundColor" Value="{OnPlatform WinUI=Transparent, Android=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Default={StaticResource TextLight}}" />
+                                    <Setter Property="VerticalOptions" Value="Center" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Selected">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
                                     <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="White" />
+                                    <Setter Property="VerticalOptions" Value="Center" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -72,7 +76,8 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource PrimaryColor}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
+                                    <Setter Property="VerticalOptions" Value="Center" />
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -80,19 +85,85 @@
                 </Setter>
             </Style>
         </ResourceDictionary>
+        <!--#region Icons-->
+        <!-- Home -->
+        <FontImageSource
+            x:Key="HomeIconLight"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.House}"
+            Color="{StaticResource TextLight}" />
+
+        <FontImageSource
+            x:Key="HomeIconDark"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.House}"
+            Color="{StaticResource TextDark}" />
+
+        <!-- Search -->
+        <FontImageSource
+            x:Key="SearchIconLight"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.MagnifyingGlass}"
+            Color="{StaticResource TextLight}" />
+
+        <FontImageSource
+            x:Key="SearchIconDark"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.MagnifyingGlass}"
+            Color="{StaticResource TextDark}" />
+
+        <!-- Settings -->
+        <FontImageSource
+            x:Key="SettingsIconLight"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.Gear}"
+            Color="{StaticResource TextLight}" />
+
+        <FontImageSource
+            x:Key="SettingsIconDark"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.Gear}"
+            Color="{StaticResource TextDark}" />
+
+        <!-- About -->
+        <FontImageSource
+            x:Key="AboutIconLight"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.CircleInfo}"
+            Color="{StaticResource TextLight}" />
+
+        <FontImageSource
+            x:Key="AboutIconDark"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.CircleInfo}"
+            Color="{StaticResource TextDark}" />
+
+        <!-- Logout -->
+        <FontImageSource
+            x:Key="LogoutIconLight"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.RightFromBracket}"
+            Color="{StaticResource TextLight}" />
+
+        <FontImageSource
+            x:Key="LogoutIconDark"
+            FontFamily="FAS"
+            Glyph="{x:Static fas:IconFont.RightFromBracket}"
+            Color="{StaticResource TextDark}" />
+        <!--#endregion-->
     </Shell.Resources>
     <!--
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element
     -->
 
-    <FlyoutItem Title="Home">
+    <FlyoutItem Title="Home" Icon="{AppThemeBinding Dark={StaticResource HomeIconDark}, Light={StaticResource HomeIconLight}}">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="home" />
     </FlyoutItem>
-    <FlyoutItem Title="Search">
+    <FlyoutItem Title="Search" Icon="{AppThemeBinding Dark={StaticResource SearchIconDark}, Light={StaticResource SearchIconLight}}">
         <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" Route="search" />
     </FlyoutItem>
-    <FlyoutItem Title="Settings">
+    <FlyoutItem Title="Settings" Icon="{AppThemeBinding Dark={StaticResource SettingsIconDark}, Light={StaticResource SettingsIconLight}}">
         <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" Route="settings" />
     </FlyoutItem>
 
@@ -100,7 +171,11 @@
         When the Flyout is visible this will be a menu item you can tie a click behavior to
     -->
 
-    <MenuItem Clicked="OnLogoutClicked" Text="Logout" />
+    <MenuItem
+        Clicked="OnLogoutClicked"
+        IconImageSource="{AppThemeBinding Dark={StaticResource LogoutIconDark},
+                                          Light={StaticResource LogoutIconLight}}"
+        Text="Logout" />
 
     <!--
         TabBar lets you define content that won't show up in a Flyout menu. When this content is active

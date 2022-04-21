@@ -8,7 +8,10 @@
     Shell.NavBarIsVisible="False">
     <Grid Style="{StaticResource ContentArea}">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Button Clicked="OnLoginClicked" Text="Login" />
+            <Button
+                Clicked="OnLoginClicked"
+                Style="{StaticResource PrimaryAction}"
+                Text="Login" />
         </StackLayout>
     </Grid>
 </ContentPage>
