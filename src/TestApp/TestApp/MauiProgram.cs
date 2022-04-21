@@ -13,7 +13,11 @@ namespace TestApp
                    .UseVijayAnandMauiToolkit(ServiceRegistrations.Navigation | ServiceRegistrations.Theme)
                    .ConfigureFonts(fonts =>
                    {
-                       fonts.AddFont("OpenSansRegular.ttf", "OSR");
+                       fonts.AddFont("fa-brands-400.ttf", "FAB");
+                       fonts.AddFont("fa-regular-400.ttf", "FAR");
+                       fonts.AddFont("fa-solid-900.ttf", "FAS");
+                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSans400");
+                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSans600");
                    });
 
             builder.Services.AddSingleton<SettingsViewModel>();

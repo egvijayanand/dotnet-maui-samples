@@ -4,7 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TestApp"
-    Title="Search">
+    Title="Search"
+    Shell.NavBarIsVisible="{OnIdiom Phone=True,
+                                    Default=False}">
     <Grid Style="{StaticResource ContentArea}">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label Text="Search Page" />

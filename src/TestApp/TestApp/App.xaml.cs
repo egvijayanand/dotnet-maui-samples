@@ -38,7 +38,7 @@
 
         private void OnAppThemeChangeRequested(object? sender, AppThemeChangedEventArgs e)
         {
-            MainThread.BeginInvokeOnMainThread(() => themeService?.SetTheme());
+            _ = MainThread.InvokeOnMainThreadAsync(() => themeService?.SetTheme());
         }
     }
 }
