@@ -64,6 +64,7 @@ namespace DateCalculator.ViewModels
 
         public IList<int> Range { get; init; }
 
+        // While using classic MVVM
         /*
         public DateTime StartDate
         {
@@ -104,25 +105,25 @@ namespace DateCalculator.ViewModels
         public string SelectedMode
         {
             get => selectedMode;
-            set => SetProperty(ref selectedMode, value, onChanged: FindTheResult);
+            set => SetProperty(ref selectedMode, value, onChanged: FindTheDate);
         }
         
         public int SelectedYear
         {
             get => selectedYear;
-            set => SetProperty(ref selectedYear, value, onChanged: FindTheResult);
+            set => SetProperty(ref selectedYear, value, onChanged: FindTheDate);
         }
 
         public int SelectedMonth
         {
             get => selectedMonth;
-            set => SetProperty(ref selectedMonth, value, onChanged: FindTheResult);
+            set => SetProperty(ref selectedMonth, value, onChanged: FindTheDate);
         }
 
         public int SelectedDay
         {
             get => selectedDay;
-            set => SetProperty(ref selectedDay, value, onChanged: FindTheResult);
+            set => SetProperty(ref selectedDay, value, onChanged: FindTheDate);
         }
         public string ResultCaption
         {
@@ -142,7 +143,7 @@ namespace DateCalculator.ViewModels
             set => SetProperty(ref diffInDays, value);
         }
 
-        public ICommand DiffCommand => new Command(FindTheResult);
+        public ICommand DiffCommand => new Command(FindTheDate);
         */
 
         partial void OnDiffModeChanged(bool value)
