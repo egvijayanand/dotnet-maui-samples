@@ -1,0 +1,76 @@
+﻿<Application
+    x:Class="DateCalculator.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DateCalculator"
+    xmlns:m="clr-namespace:Microsoft.Maui;assembly=Microsoft.Maui">
+    <Application.Resources>
+        <ResourceDictionary Source="Resources/Styles.xaml">
+            <x:Double x:Key="ItemSpacing">5</x:Double>
+
+            <m:Thickness x:Key="ApplePadding">30,60,30,30</m:Thickness>
+            <m:Thickness x:Key="DefaultPadding">30</m:Thickness>
+
+            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
+            </Style>
+
+            <Style x:Key="ContentArea" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+                <Setter Property="Padding" Value="{OnPlatform iOS={StaticResource ApplePadding}, Default={StaticResource DefaultPadding}}" />
+            </Style>
+
+            <Style x:Key="Caption" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LightGray}, Light={StaticResource DarkGray}}" />
+            </Style>
+
+            <Style x:Key="BoldText" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <!--<Color x:Key="PrimaryTextColor">Black</Color>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OSR" />
+            </Style>
+            <Style x:Key="BoldText" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OSB" />
+            </Style>-->
+            <!--<Style x:Key="Caption" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OSR" />
+            </Style>-->
+            <!--<Style TargetType="Picker">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OSR" />
+            </Style>
+            <Style TargetType="RadioButton">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OSR" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="OSR" />
+                <Setter Property="BackgroundColor" Value="#2b0b98" />
+                <Setter Property="Padding" Value="14,10" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+                <Setter Property="Padding" Value="20,0" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+                <Setter Property="Spacing" Value="5" />
+            </Style>
+
+            <Style x:Key="Container" TargetType="VerticalStackLayout">
+                <Setter Property="Spacing" Value="20" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="StartAndExpand" />
+            </Style>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

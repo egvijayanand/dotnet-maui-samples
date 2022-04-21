@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="DateCalculator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:far="clr-namespace:FontAwesome.Regular;assembly=VijayAnand.FontAwesome"
+    xmlns:fas="clr-namespace:FontAwesome.Solid;assembly=VijayAnand.FontAwesome"
+    xmlns:pages="clr-namespace:DateCalculator.Views">
+    <Shell.Resources />
+    <FlyoutItem Title="Home" Icon="{FontImage Glyph={x:Static fas:IconFont.House}, FontFamily=FAS, Color=Black}">
+        <ShellContent ContentTemplate="{DataTemplate pages:HomePage}" Route="home" />
+    </FlyoutItem>
+    <FlyoutItem Title="Date Calculation" Icon="{FontImage Glyph={x:Static far:IconFont.Calendar}, FontFamily=FAR, Color=Black}">
+        <ShellContent ContentTemplate="{DataTemplate pages:DatePage}" Route="date-calc" />
+    </FlyoutItem>
+    <MenuItem
+        Clicked="Settings_Clicked"
+        IconImageSource="{FontImage Glyph={x:Static fas:IconFont.Gear},
+                                    FontFamily=FAS,
+                                    Color=Black}"
+        Text="Settings" />
+    <TabBar>
+        <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" Route="settings" />
+    </TabBar>
+</Shell>

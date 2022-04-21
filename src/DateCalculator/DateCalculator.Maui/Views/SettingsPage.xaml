@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages:MauiPage
+    x:Class="DateCalculator.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DateCalculator"
+    xmlns:pages="clr-namespace:DateCalculator.Views"
+    xmlns:vm="clr-namespace:DateCalculator.ViewModels;assembly=DateCalculator.Shared"
+    Title="{Binding Title}"
+    x:DataType="vm:SettingsViewModel">
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Style="{StaticResource ContentArea}">
+            <Button
+                Clicked="Button_Clicked"
+                HorizontalOptions="Center"
+                Text="Home"
+                VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</pages:MauiPage>
