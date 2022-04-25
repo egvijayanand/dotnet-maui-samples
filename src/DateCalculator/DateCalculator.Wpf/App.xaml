@@ -6,8 +6,6 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!-- Update the FontFamily to set it across all Controls styles -->
-        <sys:String x:Key="AppFont">Roboto400</sys:String>
         <!-- Update the base FontSize to set it across all Controls styles -->
         <sys:Double x:Key="AppFontSize">14</sys:Double>
 

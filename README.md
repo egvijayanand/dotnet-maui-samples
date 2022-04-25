@@ -10,6 +10,7 @@ Available under the `src` directory:
 * `DateCalculator`
   - MVVM Sample
   - Xamarin Forms and .NET MAUI in a single solution
+  - WPF project to illustrate the reuse of ViewModels across UI frameworks
   - Shared business logic as a separate library project
   - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/8.0.0-preview3) NuGet package
 * `MauiBlazorApp` - .NET MAUI Blazor sample
