@@ -1,0 +1,75 @@
+﻿<Window
+    x:Class="DateCalculator.Wpf.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:DateCalculator.Wpf.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DateCalculator.Wpf"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:DateCalculator.ViewModels;assembly=DateCalculator.Shared"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:DateViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <Thickness x:Key="LeftMargin">15,0,0,0</Thickness>
+        <Thickness x:Key="TopMargin">0,15,0,0</Thickness>
+        <Thickness x:Key="InnerSpacing">0,15,0,0</Thickness>
+        <converters:InvertedBoolConverter x:Key="InverseBoolConverter" />
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+    </Window.Resources>
+    <StackPanel Margin="30">
+        <StackPanel>
+            <ComboBox SelectedIndex="{Binding Option}">
+                <ComboBox.Items>
+                    <ComboBoxItem>Difference between dates</ComboBoxItem>
+                    <ComboBoxItem>Add or subtract days</ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Margin="{StaticResource TopMargin}">
+            <Label Content="From" Style="{StaticResource Caption}" />
+            <DatePicker SelectedDate="{Binding StartDate}" />
+        </StackPanel>
+        <StackPanel Margin="{StaticResource TopMargin}" Visibility="{Binding DiffMode, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Label Content="To" Style="{StaticResource Caption}" />
+            <DatePicker SelectedDate="{Binding EndDate}" />
+        </StackPanel>
+        <StackPanel Margin="{StaticResource TopMargin}" Visibility="{Binding DiffModeInverse, Converter={StaticResource BoolToVisibilityConverter}}">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton
+                    Content="Add"
+                    GroupName="modes"
+                    IsChecked="{Binding SelectedMode, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Add}" />
+                <RadioButton
+                    Margin="{StaticResource LeftMargin}"
+                    Content="Subtract"
+                    GroupName="modes"
+                    IsChecked="{Binding SelectedMode, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Subtract}" />
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                <StackPanel>
+                    <Label Content="Years" Style="{StaticResource Caption}" />
+                    <ComboBox ItemsSource="{Binding Range}" SelectedIndex="{Binding SelectedYear}" />
+                </StackPanel>
+                <StackPanel Margin="{StaticResource LeftMargin}">
+                    <Label Content="Months" Style="{StaticResource Caption}" />
+                    <ComboBox ItemsSource="{Binding Range}" SelectedIndex="{Binding SelectedMonth}" />
+                </StackPanel>
+                <StackPanel Margin="{StaticResource LeftMargin}">
+                    <Label Content="Days" Style="{StaticResource Caption}" />
+                    <ComboBox ItemsSource="{Binding Range}" SelectedIndex="{Binding SelectedDay}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="{StaticResource TopMargin}">
+            <Label Content="{Binding ResultCaption}" Style="{StaticResource Caption}" />
+            <Label Content="{Binding DiffResult}" Style="{StaticResource BoldText}" />
+            <Label Content="{Binding DiffInDays}" />
+        </StackPanel>
+    </StackPanel>
+</Window>

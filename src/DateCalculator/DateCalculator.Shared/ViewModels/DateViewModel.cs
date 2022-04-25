@@ -16,6 +16,7 @@ namespace DateCalculator.ViewModels
         private DateTime endDate;
 
         [ObservableProperty]
+        [AlsoNotifyChangeFor(nameof(DiffModeInverse))]
         private bool diffMode;
 
         [ObservableProperty]
@@ -63,6 +64,8 @@ namespace DateCalculator.ViewModels
         }
 
         public IList<int> Range { get; init; }
+
+        public bool DiffModeInverse => !DiffMode;
 
         // While using classic MVVM
         /*
@@ -161,6 +164,10 @@ namespace DateCalculator.ViewModels
         }
 
         partial void OnOptionChanged(int value) => DiffMode = value == 0;
+
+        partial void OnStartDateChanged(DateTime value) => FindTheDate();
+
+        partial void OnEndDateChanged(DateTime value) => FindTheDate();
 
         partial void OnSelectedModeChanged(string value) => FindTheDate();
 
