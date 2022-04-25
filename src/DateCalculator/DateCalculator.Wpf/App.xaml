@@ -1,0 +1,42 @@
+﻿<Application
+    x:Class="DateCalculator.Wpf.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:DateCalculator.Wpf"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Update the base FontSize to set it across all Controls styles -->
+        <sys:Double x:Key="AppFontSize">14</sys:Double>
+
+        <Color x:Key="Primary">#512BD4</Color>
+        <Color x:Key="Light">#DFD8F7</Color>
+        <Color x:Key="Dark">#2B0B98</Color>
+        <Color x:Key="White">White</Color>
+        <Color x:Key="Black">Black</Color>
+        <Color x:Key="LightGray">#E5E5E1</Color>
+        <Color x:Key="MidGray">#969696</Color>
+        <Color x:Key="DarkGray">#505050</Color>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />
+        <SolidColorBrush x:Key="LightBrush" Color="{StaticResource Light}" />
+        <SolidColorBrush x:Key="DarkBrush" Color="{StaticResource Dark}" />
+        <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}" />
+        <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}" />
+        <SolidColorBrush x:Key="LightGrayBrush" Color="{StaticResource LightGray}" />
+        <SolidColorBrush x:Key="MidGrayBrush" Color="{StaticResource MidGray}" />
+        <SolidColorBrush x:Key="DarkGrayBrush" Color="{StaticResource DarkGray}" />
+
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="pack://application:,,,/Fonts/#Open Sans" />
+            <Setter Property="FontSize" Value="{StaticResource AppFontSize}" />
+        </Style>
+
+        <Style x:Key="Caption" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource DarkGrayBrush}" />
+        </Style>
+
+        <Style x:Key="BoldText" TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </Application.Resources>
+</Application>
