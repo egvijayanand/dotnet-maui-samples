@@ -11,7 +11,7 @@
                                     Default=False}">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <m:Thickness x:Key="OptionPadding">5,0,0,0</m:Thickness>
+            <m:Thickness x:Key="OptionPadding">3,0,0,0</m:Thickness>
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid Style="{StaticResource ContentArea}">
