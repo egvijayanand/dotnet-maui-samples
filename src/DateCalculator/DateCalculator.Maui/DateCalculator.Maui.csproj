@@ -22,7 +22,7 @@
 
 		<!-- App Identifier -->
 		<ApplicationId>com.egvijayanand.maui.datecalculator</ApplicationId>
-		<ApplicationIdGuid>E4995291-7DD1-45F2-B37C-2CF5FA897267</ApplicationIdGuid>
+		<ApplicationIdGuid>e4995291-7dd1-45f2-b37c-2cf5fa897267</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -54,6 +54,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-rc3" />
 		<PackageReference Include="VijayAnand.FontAwesome" Version="2.1.1" />
 	</ItemGroup>
 
@@ -84,7 +85,7 @@
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\SettingsPage.xaml">
-		  <Generator>MSBuild:Compile</Generator>
+			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 	</ItemGroup>
 

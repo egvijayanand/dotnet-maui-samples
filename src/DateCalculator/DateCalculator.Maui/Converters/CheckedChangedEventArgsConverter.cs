@@ -1,6 +1,4 @@
 ﻿using Maui.CommunityToolkit.Extensions.Internals;
-using Microsoft.Maui.Controls;
-using System;
 using System.Globalization;
 
 #nullable enable

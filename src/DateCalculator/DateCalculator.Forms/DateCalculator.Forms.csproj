@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-		<LangVersion>preview</LangVersion>
+		<LangVersion>latest</LangVersion>
 		<RootNamespace>DateCalculator</RootNamespace>
 		<AssemblyName>DateCalculator</AssemblyName>
 	</PropertyGroup>
@@ -28,9 +28,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="VijayAnand.FontAwesome" Version="2.1.1" />
-		<PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.1" />
+		<PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
 		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
-		<PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
 	</ItemGroup>
 
 	<ItemGroup>
