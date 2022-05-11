@@ -47,7 +47,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{OnPlatform WinUI=Transparent, Android=Transparent, iOS=White}" />
+                                    <Setter Property="BackgroundColor" Value="{OnPlatform iOS=White, Default=Transparent}" />
                                     <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Default={StaticResource TextLight}}" />
                                     <Setter Property="VerticalOptions" Value="Center" />
                                 </VisualState.Setters>
