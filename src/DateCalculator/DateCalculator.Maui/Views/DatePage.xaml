@@ -2,9 +2,8 @@
     x:Class="DateCalculator.Views.DatePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:behaviors="clr-namespace:Maui.CommunityToolkit.Behaviors"
     xmlns:controls="clr-namespace:DateCalculator.Controls"
-    xmlns:converters="clr-namespace:Maui.CommunityToolkit.Converters"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:pages="clr-namespace:DateCalculator.Views"
     xmlns:vm="clr-namespace:DateCalculator.ViewModels;assembly=DateCalculator.Shared"
     Title="{Binding Title}"
@@ -16,9 +15,9 @@
         <vm:DateViewModel />
     </ContentPage.BindingContext>
     <pages:MauiPage.Resources>
-        <converters:InvertedBoolConverter x:Key="InverseBoolConverter" />
-        <converters:IntToBoolConverter x:Key="IntToBoolConverter" />
-        <converters:CheckedChangedEventArgsConverter x:Key="CheckedChangedEventArgsConverter" />
+        <mct:InvertedBoolConverter x:Key="InverseBoolConverter" />
+        <!--<mct:IntToBoolConverter x:Key="IntToBoolConverter" />-->
+        <!--<converters:CheckedChangedEventArgsConverter x:Key="CheckedChangedEventArgsConverter" />-->
     </pages:MauiPage.Resources>
     <pages:MauiPage.Content>
         <Grid Style="{StaticResource ContentArea}">
@@ -33,7 +32,7 @@
                     <Label Style="{StaticResource Caption}" Text="From" />
                     <DatePicker Date="{Binding StartDate}">
                         <DatePicker.Behaviors>
-                            <behaviors:EventToCommandBehavior Command="{Binding DateDiffCommand}" EventName="DateSelected" />
+                            <mct:EventToCommandBehavior Command="{Binding DateDiffCommand}" EventName="DateSelected" />
                         </DatePicker.Behaviors>
                     </DatePicker>
                 </StackLayout>
@@ -41,7 +40,7 @@
                     <Label Style="{StaticResource Caption}" Text="To" />
                     <DatePicker Date="{Binding EndDate}">
                         <DatePicker.Behaviors>
-                            <behaviors:EventToCommandBehavior Command="{Binding DateDiffCommand}" EventName="DateSelected" />
+                            <mct:EventToCommandBehavior Command="{Binding DateDiffCommand}" EventName="DateSelected" />
                         </DatePicker.Behaviors>
                     </DatePicker>
                 </StackLayout>

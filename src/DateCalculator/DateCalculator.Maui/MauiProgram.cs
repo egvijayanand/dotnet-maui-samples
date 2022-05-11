@@ -1,4 +1,6 @@
-﻿[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+﻿using CommunityToolkit.Maui;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace DateCalculator
 {
@@ -8,6 +10,7 @@ namespace DateCalculator
         {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
+                   .UseMauiCommunityToolkit()
                    .ConfigureFonts(fonts =>
                    {
                        fonts.AddFont("fa-regular-400.ttf", "FAR");
