@@ -16,3 +16,4 @@ Available under the `src` directory:
 * `MauiBlazorApp` - .NET MAUI Blazor sample
   - App Theming
   - Components from shared Razor Class Library (RCL)
+* `MauiAppCS` - .NET MAUI C# Markup based Sample
