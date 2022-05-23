@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32505.426
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.UWP", "DateCalculator\DateCalculator.UWP\DateCalculator.UWP.csproj", "{1049E8F2-DD4A-430A-876F-97B2AABFF362}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.UWP", "UnifiedDateCalculator\DateCalculator.UWP\DateCalculator.UWP.csproj", "{1049E8F2-DD4A-430A-876F-97B2AABFF362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Android", "DateCalculator\DateCalculator.Android\DateCalculator.Android.csproj", "{8E0396C9-6174-4451-BBBC-9DF606D499B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Android", "UnifiedDateCalculator\DateCalculator.Android\DateCalculator.Android.csproj", "{8E0396C9-6174-4451-BBBC-9DF606D499B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.iOS", "DateCalculator\DateCalculator.iOS\DateCalculator.iOS.csproj", "{9F7692B4-49E1-48BA-8F4D-61D3BD4A70A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.iOS", "UnifiedDateCalculator\DateCalculator.iOS\DateCalculator.iOS.csproj", "{9F7692B4-49E1-48BA-8F4D-61D3BD4A70A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Forms", "DateCalculator\DateCalculator.Forms\DateCalculator.Forms.csproj", "{95C0D903-8430-49CB-AFE0-6B7A8F21354B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Forms", "UnifiedDateCalculator\DateCalculator.Forms\DateCalculator.Forms.csproj", "{95C0D903-8430-49CB-AFE0-6B7A8F21354B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.Maui", "DateCalculator\DateCalculator.Maui\DateCalculator.Maui.csproj", "{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.Maui", "UnifiedDateCalculator\DateCalculator.Maui\DateCalculator.Maui.csproj", "{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.Shared", "DateCalculator\DateCalculator.Shared\DateCalculator.Shared.csproj", "{07CFA9C7-A1C8-410B-805B-5C01DC1ED653}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.Shared", "UnifiedDateCalculator\DateCalculator.Shared\DateCalculator.Shared.csproj", "{07CFA9C7-A1C8-410B-805B-5C01DC1ED653}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.UI", "DateCalculator\DateCalculator.UI\DateCalculator.UI.csproj", "{F627C9F2-E55E-494A-9EAC-14BC59CFDA3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.UI", "UnifiedDateCalculator\DateCalculator.UI\DateCalculator.UI.csproj", "{F627C9F2-E55E-494A-9EAC-14BC59CFDA3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
