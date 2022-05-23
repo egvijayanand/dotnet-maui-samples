@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>DateCalculator.Forms</RootNamespace>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\Fonts\OpenSans-Regular.ttf" />
+		<EmbeddedResource Include="Resources\Fonts\OpenSans-SemiBold.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DateCalculator.UI\DateCalculator.UI.csproj" />
+	</ItemGroup>
+</Project>

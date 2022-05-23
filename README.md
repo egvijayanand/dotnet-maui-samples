@@ -17,3 +17,8 @@ Available under the `src` directory:
   - App Theming
   - Components from shared Razor Class Library (RCL)
 * `MauiAppCS` - .NET MAUI C# Markup based Sample
+* `UnifiedDateCalculator`
+  - Shared class library sample
+  - UI, ViewModel, Model, and Business logic all from shared project
+  - Head projects serve as an app container
+  - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
