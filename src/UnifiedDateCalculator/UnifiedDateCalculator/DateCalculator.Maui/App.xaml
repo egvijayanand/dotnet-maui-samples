@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="DateCalculator.Maui.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DateCalculator.Maui">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Additional Styles -->
+            <x:Double x:Key="ItemSpacing">5</x:Double>
+
+            <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>
+            <Thickness x:Key="DefaultPadding">30</Thickness>
+
+            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
+            </Style>
+
+            <Style x:Key="ContentArea" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+                <Setter Property="Padding" Value="{OnPlatform iOS={StaticResource ApplePadding}, Default={StaticResource DefaultPadding}}" />
+            </Style>
+
+            <Style x:Key="Caption" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LightGray}, Light={StaticResource DarkGray}}" />
+            </Style>
+
+            <Style x:Key="BoldText" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

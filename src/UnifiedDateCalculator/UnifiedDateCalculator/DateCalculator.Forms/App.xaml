@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="DateCalculator.Forms.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Unknown">#2B0B98</Color>
+
+            <x:String x:Key="AppFont">OpenSans400</x:String>
+            <x:Double x:Key="AppFontSize">14</x:Double>
+
+            <x:Double x:Key="ItemSpacing">5</x:Double>
+
+            <Color x:Key="Primary">#3700B3</Color>
+            <Color x:Key="White">White</Color>
+            <Color x:Key="Black">Black</Color>
+
+            <Color x:Key="BackgroundDark">#121212</Color>
+            <Color x:Key="BackgroundLight">White</Color>
+
+            <Color x:Key="TextDark">White</Color>
+            <Color x:Key="TextLight">Black</Color>
+
+            <Color x:Key="LightGray">#E5E5E1</Color>
+            <Color x:Key="MidGray">#969696</Color>
+            <Color x:Key="DarkGray">#505050</Color>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Page">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+            </Style>
+
+            <Style TargetType="StackLayout">
+                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
+                <Setter Property="FontFamily" Value="{StaticResource AppFont}" />
+                <Setter Property="FontSize" Value="{StaticResource AppFontSize}" />
+            </Style>
+
+            <Style x:Key="Caption" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LightGray}, Light={StaticResource DarkGray}}" />
+            </Style>
+
+            <Style x:Key="BoldText" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="TitleText" TargetType="Label">
+                <Setter Property="FontSize" Value="Title" />
+            </Style>
+
+            <Style x:Key="PrimaryAction" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+                <Setter Property="FontFamily" Value="{StaticResource AppFont}" />
+                <Setter Property="FontSize" Value="{StaticResource AppFontSize}" />
+                <Setter Property="Padding" Value="14,10" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
