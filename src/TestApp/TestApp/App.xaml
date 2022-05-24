@@ -5,12 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TestApp">
     <Application.Resources>
-        <ResourceDictionary Source="Resources/Styles.xaml">
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
             <x:Double x:Key="ItemSpacing">10</x:Double>
 
             <Style x:Key="MauiLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource MauiColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource Primary}}" />
             </Style>
 
             <Style ApplyToDerivedTypes="True" TargetType="StackBase">
@@ -24,7 +28,6 @@
             <Style x:Key="PrimaryAction" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{DynamicResource Primary}" />
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryText}" />
-                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
         </ResourceDictionary>

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Android", "U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.iOS", "UnifiedDateCalculator\DateCalculator.iOS\DateCalculator.iOS.csproj", "{9F7692B4-49E1-48BA-8F4D-61D3BD4A70A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Forms", "UnifiedDateCalculator\DateCalculator.Forms\DateCalculator.Forms.csproj", "{95C0D903-8430-49CB-AFE0-6B7A8F21354B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.Forms", "UnifiedDateCalculator\DateCalculator.Forms\DateCalculator.Forms.csproj", "{95C0D903-8430-49CB-AFE0-6B7A8F21354B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateCalculator.Maui", "UnifiedDateCalculator\DateCalculator.Maui\DateCalculator.Maui.csproj", "{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}"
 EndProject
@@ -179,6 +179,7 @@ Global
 		{95C0D903-8430-49CB-AFE0-6B7A8F21354B}.Release|x86.Deploy.0 = Release|Any CPU
 		{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}.Debug|ARM.Build.0 = Debug|Any CPU
 		{2FCBFB2B-CE78-4034-A488-F1B13E7FF4B4}.Debug|iPhone.ActiveCfg = Debug|Any CPU

@@ -6,53 +6,50 @@
     Title="{OnIdiom Desktop='',
                     Default='.NET MAUI'}"
     Shell.PresentationMode="ModalAnimated">
-    <Grid Style="{StaticResource ContentArea}">
-        <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" RowSpacing="25">
+    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" RowSpacing="25">
 
-                <Label
-                    Grid.Row="0"
-                    FontSize="32"
-                    HorizontalOptions="Center"
-                    SemanticProperties.HeadingLevel="Level1"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Hello, World!" />
+            <Label
+                Grid.Row="0"
+                FontSize="32"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource MauiLabel}"
+                Text="Hello, World!" />
 
-                <Label
-                    Grid.Row="1"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                    SemanticProperties.HeadingLevel="Level1"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Welcome to .NET Multi-platform App UI" />
+            <Label
+                Grid.Row="1"
+                FontSize="18"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource MauiLabel}"
+                Text="Welcome to .NET Multi-platform App UI" />
 
-                <Label
-                    x:Name="CounterLabel"
-                    Grid.Row="2"
-                    FontAttributes="Bold"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Current count: 0" />
+            <Label
+                x:Name="CounterLabel"
+                Grid.Row="2"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Style="{StaticResource MauiLabel}"
+                Text="Current count: 0" />
 
-                <Button
-                    Grid.Row="3"
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Style="{StaticResource PrimaryAction}"
-                    Text="Click me" />
+            <Button
+                Grid.Row="3"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Style="{StaticResource PrimaryAction}"
+                Text="Click me" />
 
-                <Image
-                    Grid.Row="4"
-                    HeightRequest="310"
-                    HorizontalOptions="Center"
-                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                    Source="dotnet_bot.png"
-                    WidthRequest="250" />
+            <Image
+                Grid.Row="4"
+                HeightRequest="310"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dotnet_bot.png"
+                WidthRequest="250" />
 
-            </Grid>
-        </ScrollView>
-    </Grid>
+        </Grid>
+    </ScrollView>
 </ContentPage>

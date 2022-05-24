@@ -8,8 +8,8 @@
             builder.UseMauiApp<App>()
                    .ConfigureFonts(fonts =>
                    {
-                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSansSemiBold");
+                       fonts.AddFont("OpenSans-Regular.ttf", "OpenSans400");
+                       fonts.AddFont("OpenSans-SemiBold.ttf", "OpenSans600");
                    });
 
 
