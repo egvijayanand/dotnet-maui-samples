@@ -55,7 +55,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="VijayAnand.FontAwesome" Version="2.1.1" />
-		<PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0-pre11" />
+		<PackageReference Include="VijayAnand.MauiToolkit" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

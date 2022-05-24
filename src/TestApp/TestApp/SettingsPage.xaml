@@ -9,32 +9,22 @@
     x:DataType="vm:SettingsViewModel"
     Shell.NavBarIsVisible="{OnIdiom Phone=True,
                                     Default=False}">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <m:Thickness x:Key="OptionPadding">3,0,0,0</m:Thickness>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <Grid Style="{StaticResource ContentArea}">
-        <StackLayout
-            BackgroundColor="Transparent"
-            HorizontalOptions="Center"
-            RadioButtonGroup.GroupName="AppTheme"
-            VerticalOptions="Center">
-            <RadioButton IsChecked="{Binding UseSystem}" Value="system">
-                <RadioButton.Content>
-                    <Label Padding="{StaticResource OptionPadding}" Text="Use System" />
-                </RadioButton.Content>
-            </RadioButton>
-            <RadioButton IsChecked="{Binding LightTheme}" Value="light">
-                <RadioButton.Content>
-                    <Label Padding="{StaticResource OptionPadding}" Text="Light" />
-                </RadioButton.Content>
-            </RadioButton>
-            <RadioButton IsChecked="{Binding DarkTheme}" Value="dark">
-                <RadioButton.Content>
-                    <Label Padding="{StaticResource OptionPadding}" Text="Dark" />
-                </RadioButton.Content>
-            </RadioButton>
-        </StackLayout>
-    </Grid>
+    <StackLayout
+        BackgroundColor="Transparent"
+        HorizontalOptions="Center"
+        RadioButtonGroup.GroupName="AppTheme"
+        VerticalOptions="Center">
+        <RadioButton
+            Content="Use System"
+            IsChecked="{Binding UseSystem}"
+            Value="system" />
+        <RadioButton
+            Content="Light"
+            IsChecked="{Binding LightTheme}"
+            Value="light" />
+        <RadioButton
+            Content="Dark"
+            IsChecked="{Binding DarkTheme}"
+            Value="dark" />
+    </StackLayout>
 </ContentPage>

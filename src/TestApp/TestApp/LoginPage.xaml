@@ -6,12 +6,10 @@
     xmlns:local="clr-namespace:TestApp"
     Title="Login"
     Shell.NavBarIsVisible="False">
-    <Grid Style="{StaticResource ContentArea}">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Button
-                Clicked="OnLoginClicked"
-                Style="{StaticResource PrimaryAction}"
-                Text="Login" />
-        </StackLayout>
-    </Grid>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button
+            Clicked="OnLoginClicked"
+            Style="{StaticResource PrimaryAction}"
+            Text="Login" />
+    </StackLayout>
 </ContentPage>

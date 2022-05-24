@@ -7,9 +7,7 @@
     Title="Search"
     Shell.NavBarIsVisible="{OnIdiom Phone=True,
                                     Default=False}">
-    <Grid Style="{StaticResource ContentArea}">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Search Page" />
-        </StackLayout>
-    </Grid>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Search Page" />
+    </StackLayout>
 </ContentPage>
