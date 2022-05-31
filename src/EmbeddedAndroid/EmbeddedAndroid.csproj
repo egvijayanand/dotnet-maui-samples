@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0-android</TargetFramework>
+		<OutputType>Exe</OutputType>
+
+		<!-- Project Options -->
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>EmbeddedAndroid</RootNamespace>
+
+		<!-- .NET MAUI -->
+		<UseMaui>true</UseMaui>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.embeddedandroid</ApplicationId>
+
+		<!-- App Version -->
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+
+		<!-- Target Platform Options -->
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0" />
+	</ItemGroup>
+</Project>
