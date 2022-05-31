@@ -22,3 +22,4 @@ Available under the `src` directory:
   - UI, ViewModel, Model, and Business logic all from shared project
   - Head projects serve as an app container
   - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
+* `EmbeddedAndroid` - .NET MAUI Page embedded in a Native Android App, targeting .NET 6 (`net6.0-android`)
