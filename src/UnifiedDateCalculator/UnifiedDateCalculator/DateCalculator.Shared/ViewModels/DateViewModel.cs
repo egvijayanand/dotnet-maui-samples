@@ -16,7 +16,7 @@ namespace DateCalculator.ViewModels
         private DateTime endDate;
 
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(DiffModeInverse))]
+        [NotifyPropertyChangedFor(nameof(DiffModeInverse))]
         private bool diffMode;
 
         [ObservableProperty]
@@ -177,7 +177,7 @@ namespace DateCalculator.ViewModels
 
         partial void OnSelectedDayChanged(int value) => FindTheDate();
 
-        [ICommand]
+        [RelayCommand]
         private void DateDiff() => FindTheDate();
 
         private void FindTheDate()

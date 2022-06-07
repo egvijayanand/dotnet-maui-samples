@@ -1,12 +1,13 @@
-﻿namespace MauiAppCS
+﻿using VijayAnand.MauiToolkit.Services;
+
+namespace MauiAppCS
 {
     public partial class App : Application
     {
         public App()
         {
             Build();
-
-            MainPage = new MainPage();
+            MainPage = AppService.GetService<MainPage>();
         }
 
         private void Build()

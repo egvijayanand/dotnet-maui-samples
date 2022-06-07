@@ -7,7 +7,7 @@ namespace VijayAnand.Toolkit.ObjectModel
     public partial class BaseViewModel : ObservableValidator, IDisposable
     {
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(IsNotBusy))]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
         private bool isBusy;
 
         [ObservableProperty]
@@ -32,7 +32,7 @@ namespace VijayAnand.Toolkit.ObjectModel
         private bool isValid = true;
 
         [ObservableProperty]
-        private List<string?> errors = new();
+        private List<string> errors = new();
 
         public BaseViewModel()
         {
