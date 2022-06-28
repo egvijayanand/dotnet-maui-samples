@@ -15,6 +15,7 @@
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<UseMaui>true</UseMaui>
+		<MauiVersion>6.0.312</MauiVersion>
 		<SingleProject>true</SingleProject>
 		<DefineConstants>$(DefineConstants);MAUI</DefineConstants>
 	</PropertyGroup>
@@ -44,7 +45,7 @@
 
 	<!-- Common NuGet packages -->
 	<ItemGroup>
-		<PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.0.0-pre2" />
+		<PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
