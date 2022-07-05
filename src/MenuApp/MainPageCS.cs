@@ -24,7 +24,11 @@ namespace MenuApp
                                                                                    .AddSubMenuItem(new MenuFlyoutItem().Title("London, UK"))
                                                                                    .AddSubMenuItem(new MenuFlyoutItem().Title("Cape Town, RSA"))
                                                                                    .AddSubMenuItem(new MenuFlyoutItem().Title("Beijing, PRC"))
-                                                                                   .AddSubMenuGroup(new MenuFlyoutSubItem().Title("India").AddSubMenuItem(new MenuFlyoutItem().Title("Chennai, TN")).AddSubMenuItem(new MenuFlyoutItem().Title("Kolkata, WB")).AddSubMenuItem(new MenuFlyoutItem().Title("Mumbai, MH")).AddSubMenuItem(new MenuFlyoutItem().Title("New Delhi, NCR"))))
+                                                                                   .AddSubMenuGroup(new MenuFlyoutSubItem().Title("India")
+                                                                                                                           .AddSubMenuItem(new MenuFlyoutItem().Title("Chennai, TN"))
+                                                                                                                           .AddSubMenuItem(new MenuFlyoutItem().Title("Kolkata, WB"))
+                                                                                                                           .AddSubMenuItem(new MenuFlyoutItem().Title("Mumbai, MH"))
+                                                                                                                           .AddSubMenuItem(new MenuFlyoutItem().Title("New Delhi, NCR"))))
                                               .AddMenuItem(new MenuFlyoutItem().Title("Add a Location")));
             MenuBarItems.Add(new MenuBarItem().Title("View")
                                               .AddMenuItem(new MenuFlyoutItem().Title("Refresh"))

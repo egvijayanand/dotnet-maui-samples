@@ -7,6 +7,7 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog
 Available under the `src` directory:
 
 * `TestApp` - .NET MAUI Shell sample
+* `MenuApp` - .NET MAUI sample app with multi-level menu definition in both XAML and C# _(Will work only on Desktop form factor)_
 * `DateCalculator`
   - MVVM Sample
   - Xamarin Forms and .NET MAUI in a single solution
