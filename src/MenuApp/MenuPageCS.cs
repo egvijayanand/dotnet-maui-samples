@@ -1,5 +1,4 @@
-﻿using MenuApp.ViewModels;
-using VijayAnand.MauiToolkit.Markup;
+﻿using VijayAnand.MauiToolkit.Markup;
 
 namespace MenuApp
 {
