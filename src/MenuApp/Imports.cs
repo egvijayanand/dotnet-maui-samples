@@ -1,3 +1,5 @@
+// Local
+global using MenuApp.ViewModels;
 // Markup
 global using CommunityToolkit.Maui.Markup;
 // Static
