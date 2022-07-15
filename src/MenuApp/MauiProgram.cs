@@ -1,4 +1,6 @@
 ﻿
+using VijayAnand.MauiToolkit;
+
 namespace MenuApp
 {
     public static class MauiProgram
@@ -7,6 +9,7 @@ namespace MenuApp
         {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
+                   .UseVijayAnandMauiToolkit(ServiceRegistrations.Dialogs)
                    .UseMauiCommunityToolkitMarkup()
                    .ConfigureFonts(fonts =>
                    {

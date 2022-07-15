@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
 <ContentPage
-    x:Class="MenuApp.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Main Page">
+    xmlns:vm="clr-namespace:MenuApp.ViewModels"
+    x:Name="page"
+    Title="Main Page"
+    x:DataType="vm:MainViewModel">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
 
     <ContentPage.MenuBarItems>
-        <MenuBarItem Text="File">
+        <MenuBarItem
+            BindingContext="{Binding Source={x:Reference page}, Path=BindingContext}"
+            Text="File">
             <MenuFlyoutItem
-                Clicked="OnQuitClicked"
+                Command="{Binding QuitCommand}"
                 Text="Quit" />
         </MenuBarItem>
         <MenuBarItem Text="Locations">
@@ -53,19 +62,18 @@
                 Text="Welcome to .NET Multi-platform App UI" />
 
             <Label
-                x:Name="CounterLabel"
                 FontAttributes="Bold"
                 FontSize="18"
                 HorizontalOptions="Center"
                 Style="{StaticResource MauiLabel}"
-                Text="Current count: 0" />
+                Text="{Binding CurrentCount}" />
 
             <Button
-                Clicked="OnCounterClicked"
+                Command="{Binding CountCommand}"
                 HorizontalOptions="Center"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Style="{StaticResource PrimaryAction}"
-                Text="Click me" />
+                Text="Click Me" />
 
             <Image
                 HeightRequest="310"
