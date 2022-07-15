@@ -16,8 +16,9 @@ namespace MenuApp
             ViewModel = new MainViewModel();
             Title = "Menu Page";
             MenuBarItems.Add(new MenuBarItem().Title("File")
+                                              .Assign(out fileMenu)
                                               .AddMenuItem(new MenuFlyoutItem().Title("Quit")
-                                                                               .BindCommand(nameof(MainViewModel.QuitCommand), source: (MainViewModel)BindingContext)));
+                                                                               .BindCommand(nameof(MainViewModel.QuitCommand))));
             MenuBarItems.Add(new MenuBarItem().Title("Locations")
                                               .AddMenuGroup(new MenuFlyoutSubItem().Title("Change Location")
                                               .AddSubMenuItem(new MenuFlyoutItem().Title("New York, USA"))
@@ -81,6 +82,11 @@ namespace MenuApp
             };
 
             BindingContext = ViewModel;
+            fileMenu.BindingContext = BindingContext;
         }
+
+        #region Variables
+        private MenuBarItem fileMenu;
+        #endregion
     }
 }

@@ -4,20 +4,13 @@ namespace MenuApp
 {
     public partial class MainPageCS : ContentPage
     {
-        int count = 0;
-
         public MainPageCS()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
             Title = "Main Page (C#)";
-
             MenuBarItems.Add(new MenuBarItem().Title("File")
+                                              .Bind(BindingContextProperty, nameof(BindingContext), source: this)
                                               .AddMenuItem(new MenuFlyoutItem().Title("Quit")
-                                                                               .Invoke(item => item.Clicked += OnQuitClicked)));
+                                                                               .BindCommand(nameof(MainViewModel.QuitCommand))));
             MenuBarItems.Add(new MenuBarItem().Title("Locations")
                                               .AddMenuGroup(new MenuFlyoutSubItem().Title("Change Location")
                                                                                    .AddSubMenuItem(new MenuFlyoutItem().Title("New York, USA"))
@@ -44,52 +37,43 @@ namespace MenuApp
                         {
                             Style = AppResource<Style>("MauiLabel"),
                             Text = "Hello, World!",
-                        }.FontSize(32).CenterHorizontal().SemanticHeading(SemanticHeadingLevel.Level1),
+                        }.FontSize(32)
+                         .CenterHorizontal()
+                         .SemanticHeading(SemanticHeadingLevel.Level1),
                         new Label()
                         {
                             Style = AppResource<Style>("MauiLabel"),
                             Text = "Welcome to .NET Multi-platform App UI",
-                        }.FontSize(18).CenterHorizontal().SemanticDesc("Welcome to dot net Multi platform App U I").SemanticHeading(SemanticHeadingLevel.Level1),
+                        }.FontSize(18)
+                         .CenterHorizontal()
+                         .SemanticDesc("Welcome to dot net Multi platform App U I")
+                         .SemanticHeading(SemanticHeadingLevel.Level1),
                         new Label()
                         {
                             FontAttributes = FontAttributes.Bold,
                             Style = AppResource<Style>("MauiLabel"),
-                            Text = "Current count: 0",
-                        }.FontSize(18).CenterHorizontal().Assign(out CounterLabel),
+                        }.FontSize(18)
+                         .CenterHorizontal()
+                         .Bind(nameof(MainViewModel.CurrentCount)),
                         new Button()
                         {
                             Style = AppResource<Style>("PrimaryAction"),
-                            Text = "Click me",
-                        }.CenterHorizontal().Invoke(btn => btn.Clicked += OnCounterClicked).SemanticHint("Counts the number of times you click"),
+                            Text = "Click Me",
+                        }.CenterHorizontal()
+                         .Bind(nameof(MainViewModel.CountCommand))
+                         .SemanticHint("Counts the number of times you click"),
                         new Image()
                         {
                             Source = "dotnet_bot.png",
-                        }.Height(310).Width(250).CenterHorizontal().SemanticDesc("Cute dot net bot waving hi to you!"),
+                        }.Height(310)
+                         .Width(250)
+                         .CenterHorizontal()
+                         .SemanticDesc("Cute dot net bot waving hi to you!"),
                     }
                 }.Padding(30)
             };
+
+            BindingContext = new MainViewModel();
         }
-
-        #region Event Handlers
-        private async void OnQuitClicked(object? sender, EventArgs e)
-        {
-            if (await DisplayAlert("Quit", "Are you sure?", "Yes", "No"))
-            {
-                Application.Current?.Quit();
-            }
-        }
-
-        private void OnCounterClicked(object? sender, EventArgs e)
-        {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
-
-            SemanticScreenReader.Announce(CounterLabel.Text);
-        }
-        #endregion
-
-        #region UI Fields
-        private Label CounterLabel;
-        #endregion
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace MenuApp
+﻿using System.Reflection;
+
+namespace MenuApp
 {
     public partial class App : Application
     {
@@ -11,7 +13,7 @@
             );*/
 
             // XAML-based conventional UI definition
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(GetXamlResource<Page>("MainPage.xaml", GetType().Assembly));
 
             // C# Markup UI definition
             //MainPage = new NavigationPage(new MainPageCS());

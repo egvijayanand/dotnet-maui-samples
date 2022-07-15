@@ -300,7 +300,7 @@ paket-files/
 .fake/
 
 # CodeRush personal settings
-.cr/personal
+.cr/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
