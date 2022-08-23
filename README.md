@@ -24,3 +24,7 @@ Available under the `src` directory:
   - Head projects serve as an app container
   - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
 * `EmbeddedAndroid` - .NET MAUI Page embedded in a Native Android App, targeting .NET 6 (`net6.0-android`)
+
+* C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - Awesome UIs without any XAML usage - More samples coming soon ...
+  - [BeautyShopApp](https://github.com/jsuarezruiz/netmaui-beautyshop-app-challenge) 
+  - [ChatApp](https://github.com/jsuarezruiz/netmaui-chat-app-challenge)
