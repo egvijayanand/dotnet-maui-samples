@@ -1,0 +1,12 @@
+﻿global using System.Globalization;
+global using SkiaSharp;
+global using SkiaSharp.Views.Maui.Controls.Hosting;
+global using CommunityToolkit.Mvvm.Input;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using MauiBMICalculator;
+global using MauiBMICalculator.Controls;
+global using MauiBMICalculator.Converters;
+global using MauiBMICalculator.ViewModels;
+global using MauiBMICalculator.Views;
+global using Microsoft.Maui.Controls.Shapes;
+global using SkiaSharp.Views.Maui.Controls;

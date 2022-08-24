@@ -25,6 +25,9 @@ Available under the `src` directory:
   - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
 * `EmbeddedAndroid` - .NET MAUI Page embedded in a Native Android App, targeting .NET 6 (`net6.0-android`)
 
-* C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - Awesome UIs without any XAML usage - More samples coming soon ...
-  - [BeautyShopApp](https://github.com/jsuarezruiz/netmaui-beautyshop-app-challenge) 
-  - [ChatApp](https://github.com/jsuarezruiz/netmaui-chat-app-challenge)
+* C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
+  - [BeautyShop App](https://github.com/jsuarezruiz/netmaui-beautyshop-app-challenge) 
+  - [Chat App](https://github.com/jsuarezruiz/netmaui-chat-app-challenge)
+  - [Pet Adoption UI](https://github.com/LeomarisReyes/PetAdoptionUI)
+  - [MAUI Finance](https://github.com/cemahseri/MauiFinance)
+  - [BMI Calculator](https://github.com/naweed/MauiBMICalculator)
