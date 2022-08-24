@@ -26,8 +26,11 @@ Available under the `src` directory:
 * `EmbeddedAndroid` - .NET MAUI Page embedded in a Native Android App, targeting .NET 6 (`net6.0-android`)
 
 * C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
+  - Made available under the `src/C#-Samples/` folder
+  - Design credit to their respective owners
   - [BeautyShop App](https://github.com/jsuarezruiz/netmaui-beautyshop-app-challenge) 
   - [Chat App](https://github.com/jsuarezruiz/netmaui-chat-app-challenge)
   - [Pet Adoption UI](https://github.com/LeomarisReyes/PetAdoptionUI)
   - [MAUI Finance](https://github.com/cemahseri/MauiFinance)
   - [BMI Calculator](https://github.com/naweed/MauiBMICalculator)
+  - [Class Fly](https://github.com/kphillpotts/MAUI-UI-July) - Designed as part of MAUI UI July

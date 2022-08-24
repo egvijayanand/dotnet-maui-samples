@@ -1,0 +1,25 @@
+﻿<div class="toolbar">
+    <div>
+        @if(!string.IsNullOrWhiteSpace(BackUrl))
+        {
+            <a href="@BackUrl"><img src="images/back.png" /></a>
+        }
+        else if(!string.IsNullOrWhiteSpace(Subtitle))
+        {
+            <h2>@Subtitle</h2>
+        }
+    </div>
+    <div>
+        <h1>@Title</h1>
+    </div>
+    <div>
+        @ToolbarItems
+    </div>
+</div>
+
+@code {
+    [Parameter] public string BackUrl { get; set; }
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string Subtitle { get; set; }
+    [Parameter] public RenderFragment ToolbarItems { get; set; }
+}

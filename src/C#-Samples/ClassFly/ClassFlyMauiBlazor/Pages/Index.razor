@@ -1,0 +1,35 @@
+﻿@page "/"
+@using ClassFly.Core.Models
+@using ClassFlyMauiBlazor.Components
+<Toolbar Subtitle="Choose a course!">
+    <ToolbarItems>
+        <img src="images/menu.png"/>
+    </ToolbarItems>
+</Toolbar>
+<input class="search" @oninput="Search" type="search" placeholder="Search courses" />
+
+@foreach(var course in Courses)
+{
+    <a class="card course" href="courses/@course.Name/@true">
+        <img src="/images/@(course.Image)"/>
+        <h3>@course.Name </h3>
+        <p>in class</p>
+        <h4>@course.MemberCount Members</h4>
+    </a>
+}
+
+@code {
+    DataService DataService = new DataService();
+    List<Course> Courses;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Courses = DataService.GetCourses();
+    }
+
+    void Search(ChangeEventArgs searchTerm)
+    {
+        Courses = DataService.Search(searchTerm.Value as string);
+    }
+}
