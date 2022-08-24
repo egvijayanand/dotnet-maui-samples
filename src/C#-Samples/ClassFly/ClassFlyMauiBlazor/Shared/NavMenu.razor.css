@@ -1,0 +1,49 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(277.87deg, #384054 20.75%, #505A70 84.96%);
+    border-radius: 40px 40px 0px 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+
+.nav-item ::deep a:not(.active) img.active {
+    display: none;
+}
+
+.nav-item ::deep a.active img.inactive {
+    display: none;
+}
+
+.nav-item ::deep a {
+    color: #d7d7d7;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+}
+
+
+
+@media (min-width: 641px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .collapse {
+        /* Never collapse the tab-bar for wide screens */
+        display: block;
+    }
+}

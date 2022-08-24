@@ -1,0 +1,55 @@
+﻿@page "/courses/{CourseName}"
+@page "/courses/{CourseName}/{IsModal}"
+@using ClassFly.Core.Models
+@using ClassFlyMauiBlazor.Components
+<Toolbar Title="@CourseName" BackUrl="/" >
+    <ToolbarItems>
+        <img src="images/menu.png"/>
+    </ToolbarItems>
+</Toolbar>
+@if(Course == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="paralax-page" style="">
+        <div style="height: 300px;">
+
+        </div>
+        <div class="popup" style="display: flex; flex-direction:column;">
+            <h2 class="mentor-heading" >Select mentor</h2>
+            @foreach(var mentor in Course.Mentors)
+            {
+                <div class="mentor">
+                    <img class="mentor-image" src="images/@mentor.Image"/>
+                    <div class="divider"></div>
+                    <h3>@mentor.Name</h3>
+                    <h3 class="mentor-followers" >@mentor.FollowerCount followers</h3>
+                    <img class="mentor-arrow" src="images/right.png"/>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string? CourseName { get; set; }
+
+    [Parameter]
+    public string? IsModal { get; set; }
+
+    DataService DataService = new DataService();
+    Course Course;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if(CourseName != null)
+        {
+            Course = DataService.GetCourses().FirstOrDefault(x => x.Name == CourseName);
+        }
+
+    }
+}
