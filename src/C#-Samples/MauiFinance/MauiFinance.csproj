@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
+
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Display name -->
+    <ApplicationTitle>MAUI Finance</ApplicationTitle>
+
+    <!-- App Identifier -->
+    <ApplicationId>com.cemahseri.mauifinance</ApplicationId>
+    <ApplicationIdGuid>5e1d6ee5-cfcb-49c3-9ec3-33e21de2b376</ApplicationIdGuid>
+
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.4</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">31.0</SupportedOSPlatformVersion>
+
+    <RootNamespace>MauiFinance</RootNamespace>
+
+    <ErrorReport>none</ErrorReport>
+    <DebugType>none</DebugType>
+    <DebugSymbols>False</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+    
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+    
+    <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\account.png" />
+    <None Remove="Resources\Images\add.png" />
+    <None Remove="Resources\Images\arrow_downward.png" />
+    <None Remove="Resources\Images\arrow_upward.png" />
+    <None Remove="Resources\Images\attach_money.png" />
+    <None Remove="Resources\Images\cemahseri.jpg" />
+    <None Remove="Resources\Images\credit_card.png" />
+    <None Remove="Resources\Images\home.png" />
+    <None Remove="Resources\Images\more.png" />
+    <None Remove="Resources\Images\notifications.png" />
+    <None Remove="Resources\Images\payments.png" />
+    <None Remove="Resources\Images\sort.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.1" />
+    <PackageReference Include="VijayAnand.Toolkit.Markup" Version="1.0.1-pre1" />
+  </ItemGroup>
+</Project>
