@@ -34,3 +34,6 @@ Available under the `src` directory:
   - [MAUI Finance](https://github.com/cemahseri/MauiFinance)
   - [BMI Calculator](https://github.com/naweed/MauiBMICalculator)
   - [Class Fly](https://github.com/kphillpotts/MAUI-UI-July) - Designed as part of MAUI UI July
+  - [F1 TV](https://github.com/andreas-nesheim/MAUIUIJuly) - Designed as part of MAUI UI July
+  - [Coffeeffee MAUI](https://github.com/zdanovs/Coffeeffee-MAUI)
+  - [MAUI Focus](https://github.com/pedroldk/maui-focus)
