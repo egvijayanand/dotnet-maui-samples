@@ -11,7 +11,9 @@ namespace BeautyShopApp.Views
                     new Label()
                     {
                         Text = "Detail",
-                    }.Center(),
+                        VerticalOptions = LayoutOptions.CenterAndExpand,
+                        HorizontalOptions = LayoutOptions.CenterAndExpand,
+                    },
                 }
             };
         }

@@ -25,6 +25,7 @@ namespace PetAdoptionUI
                         {
                             RowDefinitions = Rows.Define(Auto,Auto,Auto),
                             ColumnDefinitions = Columns.Define(Auto,Star,Auto),
+                            HorizontalOptions = LayoutOptions.FillAndExpand,
                             RowSpacing = 10,
                             Children =
                             {

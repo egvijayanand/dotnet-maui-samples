@@ -25,7 +25,9 @@ namespace MAUIUIJuly
                         new FlexLayout()
                         {
                             Background = new SolidColorBrush(Color.FromArgb("#e10600")),
+                            HorizontalOptions = LayoutOptions.CenterAndExpand,
                             JustifyContent = FlexJustify.SpaceBetween,
+                            VerticalOptions = LayoutOptions.CenterAndExpand,
                             Children =
                             {
                                 new Image()
@@ -54,7 +56,7 @@ namespace MAUIUIJuly
                                     },
                                 }.Margins(0,10,0,0).Height(32).Width(32).CenterVertical(),
                             },
-                        }.Padding(20).Height(60).Center(),
+                        }.Padding(20).Height(60),
                         new Grid()
                         {
                             Children =
@@ -212,10 +214,11 @@ namespace MAUIUIJuly
                                 new Label()
                                 {
                                     FontAttributes = FontAttributes.Bold,
+                                    HorizontalOptions = LayoutOptions.EndAndExpand,
                                     Text = "View All",
-                                }.Margin(0,0).FontSize(18).End(),
+                                }.Margin(0,0).FontSize(18),
                             },
-                        }.Margins(20,10,20,0), 
+                        }.Margins(20,10,20,0),
 #endif
                         new CollectionView()
                         {

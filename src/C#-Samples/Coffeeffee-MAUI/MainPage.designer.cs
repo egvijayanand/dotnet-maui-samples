@@ -33,6 +33,7 @@ namespace Coffeeffee_MAUI
                     }.Height(52).Width(52).Column(2).Margins(0,0,32,0).FontSize(20).End().CenterVertical(),
                     new Label()
                     {
+                        VerticalOptions = LayoutOptions.CenterAndExpand,
                         FormattedText = new FormattedString()
                         {
                             Spans =
