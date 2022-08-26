@@ -41,3 +41,4 @@ Available under the `src` directory:
   - [Medicine Tracker](https://github.com/thaveeshakannangara/MAUIBeautifulUIChallenge)
   - [eCommerce MAUI](https://github.com/exendahal/EcommerceMAUI)
   - [MAUI Payments with Prism](https://github.com/DamianSuess/Learn.MauiPaymentUi)
+  - [Bottom Sheets](https://github.com/PremSaiVarada/DemoCustomSheets)
