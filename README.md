@@ -37,3 +37,5 @@ Available under the `src` directory:
   - [F1 TV](https://github.com/andreas-nesheim/MAUIUIJuly) - Designed as part of MAUI UI July
   - [Coffeeffee MAUI](https://github.com/zdanovs/Coffeeffee-MAUI)
   - [MAUI Focus](https://github.com/pedroldk/maui-focus)
+  - [Scientific Calculator](https://github.com/naweed/MauiScientificCalculator)
+  - [Medicine Tracker](https://github.com/thaveeshakannangara/MAUIBeautifulUIChallenge)
