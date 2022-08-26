@@ -39,3 +39,5 @@ Available under the `src` directory:
   - [MAUI Focus](https://github.com/pedroldk/maui-focus)
   - [Scientific Calculator](https://github.com/naweed/MauiScientificCalculator)
   - [Medicine Tracker](https://github.com/thaveeshakannangara/MAUIBeautifulUIChallenge)
+  - [eCommerce MAUI](https://github.com/exendahal/EcommerceMAUI)
+  - [MAUI Payments with Prism](https://github.com/DamianSuess/Learn.MauiPaymentUi)
