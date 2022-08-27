@@ -42,3 +42,5 @@ Available under the `src` directory:
   - [eCommerce MAUI](https://github.com/exendahal/EcommerceMAUI)
   - [MAUI Payments with Prism](https://github.com/DamianSuess/Learn.MauiPaymentUi)
   - [Bottom Sheets](https://github.com/PremSaiVarada/DemoCustomSheets)
+  - [MyTasks](https://github.com/jsuarezruiz/netmaui-mytasks-app-challenge)
+  - [MonkeyFinder](https://github.com/dotnet-presentations/dotnet-maui-workshop) - Designed as part of .NET MAUI - Workshop by James Montemagno
