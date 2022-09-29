@@ -44,3 +44,5 @@ Available under the `src` directory:
   - [Bottom Sheets](https://github.com/PremSaiVarada/DemoCustomSheets)
   - [MyTasks](https://github.com/jsuarezruiz/netmaui-mytasks-app-challenge)
   - [MonkeyFinder](https://github.com/dotnet-presentations/dotnet-maui-workshop) - Designed as part of .NET MAUI - Workshop by James Montemagno
+  - [News App](https://github.com/henduck/MAUINewsApp)
+    * There's some issue in making use of FlexLayout as a BindableLayout in C# Markup hence replaced it with StackLayout and Grid on two of the pages
