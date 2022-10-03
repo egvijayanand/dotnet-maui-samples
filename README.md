@@ -46,3 +46,4 @@ Available under the `src` directory:
   - [MonkeyFinder](https://github.com/dotnet-presentations/dotnet-maui-workshop) - Designed as part of .NET MAUI - Workshop by James Montemagno
   - [News App](https://github.com/henduck/MAUINewsApp)
     * There's some issue in making use of FlexLayout as a BindableLayout in C# Markup hence replaced it with StackLayout and Grid on two of the pages
+  - [MAUI Pets](https://github.com/BryanOroxon/MAUIPETS)
