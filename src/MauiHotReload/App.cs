@@ -39,15 +39,15 @@ namespace MauiHotReload
 			{
 				Setters =
 				{
-					new() { Property = Label.TextColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppResource<Color>("White"), AppTheme.Light or _ => AppResource<Color>("Primary") } },
+					new() { Property = Label.TextColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppColor("White"), AppTheme.Light or _ => AppColor("Primary") } },
 				},
 			});
 			Resources.Add("Action", new Style(typeof(Button))
 			{
 				Setters =
 				{
-					new() { Property = Button.BackgroundColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppResource<Color>("BackgroundDark"), AppTheme.Light or _ => AppResource<Color>("BackgroundLight") } },
-					new() { Property = Button.TextColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppResource<Color>("TextDark"), AppTheme.Light or _ => AppResource<Color>("TextLight") } },
+					new() { Property = Button.BackgroundColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppColor("BackgroundDark"), AppTheme.Light or _ => AppColor("BackgroundLight") } },
+					new() { Property = Button.TextColorProperty, Value = RequestedTheme switch { AppTheme.Dark => AppColor("TextDark"), AppTheme.Light or _ => AppColor("TextLight") } },
 					new() { Property = Button.FontFamilyProperty, Value = AppResource<string>("AppFont") },
 					new() { Property = Button.FontSizeProperty, Value = AppResource<double>("AppFontSize") },
 					new() { Property = Button.PaddingProperty, Value = new Thickness(14,10) },
@@ -55,17 +55,14 @@ namespace MauiHotReload
 			});
 			Resources.Add("PrimaryAction", new Style(typeof(Button))
 			{
-				BasedOn = AppResource<Style>("Action"),
+				BasedOn = AppStyle("Action"),
 				Setters =
 				{
-					new() { Property = Button.BackgroundColorProperty, Value = AppResource<Color>("Primary") },
+					new() { Property = Button.BackgroundColorProperty, Value = AppColor("Primary") },
 					new() { Property = Button.FontAttributesProperty, Value = FontAttributes.Bold },
-					new() { Property = Button.TextColorProperty, Value = AppResource<Color>("White") },
+					new() { Property = Button.TextColorProperty, Value = AppColor("White") },
 				},
 			});
 		}
-
-		private static ResourceDictionary GetXamlResourceDictionary(string resourcePath, Assembly assembly)
-			=> GetXamlResource<ResourceDictionary>(resourcePath, assembly);
 	}
 }

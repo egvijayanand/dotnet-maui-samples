@@ -22,7 +22,7 @@
 					new Button
 					{
 						Text = "Go to details",
-						Style = AppResource<Style>("PrimaryAction"),
+						Style = AppStyle("PrimaryAction"),
 					}.Row(2).Column(0).Center().Invoke(btn => btn.Clicked += OnClicked),
 					new Label
 					{
