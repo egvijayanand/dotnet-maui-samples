@@ -25,6 +25,7 @@ Available under the `src` directory:
   - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
 * `EmbeddedAndroid` - .NET MAUI Page embedded in a Native Android App, targeting .NET 6 (`net6.0-android`)
 * `MediaElement` - Sample project in both .NET 6 and 7. Now made available in Preview bits as part of the .NET MAUI CommunityToolkit - And it'll be a separate NuGet package titled `CommunityToolkit.Maui.MediaElement`
+* `MauiHotReload` - Sample project to demonstrate **C# Hot Reload** feature supported via [MetadataUpdateHandler](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?view=net-6.0) (refer to HotReloadService.cs). Core logic is abstracted into a base page named `MauiPage`, inherit the content pages from it and implement the UI logic in the override of the abstract `Build()` method. Source is available in the `src\MauiHotReload` folder.
 
 * C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
   - Made available under the `src/C#-Samples/` folder
