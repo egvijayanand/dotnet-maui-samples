@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <!-- Targets possible from Windows OS -->
+        <TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">net7.0-windows10.0.19041.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>WindowsUnpackagedApp</RootNamespace>
+        <WindowsPackageType>None</WindowsPackageType>
+
+        <!-- Display name -->
+        <ApplicationTitle>WindowsUnpackagedApp</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.windowsunpackagedapp</ApplicationId>
+        <ApplicationIdGuid>4a3e8599-0f8a-49d0-b765-d175f6720c5c</ApplicationIdGuid>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <!-- Target Platform Options -->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+
+        <!-- Minimum Target OS Version for Windows Platform -->
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128"/>
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*"/>
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*"/>
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="WindowsUnpackagedApp.code-workspace" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>
