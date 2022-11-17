@@ -16,7 +16,7 @@ namespace EmbeddedWindows
 		{
 			this.InitializeComponent();
 			var mauiApp = MauiApp.CreateBuilder()
-								 .UseMauiApp<Microsoft.Maui.Controls.Application>()
+								 .UseMauiEmbedding<Microsoft.Maui.Controls.Application>()
 								 .UseMauiCommunityToolkitMarkup()
 								 .Build();
 			var mauiContext = new MauiContext(mauiApp.Services);
