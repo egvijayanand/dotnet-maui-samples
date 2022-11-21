@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net6.0-android</TargetFramework>
+		<TargetFramework>net7.0-android</TargetFramework>
 		<OutputType>Exe</OutputType>
 
 		<!-- Project Options -->
@@ -23,6 +23,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.0.0" />
 	</ItemGroup>
 </Project>
