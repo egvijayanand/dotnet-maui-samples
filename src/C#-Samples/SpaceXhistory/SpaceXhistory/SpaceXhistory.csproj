@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>SpaceXhistory</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>SpaceXhistory</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.spacexhistory</ApplicationId>
+		<ApplicationIdGuid>41a7ade3-e904-4d66-9a0e-4d14baed28f9</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<MauiImage Update="Resources\Images\base.svg" BaseSize="30,30" />
+		<MauiImage Update="Resources\Images\cap.svg" BaseSize="24,24" />
+		<MauiImage Update="Resources\Images\ship.svg" BaseSize="30,30" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="2.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
+		<PackageReference Include="VijayAnand.Toolkit.Markup" Version="2.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Models\" />
+	  <None Remove="Newtonsoft.Json" />
+	  <None Remove="Views\" />
+	  <None Remove="Resources\Images\botao-de-inicio.png" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Helpers\" />
+	  <None Remove="Resources\Fonts\GemunuLibre-Bold.ttf" />
+	  <None Remove="Resources\Fonts\GemunuLibre-ExtraBold.ttf" />
+	  <None Remove="Resources\Fonts\GemunuLibre-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\GemunuLibre-Light.ttf" />
+	  <None Remove="Resources\Fonts\GemunuLibre-Medium.ttf" />
+	  <None Remove="Resources\Fonts\GemunuLibre-Regular.ttf" />
+	  <None Remove="Resources\Fonts\GemunuLibre-SemiBold.ttf" />
+	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\base.svg" />
+	  <None Remove="Resources\Images\cap.svg" />
+	  <None Remove="Resources\Images\ship.svg" />
+	  <None Remove="Resources\Images\wiki.svg" />
+	  <None Remove="Resources\Images\youtube.svg" />
+	  <None Remove="CommunityToolkit.Maui" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	  <Folder Include="Views\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Helpers\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Views\HomePage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UpcomingLaunchesPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PastLaunchesPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BottomTabPage.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-Bold.ttf" />
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-ExtraBold.ttf" />
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-ExtraLight.ttf" />
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-Light.ttf" />
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-Medium.ttf" />
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-Regular.ttf" />
+	  <BundleResource Include="Resources\Fonts\GemunuLibre-SemiBold.ttf" />
+	  <BundleResource Include="Resources\Images\logo.png" />
+	  <BundleResource Include="Resources\Images\base.svg" />
+	  <BundleResource Include="Resources\Images\cap.svg" />
+	  <BundleResource Include="Resources\Images\ship.svg" />
+	  <BundleResource Include="Resources\Images\wiki.svg" />
+	  <BundleResource Include="Resources\Images\youtube.svg" />
+	</ItemGroup>
+</Project>
