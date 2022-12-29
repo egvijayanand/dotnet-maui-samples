@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net7.0-android;net7.0</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst;net7.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks>
+        <OutputType Condition="'$(TargetFramework)' != 'net7.0'">Exe</OutputType>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>PopupDialogs</RootNamespace>
+        <WindowsPackageType>None</WindowsPackageType>
+
+        <!-- Display name -->
+        <ApplicationTitle>PopupDialogs</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.popupdialogs</ApplicationId>
+        <ApplicationIdGuid>1b65baaa-22b8-4fc5-a965-3ab9753cc53f</ApplicationIdGuid>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <!-- Target Platform Options -->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+
+        <!-- Minimum Target OS Version for Windows Platform -->
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*" />
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*" />
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="PopupDialogs.code-workspace" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="2.1.0-preview.2" />
+        <PackageReference Include="VijayAnand.MauiToolkit.Pro" Version="2.1.0-preview.2" />
+    </ItemGroup>
+
+</Project>
