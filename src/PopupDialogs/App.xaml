@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PopupDialogs"
+             x:Class="PopupDialogs.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Additional Styles -->
+            <Color x:Key="Red">#B00020</Color>
+
+            <Thickness x:Key="ApplePadding">30,60,30,30</Thickness>
+            <Thickness x:Key="DefaultPadding">30</Thickness>
+
+            <x:Double x:Key="ItemSpacing">10</x:Double>
+
+            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
+            </Style>
+
+            <Style x:Key="DialogStyle" TargetType="Grid">
+                <Setter Property="BackgroundColor"
+                        Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+            </Style>
+
+            <Style x:Key="MauiLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
+            </Style>
+
+            <Style x:Key="Action" TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+                <Setter Property="BorderColor"
+                        Value="{AppThemeBinding Dark=LightGray, Light={StaticResource Primary}}" />
+                <Setter Property="BorderWidth"
+                        Value="0.5" />
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource AppFont}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}" />
+                <Setter Property="MinimumWidthRequest"
+                        Value="60" />
+                <Setter Property="Padding"
+                        Value="14,10" />
+            </Style>
+
+            <Style x:Key="PrimaryAction"
+                   TargetType="Button"
+                   BasedOn="{StaticResource Action}">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Primary}" />
+                <Setter Property="BorderWidth"
+                        Value="0" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource White}" />
+            </Style>
+
+            <Style x:Key="SecondaryAction"
+                   TargetType="Button"
+                   BasedOn="{StaticResource Action}">
+            </Style>
+
+            <Style x:Key="DestructiveAction"
+                   TargetType="Button"
+                   BasedOn="{StaticResource Action}">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Red}" />
+                <Setter Property="BorderWidth"
+                        Value="0" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource White}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
