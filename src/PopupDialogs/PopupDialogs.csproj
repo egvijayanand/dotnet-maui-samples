@@ -59,8 +59,7 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
-        <PackageReference Include="VijayAnand.MauiToolkit" Version="2.1.0-preview.2" />
-        <PackageReference Include="VijayAnand.MauiToolkit.Pro" Version="2.1.0-preview.2" />
+        <PackageReference Include="VijayAnand.MauiToolkit.Pro" Version="2.1.0-preview.3" />
     </ItemGroup>
 
 </Project>
