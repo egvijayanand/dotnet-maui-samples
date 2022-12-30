@@ -18,16 +18,13 @@
             <x:Double x:Key="ItemSpacing">10</x:Double>
 
             <Style ApplyToDerivedTypes="True" TargetType="StackBase">
-                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
-            </Style>
-
-            <Style x:Key="DialogStyle" TargetType="Grid">
-                <Setter Property="BackgroundColor"
-                        Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+                <Setter Property="Spacing"
+                        Value="{StaticResource ItemSpacing}" />
             </Style>
 
             <Style x:Key="MauiLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Primary}}" />
             </Style>
 
             <Style x:Key="Action" TargetType="Button">
@@ -65,6 +62,35 @@
                    BasedOn="{StaticResource Action}">
             </Style>
 
+            <!-- Popup Dialog Styles - START -->
+
+            <Style x:Key="DialogStyle" TargetType="Border">
+                <Setter Property="BackgroundColor"
+                        Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+                <Setter Property="Stroke"
+                        Value="{StaticResource Primary}" />
+                <Setter Property="StrokeShape"
+                        Value="RoundRectangle 10" />
+                <Setter Property="StrokeThickness"
+                        Value="0.5" />
+            </Style>
+
+            <Style x:Key="DialogTitle" TargetType="Label">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource AppFont}" />
+                <Setter Property="FontSize"
+                        Value="16" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+            </Style>
+
+            <Style x:Key="DialogMessage" TargetType="Label">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource AppFont}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}" />
+            </Style>
+
             <Style x:Key="DestructiveAction"
                    TargetType="Button"
                    BasedOn="{StaticResource Action}">
@@ -75,6 +101,8 @@
                 <Setter Property="TextColor"
                         Value="{StaticResource White}" />
             </Style>
+
+            <!-- Popup Dialog Styles - END -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>
