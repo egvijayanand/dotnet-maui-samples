@@ -77,7 +77,7 @@ namespace PopupDialogs
                         await _mauiDialog.DisplayAlertAsync("Response", message, "OK", rightToLeft);
                         break;
                     case "Prompt":
-                        var result = await _mauiDialog.DisplayPromptAsync("Subscribe", "Enter your email to send notifications.", rightToLeft, maxLength: 100, keyboard: Keyboard.Email);
+                        var result = await _mauiDialog.DisplayPromptAsync("Lucky Draw", "Enter your age to participate.", rightToLeft, maxLength: 3, keyboard: Keyboard.Numeric, predicate: ValidateUserEntry);
 
                         if (!string.IsNullOrWhiteSpace(result))
                         {
@@ -94,6 +94,34 @@ namespace PopupDialogs
                         await MauiPopupDialog.Instance.DisplayAlertAsync("Static Invocation", "Welcome to .NET MAUI!!!", "OK", rightToLeft);
                         break;
                 }
+            }
+        }
+
+        private (bool, string) ValidateUserEntry(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return (false, "Age is required.");
+            }
+
+            if (int.TryParse(value, out int age))
+            {
+                if (age < 0 || age > 120)
+                {
+                    return (false, "Enter a valid age.");
+                }
+                else if (age >= 18)
+                {
+                    return (true, string.Empty);
+                }
+                else
+                {
+                    return (false, "You should be atleast 18 years old to participate.");
+                }
+            }
+            else
+            {
+                return (false, "Enter a valid age.");
             }
         }
     }
