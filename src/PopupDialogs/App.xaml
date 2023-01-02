@@ -16,6 +16,7 @@
             <Thickness x:Key="DefaultPadding">30</Thickness>
 
             <x:Double x:Key="ItemSpacing">10</x:Double>
+            <x:Double x:Key="ErrorFontSize">13</x:Double>
 
             <Style ApplyToDerivedTypes="True" TargetType="StackBase">
                 <Setter Property="Spacing"
@@ -100,6 +101,13 @@
                         Value="0" />
                 <Setter Property="TextColor"
                         Value="{StaticResource White}" />
+            </Style>
+
+            <Style
+                x:Key="ErrorLabel"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource ErrorFontSize}" />
+                <Setter Property="TextColor" Value="{StaticResource Red}" />
             </Style>
 
             <!-- Popup Dialog Styles - END -->
