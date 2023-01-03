@@ -19,6 +19,7 @@ namespace PopupDialogs
                    })
                    .ConfigureServices(services =>
                    {
+                       services.AddSingleton<MainViewModel>();
                        services.AddSingleton<MainPage>();
                    });
 #if DEBUG

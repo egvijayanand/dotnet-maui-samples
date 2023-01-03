@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PopupDialogs.MainPage">
+<pages:MauiPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:VijayAnand.MauiToolkit.Views;assembly=VijayAnand.MauiToolkit"
+    xmlns:vm="clr-namespace:PopupDialogs.ViewModels"
+    x:Class="PopupDialogs.Views.MainPage"
+    x:DataType="vm:MainViewModel"
+    x:TypeArguments="vm:MainViewModel">
 
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="15">
@@ -37,32 +42,32 @@
                 HorizontalOptions="Center"
                 Spacing="15">
                 <Button
-                    AutomationId="Alert1"
-                    Clicked="OnBtnClicked"
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Alert1"
                     SemanticProperties.Hint="Shows an alert dialog"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show Alert" />
                 <Button
-                    AutomationId="Alert2"
-                    Clicked="OnBtnClicked"
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Alert2"
                     SemanticProperties.Hint="Shows an alert dialog with accept and cancel actions"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show Alert 2" />
                 <Button
-                    AutomationId="Prompt"
-                    Clicked="OnBtnClicked"
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Prompt"
                     SemanticProperties.Hint="Shows a prompt dialog"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show Prompt" />
                 <Button
-                    AutomationId="ActionSheet"
-                    Clicked="OnBtnClicked"
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="ActionSheet"
                     SemanticProperties.Hint="Shows an action sheet"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show ActionSheet" />
                 <Button
-                    AutomationId="Static"
-                    Clicked="OnBtnClicked"
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Static"
                     SemanticProperties.Hint="Shows an action sheet"
                     Style="{StaticResource PrimaryAction}"
                     Text="Static Approach" />
@@ -76,32 +81,32 @@
                 HorizontalOptions="Center"
                 Spacing="15">
                 <Button
-                    AutomationId="Alert1"
-                    Clicked="OnMauiBtnClicked"
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Alert1"
                     SemanticProperties.Hint="Shows an alert dialog"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show Alert" />
                 <Button
-                    AutomationId="Alert2"
-                    Clicked="OnMauiBtnClicked"
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Alert2"
                     SemanticProperties.Hint="Shows an alert dialog with accept and cancel actions"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show Alert 2" />
                 <Button
-                    AutomationId="Prompt"
-                    Clicked="OnMauiBtnClicked"
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Prompt"
                     SemanticProperties.Hint="Shows a prompt dialog"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show Prompt" />
                 <Button
-                    AutomationId="ActionSheet"
-                    Clicked="OnMauiBtnClicked"
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="ActionSheet"
                     SemanticProperties.Hint="Shows an action sheet"
                     Style="{StaticResource PrimaryAction}"
                     Text="Show ActionSheet" />
                 <Button
-                    AutomationId="Static"
-                    Clicked="OnMauiBtnClicked"
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Static"
                     SemanticProperties.Hint="Shows an action sheet"
                     Style="{StaticResource PrimaryAction}"
                     Text="Static Approach" />
@@ -116,4 +121,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-</ContentPage>
+</pages:MauiPage>
