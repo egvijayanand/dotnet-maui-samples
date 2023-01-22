@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Maui.MediaElement;
+﻿using CommunityToolkit.Maui;
 
 namespace MauiApp1
 {
