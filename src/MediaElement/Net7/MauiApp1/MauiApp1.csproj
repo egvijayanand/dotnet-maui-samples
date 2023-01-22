@@ -55,7 +55,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220902.1-preview1" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -63,7 +63,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.0-build-667.81315" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.0" />
 	</ItemGroup>
 
 </Project>
