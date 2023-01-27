@@ -15,7 +15,6 @@
 		<RootNamespace>MauiApp1</RootNamespace>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<EnablePreviewFeatures>True</EnablePreviewFeatures>
 
 		<!-- Display name -->
 		<ApplicationTitle>MauiApp1</ApplicationTitle>
@@ -54,16 +53,8 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
-	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
-	</ItemGroup>
-
 	<ItemGroup>
-		<None Remove="NuGet.config" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.1" />
 	</ItemGroup>
 
 </Project>
