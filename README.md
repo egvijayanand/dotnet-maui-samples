@@ -16,6 +16,7 @@ Available under the `src` directory:
   - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/8.0.0-preview3) NuGet package
 * `MauiBlazorApp` - .NET MAUI Blazor sample
   - App Theming
+  - State sharing between .NET MAUI and Razor Components
   - Components from shared Razor Class Library (RCL)
 * `MauiAppCS` - .NET MAUI C# Markup based Sample
 * `UnifiedDateCalculator`
@@ -28,6 +29,10 @@ Available under the `src` directory:
 * `MauiHotReload` - Sample project to demonstrate **C# Hot Reload** feature supported via [MetadataUpdateHandler](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?view=net-6.0) (refer to HotReloadService.cs). Core logic is abstracted into a base page named `MauiPage`, inherit the content pages from it and implement the UI logic in the override of the abstract `Build()` method. Source is available in the `src\MauiHotReload` folder.
 * `WindowsUnpackagedApp` - Sample project to demonstrate running Windows targeted WinUI 3 project as Unpackaged app type.
 * `PopupDialogs` - Sample project to demonstrate the custom dialogs implemented with [VijayAnand.MauiToolkit.Pro](https://www.nuget.org/packages/VijayAnand.MauiToolkit.Pro) NuGet package.
+* `HybridRclApp` - `BlazorWebView` hybrid sample
+  - A hybrid solution demonstrating the capabilities of `BlazorWebView` control
+  - Loaded with `.NET MAUI`, `Windows Forms` and `WPF` projects in a single solution
+  - Razor components abstracted in a shared Razor Class Library (RCL)
 
 * C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
   - Made available under the `src/C#-Samples/` folder
