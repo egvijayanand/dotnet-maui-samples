@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<OutputType>WinExe</OutputType>
+
+		<!-- .NET MAUI -->
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<EnableDefaultCssItems>false</EnableDefaultCssItems>
+
+		<!-- Uncomment the below property if intended to run the project as Unpackaged -->
+		<!--<WindowsPackageType>None</WindowsPackageType>-->
+
+		<!-- Display name -->
+		<ApplicationTitle>HybridRclApp</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationIdGuid>7d3b675d-62d4-427d-a35d-bcf4194ec2a9</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- WinUI 3 -->
+		<UseWinUI>true</UseWinUI>
+		<EnableMsixTooling>true</EnableMsixTooling>
+
+		<!-- Project Options -->
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<!--<ImplicitUsings>enable</ImplicitUsings>-->
+		<RootNamespace>HybridRclApp.WinUI</RootNamespace>
+
+		<!-- App Options -->
+		<Platforms>x86;x64;arm64</Platforms>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4"/>
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128"/>
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*"/>
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*"/>
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="VijayAnand.MauiBlazor.Markup" Version="3.0.0-preview.*" />
+		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
+
+	<!-- 
+	Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+	Tools extension to be activated for this project even if the Windows App SDK Nuget
+	package has not yet been restored.
+	-->
+	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<ProjectCapability Include="Msix" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\HybridRclApp.RazorLib\HybridRclApp.RazorLib.csproj" />
+	</ItemGroup>
+
+	<!-- 
+	Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
+	Explorer "Package and Publish" context menu entry to be enabled for this project even if 
+	the Windows App SDK Nuget package has not yet been restored.
+	-->
+	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+	</PropertyGroup>
+</Project>

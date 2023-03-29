@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HybridRclApp.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "HybridRclApp.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

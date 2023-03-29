@@ -31,8 +31,16 @@ Available under the `src` directory:
 * `PopupDialogs` - Sample project to demonstrate the custom dialogs implemented with [VijayAnand.MauiToolkit.Pro](https://www.nuget.org/packages/VijayAnand.MauiToolkit.Pro) NuGet package.
 * `HybridRclApp` - `BlazorWebView` hybrid sample
   - A hybrid solution demonstrating the capabilities of `BlazorWebView` control
-  - Loaded with `.NET MAUI`, `Windows Forms` and `WPF` projects in a single solution
+  - Loaded with `.NET MAUI`, `Windows Forms`, `WPF`, and `WinUI 3` projects in a single solution
   - Razor components abstracted in a shared Razor Class Library (RCL)
+  - While working with the **WinUI 3** **Unpackaged** model, the below project property needs to be uncommented in the project file otherwise it'll result in the mentioned error message _and for the **Packaged** model, this property needs to stay as commented_:
+
+```xml
+<WindowsPackageType>None</WindowsPackageType>
+```
+
+**Error message:**
+Unable to load DLL 'Microsoft.ui.xaml.dll' or one of its dependencies: The specified module could not be found. (0x8007007E)
 
 * C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
   - Made available under the `src/C#-Samples/` folder
