@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net7.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst;net7.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-tizen</TargetFrameworks>
+        <TargetFrameworks>$(TargetFrameworks);net7.0</TargetFrameworks>
+        <OutputType Condition="'$(TargetFramework)' != 'net7.0'">Exe</OutputType>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <EnableDefaultItems>false</EnableDefaultItems>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>FSApp</RootNamespace>
+        <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+
+        <!-- Display name -->
+        <ApplicationTitle>FSApp</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.fsapp</ApplicationId>
+        <ApplicationIdGuid>90e8a1cd-9b19-4560-89f7-94c7e29e876e</ApplicationIdGuid>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <!-- Target Platform Options -->
+
+        <TargetPlatformIdentifier Condition=" $(TargetPlatformIdentifier) == '' ">$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</TargetPlatformIdentifier>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <!--#endif-->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+
+        <!-- Minimum Target OS Version for Windows Platform -->
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="AppBuilderExtensions.fs" />
+        <Compile Include="App.fs" />
+        <Compile Include="MauiProgram.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*" />
+
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*" />
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\*" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetPlatformIdentifier) == 'android'">
+        <AndroidResource Include="$(AndroidProjectFolder)Resources/*/*" />
+        <AndroidResource Remove="$(AndroidProjectFolder)Resources/raw/.*" />
+        <AndroidResource Update="$(AndroidProjectFolder)Resources/raw/*" />
+        <AndroidAsset Include="$(AndroidProjectFolder)Assets/**/*" Exclude="$(AndroidProjectFolder)Assets/**/.*/**" />
+        <AndroidManifest Include="$(AndroidProjectFolder)AndroidManifest.xml" />
+        <Compile Include="$(AndroidProjectFolder)MainActivity.fs" />
+        <Compile Include="$(AndroidProjectFolder)MainApplication.fs" />
+
+        <PackageReference Include="FSharp.Android.Resource" Version="1.0.*" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetPlatformIdentifier) == 'ios'">
+        <None Include="$(iOSProjectFolder)Info.plist" LogicalName="Info.plist" />
+        <Compile Include="$(iOSProjectFolder)AppDelegate.fs" />
+        <Compile Include="$(iOSProjectFolder)Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetPlatformIdentifier) == 'maccatalyst'">
+        <None Include="$(MacCatalystProjectFolder)Info.plist" LogicalName="Info.plist" />
+        <Compile Include="$(MacCatalystProjectFolder)AppDelegate.fs" />
+        <Compile Include="$(MacCatalystProjectFolder)Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetPlatformIdentifier) == 'windows'">
+        <Manifest Include="$(WindowsProjectFolder)app.manifest" />
+        <AppxManifest Include="$(WindowsProjectFolder)Package.appxmanifest" />
+        <Compile Include="$(WindowsProjectFolder)App.fs" />
+        <Compile Include="$(WindowsProjectFolder)Main.fs" />
+
+        <PackageReference Include="FSharp.Maui.WinUICompat" Version="1.1.*" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetPlatformIdentifier) == 'tizen'">
+        <TizenManifestFile Include="$(TizenProjectFolder)tizen-manifest.xml" />
+        <Compile Include="$(TizenProjectFolder)Main.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Fabulous" Version="2.4.*" />
+        <PackageReference Include="Fabulous.MauiControls" Version="2.8.*" />
+        <PackageReference Include="FSharp.Core" Version="7.0.*" />
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.*" />
+    </ItemGroup>
+
+</Project>
