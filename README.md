@@ -33,7 +33,7 @@ Available under the `src` directory:
   - A hybrid solution demonstrating the capabilities of `BlazorWebView` control
   - Loaded with `.NET MAUI`, `Windows Forms`, `WPF`, and `WinUI 3` projects in a single solution
   - Razor components abstracted in a shared Razor Class Library (RCL)
-  - While working with the **WinUI 3** **Unpackaged** model, the below project property needs to be uncommented in the project file otherwise it'll result in the mentioned error message _and for the **Packaged** model, this property needs to stay as commented_:
+  - While working with the **WinUI 3** **Unpackaged** model, the below project property needs to be uncommented in the project file otherwise it'll result in the mentioned error message. _And for the **Packaged** model, this can stay as commented or update its value as MSIX (the default value)_:
 
 ```xml
 <WindowsPackageType>None</WindowsPackageType>
@@ -43,7 +43,7 @@ Available under the `src` directory:
 Unable to load DLL 'Microsoft.ui.xaml.dll' or one of its dependencies: The specified module could not be found. (0x8007007E)
 
 * C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
-  - Made available under the `src/C#-Samples/` folder
+  - Made available under the [C#-Samples](/src/C#-Samples/) folder
   - Design credit to their respective owners
   - [BeautyShop App](https://github.com/jsuarezruiz/netmaui-beautyshop-app-challenge) 
   - [Chat App](https://github.com/jsuarezruiz/netmaui-chat-app-challenge)
@@ -65,3 +65,7 @@ Unable to load DLL 'Microsoft.ui.xaml.dll' or one of its dependencies: The speci
     * There's some issue in making use of FlexLayout as a BindableLayout in C# Markup hence replaced it with StackLayout and Grid on two of the pages
   - [MAUI Pets](https://github.com/BryanOroxon/MAUIPETS)
   - [SpaceX History](https://github.com/EduardoReisDev/SpaceXhistory)
+
+* F# Samples
+  - Made available under the [F#-Samples](/src/F#-Samples/) folder
+  - FSApp - A F# sample app developed with Fabulous (with DI option)
