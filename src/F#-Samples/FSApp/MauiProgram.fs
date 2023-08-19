@@ -4,6 +4,7 @@ open Microsoft.Extensions.DependencyInjection
 open Microsoft.Maui.Accessibility
 open Microsoft.Maui.Hosting
 open Fabulous.Maui
+open VijayAnand.MauiToolkit
 open FSApp.Extensions
 
 type MauiProgram =
