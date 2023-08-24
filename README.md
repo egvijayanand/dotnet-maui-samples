@@ -67,5 +67,6 @@ Unable to load DLL 'Microsoft.ui.xaml.dll' or one of its dependencies: The speci
   - [SpaceX History](https://github.com/EduardoReisDev/SpaceXhistory)
 
 * F# Samples
-  - Made available under the [F#-Samples](/src/F%23-Samples/) folder
-  - FSApp - A F# sample app developed with Fabulous (with DI option)
+  - Made available under the [F#-Samples](/src/F%23-Samples/) folder developed with Fabulous
+  - FSApp - A F# sample app (with DI option)
+  - HybridApp - An initial version of F# Blazor Hybrid sample app

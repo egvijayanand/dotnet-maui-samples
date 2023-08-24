@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<manifest package="com.companyname.fsapp" version="1.0.0" api-version="7" xmlns="http://tizen.org/ns/packages">
+<manifest package="com.companyname.hybridapp" version="1.0.0" api-version="7" xmlns="http://tizen.org/ns/packages">
   <profile name="common" />
-  <ui-application appid="com.companyname.fsapp" exec="FSApp.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
-    <label>FSApp</label>
+  <ui-application appid="com.companyname.hybridapp" exec="HybridApp.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
+    <label>HybridApp</label>
     <icon>appicon.xhigh.png</icon>
     <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
   </ui-application>
