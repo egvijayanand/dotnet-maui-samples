@@ -1,6 +1,6 @@
 ﻿@page "/fetchdata"
 
-@* @inject WeatherForecastService ForecastService *@
+@inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
 
@@ -43,6 +43,6 @@ else
 	protected override async Task OnInitializedAsync()
 	{
 		tableStyle = "table";
-		forecasts = await WeatherForecastService.GetForecastAsync(DateTime.Now);
+		forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
 	}
 }
