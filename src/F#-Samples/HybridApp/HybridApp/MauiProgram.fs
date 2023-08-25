@@ -22,7 +22,7 @@ type MauiProgram =
             .ConfigureServices(fun services ->
                 services
                     .AddSingleton(SemanticScreenReader.Default)
-                    .AddSingleton(WeatherForecastService)
+                    .AddSingleton<WeatherForecastService>()
 #if DEBUG
                     .AddBlazorWebViewDeveloperTools()
 #endif
