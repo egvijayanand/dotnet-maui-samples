@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EmbeddedWindows (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "EmbeddedWindows (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

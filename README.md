@@ -4,7 +4,13 @@ Completed samples will be uploaded into this repository so that it is accessible
 
 Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog for .NET MAUI and Blazor, for articles on working with these samples.
 
-Available under the `src` directory:
+_Note: Samples are in the process of migrating to the latest framework version, so there would be a change in the directory structure, so kindly bear with this._
+
+Made available in the `src\NET_9\` directory:
+* `EmbeddedWindows` - .NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 (`net9.0-windows10.0.19041.0`)
+  - Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample
+
+Made available in the the `src\` directory:
 
 * `TestApp` - .NET MAUI Shell sample
 * `MenuApp` - .NET MAUI sample app with multi-level menu definition in both XAML and C# _(Will work only on Desktop form factor)_
