@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MapsApp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MapsApp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
