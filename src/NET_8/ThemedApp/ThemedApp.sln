@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{B859FAC1-3BA7-4B57-AC9E-4ED3CB684314}") = "ThemedApp", "ThemedApp.csproj", "{C75EAAA5-2A17-423C-87D2-AFB371E44125}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A48CD27-1BF8-4CB3-A0DD-174F2738D14C}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C75EAAA5-2A17-423C-87D2-AFB371E44125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75EAAA5-2A17-423C-87D2-AFB371E44125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75EAAA5-2A17-423C-87D2-AFB371E44125}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C75EAAA5-2A17-423C-87D2-AFB371E44125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75EAAA5-2A17-423C-87D2-AFB371E44125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75EAAA5-2A17-423C-87D2-AFB371E44125}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		        SolutionGuid = {BCA472B4-60F5-4184-ADDB-F22CF80346D8}
+	EndGlobalSection
+EndGlobal
