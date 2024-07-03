@@ -11,6 +11,8 @@ Made available in the `src\NET_8\` directory:
   - Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample
 * `MapsApp` - .NET MAUI Maps embedded in a Native WinUI 3 App, targeting .NET 8 (`net8.0-windows10.0.19041.0`)
   - Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample
+* `ThemedApp` - Sample app for .NET MAUI App Theming
+  - Refer to this [article](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) for further details
 
 Made available in the `src\NET_9\` directory:
 * `EmbeddedWindows` - .NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 (`net9.0-windows10.0.19041.0`)
