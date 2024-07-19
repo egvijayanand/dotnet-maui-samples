@@ -13,6 +13,13 @@ Made available in the `src\NET_8\` directory:
   - Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample
 * `ThemedApp` - Sample app for .NET MAUI App Theming
   - Refer to this [article](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) for further details
+* `DateCalculator`
+  - MVVM Sample
+  - Xamarin Forms and .NET MAUI in a single solution
+  - WPF project to illustrate the reuse of ViewModels across UI frameworks
+  - WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too
+  - Shared business logic as a separate library project
+  - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package
 
 Made available in the `src\NET_9\` directory:
 * `EmbeddedWindows` - .NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 (`net9.0-windows10.0.19041.0`)
@@ -24,12 +31,6 @@ Made available in the the `src\` directory:
 
 * `TestApp` - .NET MAUI Shell sample
 * `MenuApp` - .NET MAUI sample app with multi-level menu definition in both XAML and C# _(Will work only on Desktop form factor)_
-* `DateCalculator`
-  - MVVM Sample
-  - Xamarin Forms and .NET MAUI in a single solution
-  - WPF project to illustrate the reuse of ViewModels across UI frameworks
-  - Shared business logic as a separate library project
-  - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm/8.0.0-preview3) NuGet package
 * `MauiBlazorApp` - .NET MAUI Blazor sample
   - App Theming
   - State sharing between .NET MAUI and Razor Components
