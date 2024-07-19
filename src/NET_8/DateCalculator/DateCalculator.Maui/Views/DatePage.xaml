@@ -1,0 +1,134 @@
+<pages:MauiPage
+    x:Class="DateCalculator.Views.DatePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:DateCalculator.Controls"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:pages="clr-namespace:DateCalculator.Views"
+    xmlns:vm="clr-namespace:DateCalculator.ViewModels;assembly=DateCalculator.Shared"
+    Title="{Binding Title}"
+    x:DataType="vm:DateViewModel">
+    <!--<Shell.TitleView>
+        <controls:AppTitleView PageTitle="{Binding Title}" />
+    </Shell.TitleView>-->
+    <ContentPage.BindingContext>
+        <vm:DateViewModel />
+    </ContentPage.BindingContext>
+    <pages:MauiPage.Resources>
+        <mct:InvertedBoolConverter x:Key="InverseBoolConverter" />
+        <!--<mct:IntToBoolConverter x:Key="IntToBoolConverter" />-->
+        <!--<converters:CheckedChangedEventArgsConverter x:Key="CheckedChangedEventArgsConverter" />-->
+    </pages:MauiPage.Resources>
+    <pages:MauiPage.Content>
+        <Grid RowDefinitions="*,40">
+            <Grid
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                RowSpacing="30"
+                Style="{StaticResource ContentArea}">
+                <Picker
+                    HorizontalOptions="{OnPlatform WinUI=Start}"
+                    ItemsSource="{Binding Options}"
+                    SelectedIndex="{Binding SelectedOption}"
+                    WidthRequest="{OnIdiom Desktop=220}">
+                    <!--<Picker.Items>
+                        <x:String>Difference between dates</x:String>
+                        <x:String>Add or subtract days</x:String>
+                    </Picker.Items>-->
+                </Picker>
+                <StackLayout Grid.Row="1">
+                    <Label
+                        Style="{StaticResource Caption}"
+                        Text="From" />
+                    <DatePicker Date="{Binding StartDate}">
+                        <DatePicker.Behaviors>
+                            <mct:EventToCommandBehavior
+                                Command="{Binding DateDiffCommand}"
+                                EventName="DateSelected" />
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="2"
+                    IsVisible="{Binding DiffMode}">
+                    <Label
+                        Style="{StaticResource Caption}"
+                        Text="To" />
+                    <DatePicker Date="{Binding EndDate}">
+                        <DatePicker.Behaviors>
+                            <mct:EventToCommandBehavior
+                                Command="{Binding DateDiffCommand}"
+                                EventName="DateSelected" />
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="3"
+                    IsVisible="{Binding DiffMode, Converter={StaticResource InverseBoolConverter}}">
+                    <StackLayout
+                        Orientation="Horizontal"
+                        RadioButtonGroup.GroupName="modes"
+                        RadioButtonGroup.SelectedValue="{Binding SelectedMode}">
+                        <BindableLayout.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Add</x:String>
+                                <x:String>Subtract</x:String>
+                            </x:Array>
+                        </BindableLayout.ItemsSource>
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="{x:Type x:String}">
+                                <RadioButton
+                                    Content="{Binding}"
+                                    Value="{Binding}" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout>
+                            <Label
+                                Style="{StaticResource Caption}"
+                                Text="Years" />
+                            <Picker
+                                ItemsSource="{Binding Range}"
+                                SelectedIndex="{Binding SelectedYear}" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label
+                                Style="{StaticResource Caption}"
+                                Text="Months" />
+                            <Picker
+                                ItemsSource="{Binding Range}"
+                                SelectedIndex="{Binding SelectedMonth}" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label
+                                Style="{StaticResource Caption}"
+                                Text="Days" />
+                            <Picker
+                                ItemsSource="{Binding Range}"
+                                SelectedIndex="{Binding SelectedDay}" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Grid.Row="4">
+                    <Label
+                        Style="{StaticResource Caption}"
+                        Text="{Binding ResultCaption}" />
+                    <Label
+                        Style="{StaticResource BoldText}"
+                        Text="{Binding DiffResult}" />
+                    <Label Text="{Binding DiffInDays}" />
+                </StackLayout>
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
+                <Label
+                    x:Name="mauiVersion"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </pages:MauiPage.Content>
+</pages:MauiPage>

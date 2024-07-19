@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <AssemblyName>DateCalculator</AssemblyName>
+        <RootNamespace>DateCalculator</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>portable</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\Fonts\Catamaran-Regular.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\Catamaran-SemiBold.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\fa-brands-400.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\fa-regular-400.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\fa-solid-900.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\OpenSans-Bold.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\OpenSans-Regular.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\OpenSans-SemiBold.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\Roboto-Bold.ttf" />
+        <EmbeddedResource Include="Resources\Fonts\Roboto-Regular.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="VijayAnand.FontAwesome" Version="2.*" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.*" />
+        <PackageReference Include="Xamarin.Forms" Version="5.*" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DateCalculator.Shared\DateCalculator.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
