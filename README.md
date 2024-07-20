@@ -20,6 +20,11 @@ Made available in the `src\NET_8\` directory:
   - WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too
   - Shared business logic as a separate library project
   - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package
+* `UnifiedDateCalculator`
+  - Shared class library sample
+  - UI, ViewModel, Model, and Business logic all from shared project
+  - Head projects serve as an app container
+  - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
 
 Made available in the `src\NET_9\` directory:
 * `EmbeddedWindows` - .NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 (`net9.0-windows10.0.19041.0`)
@@ -36,11 +41,6 @@ Made available in the the `src\` directory:
   - State sharing between .NET MAUI and Razor Components
   - Components from shared Razor Class Library (RCL)
 * `MauiAppCS` - .NET MAUI C# Markup based Sample
-* `UnifiedDateCalculator`
-  - Shared class library sample
-  - UI, ViewModel, Model, and Business logic all from shared project
-  - Head projects serve as an app container
-  - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
 * `EmbeddedAndroid` - .NET MAUI Page embedded in a Native Android App, targeting .NET 6 (`net6.0-android`)
 * `MediaElement` - Sample project in both .NET 6 and 7. Now made available in Preview bits as part of the .NET MAUI CommunityToolkit - And it'll be a separate NuGet package titled `CommunityToolkit.Maui.MediaElement`
 * `MauiHotReload` - Sample project to demonstrate **C# Hot Reload** feature supported via [MetadataUpdateHandler](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?view=net-6.0) (refer to HotReloadService.cs). Core logic is abstracted into a base page named `MauiPage`, inherit the content pages from it and implement the UI logic in the override of the abstract `Build()` method. Source is available in the `src\MauiHotReload` folder.
