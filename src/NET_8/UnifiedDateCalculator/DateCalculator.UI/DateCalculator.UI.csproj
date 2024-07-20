@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>DateCalculator.UI</RootNamespace>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <DefineConstants>$(DefineConstants);FORMS</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+        <UseMaui>true</UseMaui>
+        <MauiVersion>8.*</MauiVersion>
+        <SingleProject>true</SingleProject>
+        <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <Compile Include="**\*.shared.cs;**\*.logic.cs;**\*.forms.cs" />
+        <None Include="**\*.maui.cs" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+        <Compile Include="**\*.shared.cs;**\*.logic.cs;**\*.maui.cs" />
+        <None Include="**\*.forms.cs" />
+    </ItemGroup>
+
+    <!-- Xamarin.Forms NuGet packages -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+        <PackageReference Include="Xamarin.Forms" Version="5.*" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="2.*" />
+        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.*" />
+    </ItemGroup>
+
+    <!-- .NET MAUI NuGet packages -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
+    </ItemGroup>
+
+    <!-- Common NuGet packages -->
+    <ItemGroup>
+        <PackageReference Include="VijayAnand.Toolkit.Markup" Version="3.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DateCalculator.Shared\DateCalculator.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
