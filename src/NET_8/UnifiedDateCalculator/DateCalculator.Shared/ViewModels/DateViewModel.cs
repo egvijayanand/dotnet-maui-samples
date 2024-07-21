@@ -26,6 +26,9 @@ namespace DateCalculator.ViewModels
         private int selectedMonth;
 
         [ObservableProperty]
+        private int selectedWeek;
+
+        [ObservableProperty]
         private int selectedDay;
 
         [ObservableProperty]
@@ -67,12 +70,12 @@ namespace DateCalculator.ViewModels
             set => SetProperty(ref endDate, value);
         }
 
-        public int Option
+        public int SelectedOption
         {
-            get => option;
-            set => SetProperty(ref option, value, onChanged: () => DiffMode = Option == 0);
+            get => selectedOption;
+            set => SetProperty(ref selectedOption, value, onChanged: () => DiffMode = value == 0);
         }
-        
+
         public bool DiffMode
         {
             get => diffMode;
@@ -96,7 +99,7 @@ namespace DateCalculator.ViewModels
             get => selectedMode;
             set => SetProperty(ref selectedMode, value, onChanged: FindTheDate);
         }
-        
+
         public int SelectedYear
         {
             get => selectedYear;
@@ -107,6 +110,12 @@ namespace DateCalculator.ViewModels
         {
             get => selectedMonth;
             set => SetProperty(ref selectedMonth, value, onChanged: FindTheDate);
+        }
+
+        public int SelectedWeek
+        {
+            get => selectedWeek;
+            set => SetProperty(ref selectedWeek, value, onChanged: FindTheDate);
         }
 
         public int SelectedDay
@@ -166,6 +175,8 @@ namespace DateCalculator.ViewModels
 
         partial void OnSelectedMonthChanged(int value) => FindTheDate();
 
+        partial void OnSelectedWeekChanged(int value) => FindTheDate();
+
         partial void OnSelectedDayChanged(int value) => FindTheDate();
 
         [RelayCommand]
@@ -193,6 +204,7 @@ namespace DateCalculator.ViewModels
                 var factor = SelectedMode == "Subtract" ? -1 : 1;
                 DiffResult = StartDate.AddYears(SelectedYear * factor)
                                       .AddMonths(SelectedMonth * factor)
+                                      .AddWeeks(SelectedWeek * factor)
                                       .AddDays(SelectedDay * factor)
                                       .ToLongDateString();
                 DiffInDays = string.Empty;

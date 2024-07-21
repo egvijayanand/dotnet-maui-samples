@@ -40,6 +40,8 @@
 			rdoSubtract = new RadioButton();
 			rdoAdd = new RadioButton();
 			addSubPanel = new TableLayoutPanel();
+			cboWeeks = new ComboBox();
+			lblWeeks = new Label();
 			lblYears = new Label();
 			lblMonths = new Label();
 			lblDays = new Label();
@@ -109,7 +111,7 @@
 			// 
 			// modePanel
 			// 
-			addSubPanel.SetColumnSpan(modePanel, 3);
+			addSubPanel.SetColumnSpan(modePanel, 4);
 			modePanel.Controls.Add(rdoSubtract);
 			modePanel.Controls.Add(rdoAdd);
 			modePanel.Dock = DockStyle.Fill;
@@ -142,26 +144,47 @@
 			// 
 			// addSubPanel
 			// 
-			addSubPanel.ColumnCount = 3;
-			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
-			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34F));
-			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+			addSubPanel.ColumnCount = 4;
+			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+			addSubPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+			addSubPanel.Controls.Add(cboWeeks, 2, 2);
+			addSubPanel.Controls.Add(lblWeeks, 2, 1);
 			addSubPanel.Controls.Add(lblYears, 0, 1);
 			addSubPanel.Controls.Add(modePanel, 0, 0);
 			addSubPanel.Controls.Add(lblMonths, 1, 1);
-			addSubPanel.Controls.Add(lblDays, 2, 1);
+			addSubPanel.Controls.Add(lblDays, 3, 1);
 			addSubPanel.Controls.Add(cboYears, 0, 2);
 			addSubPanel.Controls.Add(cboMonths, 1, 2);
-			addSubPanel.Controls.Add(cboDays, 2, 2);
+			addSubPanel.Controls.Add(cboDays, 3, 2);
 			addSubPanel.Location = new Point(169, 168);
 			addSubPanel.Name = "addSubPanel";
 			addSubPanel.RowCount = 3;
 			addSubPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 34F));
 			addSubPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
 			addSubPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
-			addSubPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 			addSubPanel.Size = new Size(463, 126);
 			addSubPanel.TabIndex = 2;
+			// 
+			// cboWeeks
+			// 
+			cboWeeks.DropDownStyle = ComboBoxStyle.DropDownList;
+			cboWeeks.FormattingEnabled = true;
+			cboWeeks.Location = new Point(233, 86);
+			cboWeeks.Name = "cboWeeks";
+			cboWeeks.Size = new Size(109, 33);
+			cboWeeks.TabIndex = 2;
+			// 
+			// lblWeeks
+			// 
+			lblWeeks.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+			lblWeeks.AutoSize = true;
+			lblWeeks.Location = new Point(233, 50);
+			lblWeeks.Name = "lblWeeks";
+			lblWeeks.Size = new Size(109, 25);
+			lblWeeks.TabIndex = 102;
+			lblWeeks.Text = "Weeks";
 			// 
 			// lblYears
 			// 
@@ -169,28 +192,28 @@
 			lblYears.AutoSize = true;
 			lblYears.Location = new Point(3, 50);
 			lblYears.Name = "lblYears";
-			lblYears.Size = new Size(146, 25);
-			lblYears.TabIndex = 0;
+			lblYears.Size = new Size(109, 25);
+			lblYears.TabIndex = 100;
 			lblYears.Text = "Years";
 			// 
 			// lblMonths
 			// 
 			lblMonths.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 			lblMonths.AutoSize = true;
-			lblMonths.Location = new Point(155, 50);
+			lblMonths.Location = new Point(118, 50);
 			lblMonths.Name = "lblMonths";
-			lblMonths.Size = new Size(151, 25);
-			lblMonths.TabIndex = 1;
+			lblMonths.Size = new Size(109, 25);
+			lblMonths.TabIndex = 101;
 			lblMonths.Text = "Months";
 			// 
 			// lblDays
 			// 
 			lblDays.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 			lblDays.AutoSize = true;
-			lblDays.Location = new Point(312, 50);
+			lblDays.Location = new Point(348, 50);
 			lblDays.Name = "lblDays";
-			lblDays.Size = new Size(148, 25);
-			lblDays.TabIndex = 2;
+			lblDays.Size = new Size(112, 25);
+			lblDays.TabIndex = 103;
 			lblDays.Text = "Days";
 			// 
 			// cboYears
@@ -199,26 +222,26 @@
 			cboYears.FormattingEnabled = true;
 			cboYears.Location = new Point(3, 86);
 			cboYears.Name = "cboYears";
-			cboYears.Size = new Size(146, 33);
-			cboYears.TabIndex = 2;
+			cboYears.Size = new Size(109, 33);
+			cboYears.TabIndex = 0;
 			// 
 			// cboMonths
 			// 
 			cboMonths.DropDownStyle = ComboBoxStyle.DropDownList;
 			cboMonths.FormattingEnabled = true;
-			cboMonths.Location = new Point(155, 86);
+			cboMonths.Location = new Point(118, 86);
 			cboMonths.Name = "cboMonths";
-			cboMonths.Size = new Size(151, 33);
-			cboMonths.TabIndex = 3;
+			cboMonths.Size = new Size(109, 33);
+			cboMonths.TabIndex = 1;
 			// 
 			// cboDays
 			// 
 			cboDays.DropDownStyle = ComboBoxStyle.DropDownList;
 			cboDays.FormattingEnabled = true;
-			cboDays.Location = new Point(312, 86);
+			cboDays.Location = new Point(348, 86);
 			cboDays.Name = "cboDays";
-			cboDays.Size = new Size(148, 33);
-			cboDays.TabIndex = 4;
+			cboDays.Size = new Size(112, 33);
+			cboDays.TabIndex = 3;
 			// 
 			// DateForm
 			// 
@@ -262,5 +285,7 @@
 		private ComboBox cboYears;
 		private ComboBox cboMonths;
 		private ComboBox cboDays;
+		private ComboBox cboWeeks;
+		private Label lblWeeks;
 	}
 }

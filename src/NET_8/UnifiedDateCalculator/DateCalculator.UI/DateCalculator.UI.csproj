@@ -16,7 +16,7 @@
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
         <UseMaui>true</UseMaui>
-        <MauiVersion>8.*</MauiVersion>
+        <!--<MauiVersion>8.*</MauiVersion>-->
         <SingleProject>true</SingleProject>
         <DefineConstants>$(DefineConstants);MAUI</DefineConstants>
     </PropertyGroup>

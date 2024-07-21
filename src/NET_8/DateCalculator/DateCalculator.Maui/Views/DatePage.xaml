@@ -102,6 +102,14 @@
                         <StackLayout>
                             <Label
                                 Style="{StaticResource Caption}"
+                                Text="Weeks" />
+                            <Picker
+                                ItemsSource="{Binding Range}"
+                                SelectedIndex="{Binding SelectedWeek}" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label
+                                Style="{StaticResource Caption}"
                                 Text="Days" />
                             <Picker
                                 ItemsSource="{Binding Range}"

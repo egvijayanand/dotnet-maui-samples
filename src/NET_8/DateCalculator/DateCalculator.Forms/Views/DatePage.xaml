@@ -26,11 +26,12 @@
             VerticalOptions="StartAndExpand">
             <Picker
                 HorizontalOptions="Start"
+                ItemsSource="{Binding Options}"
                 SelectedIndex="{Binding SelectedOption}">
-                <Picker.Items>
+                <!--<Picker.Items>
                     <x:String>Difference between dates</x:String>
                     <x:String>Add or subtract days</x:String>
-                </Picker.Items>
+                </Picker.Items>-->
             </Picker>
             <StackLayout HorizontalOptions="StartAndExpand">
                 <Label
@@ -93,6 +94,12 @@
                         <Picker
                             ItemsSource="{Binding Range}"
                             SelectedIndex="{Binding SelectedMonth}" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Weeks" />
+                        <Picker
+                            ItemsSource="{Binding Range}"
+                            SelectedIndex="{Binding SelectedWeek}" />
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Days" />
