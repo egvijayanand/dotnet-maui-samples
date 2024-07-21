@@ -8,7 +8,7 @@ public partial class DateForm : Form
 		ConfigureDataBindings();
 		dateViewModelBindingSource.DataSource = new DateViewModel();
 	}
-	
+
 	private void ConfigureDataBindings()
 	{
 		// DateForm
@@ -31,6 +31,9 @@ public partial class DateForm : Form
 		// cboMonths
 		cboMonths.DataBindings.Add(new Binding(nameof(ComboBox.DataSource), dateViewModelBindingSource, nameof(DateViewModel.MonthRange), true));
 		cboMonths.DataBindings.Add(new Binding(nameof(ComboBox.SelectedIndex), dateViewModelBindingSource, nameof(DateViewModel.SelectedMonth), true, DataSourceUpdateMode.OnPropertyChanged));
+		// cboWeeks
+		cboWeeks.DataBindings.Add(new Binding(nameof(ComboBox.DataSource), dateViewModelBindingSource, nameof(DateViewModel.WeekRange), true));
+		cboWeeks.DataBindings.Add(new Binding(nameof(ComboBox.SelectedIndex), dateViewModelBindingSource, nameof(DateViewModel.SelectedWeek), true, DataSourceUpdateMode.OnPropertyChanged));
 		// cboDays
 		cboDays.DataBindings.Add(new Binding(nameof(ComboBox.DataSource), dateViewModelBindingSource, nameof(DateViewModel.DayRange), true));
 		cboDays.DataBindings.Add(new Binding(nameof(ComboBox.SelectedIndex), dateViewModelBindingSource, nameof(DateViewModel.SelectedDay), true, DataSourceUpdateMode.OnPropertyChanged));

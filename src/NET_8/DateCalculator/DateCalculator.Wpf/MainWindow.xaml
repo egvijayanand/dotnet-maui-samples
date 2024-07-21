@@ -82,6 +82,14 @@
                 </StackPanel>
                 <StackPanel Margin="{StaticResource LeftMargin}">
                     <Label
+                        Content="Weeks"
+                        Style="{StaticResource Caption}" />
+                    <ComboBox
+                        ItemsSource="{Binding Range}"
+                        SelectedIndex="{Binding SelectedWeek}" />
+                </StackPanel>
+                <StackPanel Margin="{StaticResource LeftMargin}">
+                    <Label
                         Content="Days"
                         Style="{StaticResource Caption}" />
                     <ComboBox

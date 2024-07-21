@@ -4,7 +4,6 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using XForms = Xamarin.Forms.Forms;
 
 namespace DateCalculator.UWP
 {
@@ -49,8 +48,8 @@ namespace DateCalculator.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 // Set the experimental feature flag for enabling Shell on UWP
-                XForms.SetFlags(new[] { "Shell_UWP_Experimental" });
-                XForms.Init(e);
+                Xamarin.Forms.Forms.SetFlags(new[] { "Shell_UWP_Experimental" });
+                Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

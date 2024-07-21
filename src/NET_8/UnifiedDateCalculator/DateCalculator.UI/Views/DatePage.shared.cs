@@ -62,9 +62,9 @@ namespace DateCalculator.UI.Views
                                 {
                                     new EventToCommandBehavior()
                                     {
-										EventName = nameof(DatePicker.DateSelected),
-									}.BindCommandv2(static (DateViewModel vm) => vm.DateDiffCommand),
-								},
+                                        EventName = nameof(DatePicker.DateSelected),
+                                    }.BindCommandv2(static (DateViewModel vm) => vm.DateDiffCommand),
+                                },
                             }.Bindv2(static (DateViewModel vm) => vm.EndDate),
                         },
                     }.Start().Bindv2(IsVisibleProperty, static(DateViewModel vm) => vm.DiffMode),
@@ -107,6 +107,18 @@ namespace DateCalculator.UI.Views
                                             },
                                             new Picker().Bindv2(Picker.ItemsSourceProperty, static(DateViewModel vm) => vm.Range)
                                                 .Bindv2(static(DateViewModel vm) => vm.SelectedMonth),
+                                        },
+                                    },
+                                    new StackLayout()
+                                    {
+                                        Children =
+                                        {
+                                            new Label()
+                                            {
+                                                Text = "Weeks",
+                                            },
+                                            new Picker().Bindv2(Picker.ItemsSourceProperty, static(DateViewModel vm) => vm.Range)
+                                                .Bindv2(static(DateViewModel vm) => vm.SelectedWeek),
                                         },
                                     },
                                     new StackLayout()
