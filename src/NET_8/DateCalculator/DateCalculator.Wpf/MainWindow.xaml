@@ -2,7 +2,7 @@
     x:Class="DateCalculator.Wpf.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converters="clr-namespace:DateCalculator.Wpf.Converters"
+    xmlns:conv="clr-namespace:DateCalculator.Wpf.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:DateCalculator.Wpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -18,9 +18,10 @@
         <Thickness x:Key="LeftMargin">15,0,0,0</Thickness>
         <Thickness x:Key="TopMargin">0,15,0,0</Thickness>
         <Thickness x:Key="InnerSpacing">0,15,0,0</Thickness>
-        <converters:InvertedBoolConverter x:Key="InverseBoolConverter" />
-        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-        <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+        <conv:DateTimeOffsetConverter x:Key="DateTimeOffsetConverter" />
+        <conv:InvertedBoolConverter x:Key="InverseBoolConverter" />
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <conv:StringToBoolConverter x:Key="StringToBoolConverter" />
     </Window.Resources>
     <StackPanel Margin="30">
         <StackPanel>
@@ -37,7 +38,7 @@
             <Label
                 Content="From"
                 Style="{StaticResource Caption}" />
-            <DatePicker SelectedDate="{Binding StartDate}" />
+            <DatePicker SelectedDate="{Binding StartDate, Converter={StaticResource DateTimeOffsetConverter}}" />
         </StackPanel>
         <StackPanel
             Margin="{StaticResource TopMargin}"
@@ -45,7 +46,7 @@
             <Label
                 Content="To"
                 Style="{StaticResource Caption}" />
-            <DatePicker SelectedDate="{Binding EndDate}" />
+            <DatePicker SelectedDate="{Binding EndDate, Converter={StaticResource DateTimeOffsetConverter}}" />
         </StackPanel>
         <StackPanel
             Margin="{StaticResource TopMargin}"

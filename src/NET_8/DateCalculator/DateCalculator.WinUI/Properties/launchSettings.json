@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DateCalculator.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DateCalculator.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
