@@ -1,8 +1,8 @@
-﻿namespace DateCalculator.Wpf.Converters
+﻿namespace DateCalculator.WinUI.Converters
 {
     public class StringToBoolConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, string language)
         {
             if (parameter is not string param)
             {
@@ -12,7 +12,7 @@
             return param.Equals(value);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
             var param = parameter as string;
             var boolValue = value as bool?;

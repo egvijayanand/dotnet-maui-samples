@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using DateCalculator.Extensions;
 using DateCalculator.Helpers;
 using DateCalculator.Models;
+using System.ComponentModel;
 using VijayAnand.Toolkit.ObjectModel;
 
 namespace DateCalculator.ViewModels
@@ -10,10 +11,14 @@ namespace DateCalculator.ViewModels
     public partial class DateViewModel : BaseViewModel
     {
         [ObservableProperty]
-        private DateTime startDate = DateTime.Today;
+        [NotifyPropertyChangedFor(nameof(StartDate1))]
+        //[TypeConverter(typeof(DateTimeOffsetConverter))]
+        private DateTimeOffset startDate = DateTime.Today;
 
         [ObservableProperty]
-        private DateTime endDate = DateTime.Today;
+        [NotifyPropertyChangedFor(nameof(EndDate1))]
+        //[TypeConverter(typeof(DateTimeOffsetConverter))]
+        private DateTimeOffset endDate = DateTime.Today;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(DiffModeInverse))]
@@ -55,11 +60,23 @@ namespace DateCalculator.ViewModels
             FindTheDate();
         }
 
-        public IReadOnlyList<string> Options { get;  } = ["Difference between dates", "Add or subtract days"];
+        public IReadOnlyList<string> Options { get; } = ["Difference between dates", "Add or subtract days"];
 
         public IReadOnlyList<int> Range { get; } = Enumerable.Range(0, 1000).ToList();
 
-#region For WinForms
+        #region For WinForms
+        public DateTime StartDate1
+        {
+            get => StartDate.Date;
+            set => StartDate = value;
+        }
+
+        public DateTime EndDate1
+        {
+            get => EndDate.Date;
+            set => EndDate = value;
+        }
+
         public IReadOnlyList<int> YearRange { get; } = Enumerable.Range(0, 1000).ToList();
 
         public IReadOnlyList<int> MonthRange { get; } = Enumerable.Range(0, 1000).ToList();
@@ -67,19 +84,19 @@ namespace DateCalculator.ViewModels
         public IReadOnlyList<int> WeekRange { get; } = Enumerable.Range(0, 1000).ToList();
 
         public IReadOnlyList<int> DayRange { get; } = Enumerable.Range(0, 1000).ToList();
-#endregion
+        #endregion
 
         public bool DiffModeInverse => !DiffMode;
 
         // While using classic MVVM
         /*
-        public DateTime StartDate
+        public DateTimeOffset StartDate
         {
             get => startDate;
             set => SetProperty(ref startDate, value);
         }
 
-        public DateTime EndDate
+        public DateTimeOffset EndDate
         {
             get => endDate;
             set => SetProperty(ref endDate, value);
@@ -152,7 +169,6 @@ namespace DateCalculator.ViewModels
             get => selectedDay;
             set => SetProperty(ref selectedDay, value, onChanged: FindTheDate);
         }
-
         public string ResultCaption
         {
             get => resultCaption;
@@ -196,9 +212,9 @@ namespace DateCalculator.ViewModels
 
         partial void OnSelectedOptionChanged(int value) => DiffMode = value == 0;
 
-        partial void OnStartDateChanged(DateTime value) => FindTheDate();
+        partial void OnStartDateChanged(DateTimeOffset value) => FindTheDate();
 
-        partial void OnEndDateChanged(DateTime value) => FindTheDate();
+        partial void OnEndDateChanged(DateTimeOffset value) => FindTheDate();
 
         partial void OnSelectedModeChanged(string? value)
         {
@@ -233,17 +249,18 @@ namespace DateCalculator.ViewModels
                     dtEnd = StartDate;
                 }
 
-                DiffResult = Utility.DateDiff(dtStart, dtEnd);
-                DiffInDays = ((int)(dtEnd - dtStart).TotalDays).InWords(TimeUnit.Day);
+                DiffResult = Utility.DateDiff(dtStart.Date, dtEnd.Date);
+                DiffInDays = ((int)(dtEnd.Date - dtStart.Date).TotalDays).InWords(TimeUnit.Day);
             }
             else
             {
                 int factor = AddMode ? 1 : -1;
-                DiffResult = StartDate.AddYears(SelectedYear * factor)
-                                      .AddMonths(SelectedMonth * factor)
-                                      .AddWeeks(SelectedWeek * factor)
-                                      .AddDays(SelectedDay * factor)
-                                      .ToLongDateString();
+                DiffResult = StartDate.Date
+                    .AddYears(SelectedYear * factor)
+                    .AddMonths(SelectedMonth * factor)
+                    .AddWeeks(SelectedWeek * factor)
+                    .AddDays(SelectedDay * factor)
+                    .ToLongDateString();
                 DiffInDays = string.Empty;
             }
         }

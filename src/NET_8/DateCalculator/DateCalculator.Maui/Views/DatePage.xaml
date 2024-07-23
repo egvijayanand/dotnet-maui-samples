@@ -15,6 +15,7 @@
         <vm:DateViewModel />
     </ContentPage.BindingContext>
     <pages:MauiPage.Resources>
+        <mct:DateTimeOffsetConverter x:Key="DateTimeOffsetConverter" />
         <mct:InvertedBoolConverter x:Key="InverseBoolConverter" />
         <!--<mct:IntToBoolConverter x:Key="IntToBoolConverter" />-->
         <!--<converters:CheckedChangedEventArgsConverter x:Key="CheckedChangedEventArgsConverter" />-->
@@ -39,7 +40,7 @@
                     <Label
                         Style="{StaticResource Caption}"
                         Text="From" />
-                    <DatePicker Date="{Binding StartDate}">
+                    <DatePicker Date="{Binding StartDate, Converter={StaticResource DateTimeOffsetConverter}}">
                         <DatePicker.Behaviors>
                             <mct:EventToCommandBehavior
                                 Command="{Binding DateDiffCommand}"
@@ -53,7 +54,7 @@
                     <Label
                         Style="{StaticResource Caption}"
                         Text="To" />
-                    <DatePicker Date="{Binding EndDate}">
+                    <DatePicker Date="{Binding EndDate, Converter={StaticResource DateTimeOffsetConverter}}">
                         <DatePicker.Behaviors>
                             <mct:EventToCommandBehavior
                                 Command="{Binding DateDiffCommand}"

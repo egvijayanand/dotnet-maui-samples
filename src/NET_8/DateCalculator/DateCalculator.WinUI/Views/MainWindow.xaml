@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Window
+    x:Class="DateCalculator.WinUI.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="using:DateCalculator.WinUI.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DateCalculator.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:DateCalculator.ViewModels"
+    mc:Ignorable="d">
+    <Window.Content>
+        <StackPanel
+            x:Name="content"
+            Margin="30">
+            <StackPanel.DataContext>
+                <vm:DateViewModel />
+            </StackPanel.DataContext>
+            <StackPanel.Resources>
+                <Thickness x:Key="LeftMargin">15,0,0,0</Thickness>
+                <Thickness x:Key="TopMargin">0,15,0,0</Thickness>
+                <Thickness x:Key="InnerSpacing">0,15,0,0</Thickness>
+                <conv:InvertedBoolConverter x:Key="InverseBoolConverter" />
+                <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                <conv:StringToBoolConverter x:Key="StringToBoolConverter" />
+            </StackPanel.Resources>
+            <StackPanel>
+                <ComboBox
+                    ItemsSource="{Binding Options}"
+                    SelectedIndex="{Binding SelectedOption, Mode=TwoWay}">
+                    <!--<ComboBox.Items>
+                        <ComboBoxItem>Difference between dates</ComboBoxItem>
+                        <ComboBoxItem>Add or subtract days</ComboBoxItem>
+                    </ComboBox.Items>-->
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="{StaticResource TopMargin}">
+                <TextBlock
+                    Style="{StaticResource Caption}"
+                    Text="From" />
+                <CalendarDatePicker
+                    x:Name="startDate"
+                    Date="{Binding StartDate, Mode=TwoWay}" />
+            </StackPanel>
+            <StackPanel
+                Margin="{StaticResource TopMargin}"
+                Visibility="{Binding DiffMode, Converter={StaticResource BoolToVisibilityConverter}}">
+                <TextBlock
+                    Style="{StaticResource Caption}"
+                    Text="To" />
+                <CalendarDatePicker
+                    x:Name="endDate"
+                    Date="{Binding EndDate, Mode=TwoWay}" />
+            </StackPanel>
+            <StackPanel
+                Margin="{StaticResource TopMargin}"
+                Visibility="{Binding DiffModeInverse, Converter={StaticResource BoolToVisibilityConverter}}">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton
+                        Content="Add"
+                        GroupName="modes"
+                        IsChecked="{Binding SelectedMode, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Add, Mode=TwoWay}" />
+                    <RadioButton
+                        Margin="{StaticResource LeftMargin}"
+                        Content="Subtract"
+                        GroupName="modes"
+                        IsChecked="{Binding SelectedMode, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Subtract, Mode=TwoWay}" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,10,0,0"
+                    Orientation="Horizontal">
+                    <StackPanel>
+                        <TextBlock
+                            Style="{StaticResource Caption}"
+                            Text="Years" />
+                        <ComboBox
+                            ItemsSource="{Binding Range}"
+                            SelectedIndex="{Binding SelectedYear, Mode=TwoWay}" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource LeftMargin}">
+                        <TextBlock
+                            Style="{StaticResource Caption}"
+                            Text="Months" />
+                        <ComboBox
+                            ItemsSource="{Binding Range}"
+                            SelectedIndex="{Binding SelectedMonth, Mode=TwoWay}" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource LeftMargin}">
+                        <TextBlock
+                            Style="{StaticResource Caption}"
+                            Text="Weeks" />
+                        <ComboBox
+                            ItemsSource="{Binding Range}"
+                            SelectedIndex="{Binding SelectedWeek, Mode=TwoWay}" />
+                    </StackPanel>
+                    <StackPanel Margin="{StaticResource LeftMargin}">
+                        <TextBlock
+                            Style="{StaticResource Caption}"
+                            Text="Days" />
+                        <ComboBox
+                            ItemsSource="{Binding Range}"
+                            SelectedIndex="{Binding SelectedDay, Mode=TwoWay}" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel
+                Margin="{StaticResource TopMargin}"
+                Spacing="10">
+                <TextBlock
+                    Style="{StaticResource Caption}"
+                    Text="{Binding ResultCaption}" />
+                <TextBlock
+                    Style="{StaticResource BoldText}"
+                    Text="{Binding DiffResult}" />
+                <TextBlock Text="{Binding DiffInDays}" />
+            </StackPanel>
+        </StackPanel>
+    </Window.Content>
+</Window>

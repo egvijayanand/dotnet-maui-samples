@@ -17,9 +17,9 @@ public partial class DateForm : Form
 		cboOptions.DataBindings.Add(new Binding(nameof(ComboBox.DataSource), dateViewModelBindingSource, nameof(DateViewModel.Options), true));
 		cboOptions.DataBindings.Add(new Binding(nameof(ComboBox.SelectedIndex), dateViewModelBindingSource, nameof(DateViewModel.SelectedOption), true, DataSourceUpdateMode.OnPropertyChanged));
 		// dtpStartDate
-		dtpStartDate.DataBindings.Add(new Binding(nameof(DateTimePicker.Value), dateViewModelBindingSource, nameof(DateViewModel.StartDate), true, DataSourceUpdateMode.OnPropertyChanged));
+		dtpStartDate.DataBindings.Add(new Binding(nameof(DateTimePicker.Value), dateViewModelBindingSource, nameof(DateViewModel.StartDate1), true, DataSourceUpdateMode.OnPropertyChanged));
 		// dtpEndDate
-		dtpEndDate.DataBindings.Add(new Binding(nameof(DateTimePicker.Value), dateViewModelBindingSource, nameof(DateViewModel.EndDate), true, DataSourceUpdateMode.OnPropertyChanged));
+		dtpEndDate.DataBindings.Add(new Binding(nameof(DateTimePicker.Value), dateViewModelBindingSource, nameof(DateViewModel.EndDate1), true, DataSourceUpdateMode.OnPropertyChanged));
 		dtpEndDate.DataBindings.Add(new Binding(nameof(Visible), dateViewModelBindingSource, nameof(DateViewModel.DiffMode), true, DataSourceUpdateMode.OnPropertyChanged));
 		// addSubPanel
 		addSubPanel.DataBindings.Add(new Binding(nameof(Visible), dateViewModelBindingSource, nameof(DateViewModel.DiffModeInverse), true, DataSourceUpdateMode.OnPropertyChanged));

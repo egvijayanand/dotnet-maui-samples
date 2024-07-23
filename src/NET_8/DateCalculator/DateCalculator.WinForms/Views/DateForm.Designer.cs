@@ -69,7 +69,7 @@
 			dtpEndDate.Location = new Point(250, 116);
 			dtpEndDate.Name = "dtpEndDate";
 			dtpEndDate.Size = new Size(300, 31);
-			dtpEndDate.TabIndex = 0;
+			dtpEndDate.TabIndex = 2;
 			// 
 			// lblDiffResult
 			// 
@@ -78,7 +78,7 @@
 			lblDiffResult.Location = new Point(250, 360);
 			lblDiffResult.Name = "lblDiffResult";
 			lblDiffResult.Size = new Size(111, 25);
-			lblDiffResult.TabIndex = 2;
+			lblDiffResult.TabIndex = 5;
 			lblDiffResult.Text = "[DiffResult]";
 			// 
 			// cboOptions
@@ -97,7 +97,7 @@
 			lblDiffInDays.Location = new Point(250, 403);
 			lblDiffInDays.Name = "lblDiffInDays";
 			lblDiffInDays.Size = new Size(105, 25);
-			lblDiffInDays.TabIndex = 4;
+			lblDiffInDays.TabIndex = 6;
 			lblDiffInDays.Text = "[DiffInDays]";
 			// 
 			// lblCaption
@@ -106,7 +106,7 @@
 			lblCaption.Location = new Point(250, 317);
 			lblCaption.Name = "lblCaption";
 			lblCaption.Size = new Size(84, 25);
-			lblCaption.TabIndex = 5;
+			lblCaption.TabIndex = 4;
 			lblCaption.Text = "[Caption]";
 			// 
 			// modePanel
@@ -118,7 +118,7 @@
 			modePanel.Location = new Point(3, 3);
 			modePanel.Name = "modePanel";
 			modePanel.Size = new Size(457, 36);
-			modePanel.TabIndex = 1;
+			modePanel.TabIndex = 0;
 			// 
 			// rdoSubtract
 			// 
@@ -165,7 +165,7 @@
 			addSubPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
 			addSubPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33F));
 			addSubPanel.Size = new Size(463, 126);
-			addSubPanel.TabIndex = 2;
+			addSubPanel.TabIndex = 3;
 			// 
 			// cboWeeks
 			// 
@@ -174,7 +174,7 @@
 			cboWeeks.Location = new Point(233, 86);
 			cboWeeks.Name = "cboWeeks";
 			cboWeeks.Size = new Size(109, 33);
-			cboWeeks.TabIndex = 2;
+			cboWeeks.TabIndex = 3;
 			// 
 			// lblWeeks
 			// 
@@ -223,7 +223,7 @@
 			cboYears.Location = new Point(3, 86);
 			cboYears.Name = "cboYears";
 			cboYears.Size = new Size(109, 33);
-			cboYears.TabIndex = 0;
+			cboYears.TabIndex = 1;
 			// 
 			// cboMonths
 			// 
@@ -232,7 +232,7 @@
 			cboMonths.Location = new Point(118, 86);
 			cboMonths.Name = "cboMonths";
 			cboMonths.Size = new Size(109, 33);
-			cboMonths.TabIndex = 1;
+			cboMonths.TabIndex = 2;
 			// 
 			// cboDays
 			// 
@@ -241,7 +241,7 @@
 			cboDays.Location = new Point(348, 86);
 			cboDays.Name = "cboDays";
 			cboDays.Size = new Size(112, 33);
-			cboDays.TabIndex = 3;
+			cboDays.TabIndex = 4;
 			// 
 			// DateForm
 			// 

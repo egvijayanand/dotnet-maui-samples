@@ -1,8 +1,4 @@
-﻿using System.Globalization;
-using System.Windows;
-using System.Windows.Data;
-
-namespace DateCalculator.Wpf.Converters
+﻿namespace DateCalculator.Wpf.Converters
 {
     public class BoolToVisibilityConverter : IValueConverter
     {

@@ -17,6 +17,7 @@
         <vm:DateViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
+        <xct:DateTimeOffsetConverter x:Key="DateTimeOffsetConverter" />
         <xct:InvertedBoolConverter x:Key="InverseBoolConverter" />
         <xct:IntToBoolConverter x:Key="IntToBoolConverter" />
     </ContentPage.Resources>
@@ -37,7 +38,7 @@
                 <Label
                     Style="{StaticResource Caption}"
                     Text="From" />
-                <DatePicker Date="{Binding StartDate}">
+                <DatePicker Date="{Binding StartDate, Converter={StaticResource DateTimeOffsetConverter}}">
                     <DatePicker.Behaviors>
                         <xct:EventToCommandBehavior
                             Command="{Binding DateDiffCommand}"
@@ -51,7 +52,7 @@
                 <Label
                     Style="{StaticResource Caption}"
                     Text="To" />
-                <DatePicker Date="{Binding EndDate}">
+                <DatePicker Date="{Binding EndDate, Converter={StaticResource DateTimeOffsetConverter}}">
                     <DatePicker.Behaviors>
                         <xct:EventToCommandBehavior
                             Command="{Binding DateDiffCommand}"

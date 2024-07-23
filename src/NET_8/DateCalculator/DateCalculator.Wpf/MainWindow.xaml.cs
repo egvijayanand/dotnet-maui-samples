@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace DateCalculator.Wpf
+﻿namespace DateCalculator.Wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
