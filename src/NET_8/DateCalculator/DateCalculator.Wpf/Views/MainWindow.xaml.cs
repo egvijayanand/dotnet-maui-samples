@@ -1,4 +1,4 @@
-﻿namespace DateCalculator.Wpf
+﻿namespace DateCalculator.Wpf.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

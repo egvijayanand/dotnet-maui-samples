@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Markup;
 using CommunityToolkit.Maui.Behaviors;
 using Microsoft.Extensions.Logging;
 

@@ -61,6 +61,7 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="CommunityToolkit.Maui" Version="9.*" />
+        <PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.*" />
         <PackageReference Include="VijayAnand.FontAwesome" Version="2.*" />
     </ItemGroup>
 
