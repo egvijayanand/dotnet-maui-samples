@@ -16,7 +16,7 @@ Made available in the `src\NET_8\` directory:
 * `DateCalculator`
   - MVVM Sample
   - Xamarin Forms and .NET MAUI in a single solution
-  - WPF project to illustrate the reuse of ViewModels across UI frameworks
+  - WPF and WinUI projects to illustrate the reuse of ViewModels across UI frameworks
   - WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too
   - Shared business logic as a separate library project
   - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package
