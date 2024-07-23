@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:DateCalculator.Wpf"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    StartupUri="MainWindow.xaml">
+    StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <!-- Update the base FontSize to set it across all Controls styles -->
         <sys:Double x:Key="AppFontSize">14</sys:Double>
