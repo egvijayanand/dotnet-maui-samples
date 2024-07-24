@@ -14,3 +14,5 @@ global using Microsoft.Maui.Media;
 global using Microsoft.Maui.Networking;
 global using Microsoft.Maui.Storage;
 global using static Microsoft.Maui.Graphics.Colors;
+
+global using static CommunityToolkit.Maui.Markup.GridRowsColumns;
