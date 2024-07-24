@@ -13,7 +13,26 @@
         The overall app visual hierarchy is defined here, along with navigation.
         Ensure atleast a Flyout item or a TabBar is defined for Shell to work
     -->
-    <Shell.Resources />
+    <Shell.Resources>
+        <Style
+            x:Key="BaseStyle"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="Shell.ForegroundColor" Value="{StaticResource White}" />
+            <Setter Property="Shell.TitleColor" Value="{StaticResource White}" />
+            <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+            <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+            <Setter Property="Shell.NavBarHasShadow" Value="True" />
+            <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource White}" />
+            <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource White}" />
+            <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}" />
+        </Style>
+        <Style
+            ApplyToDerivedTypes="True"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="ShellItem" />
+    </Shell.Resources>
     <!--
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element

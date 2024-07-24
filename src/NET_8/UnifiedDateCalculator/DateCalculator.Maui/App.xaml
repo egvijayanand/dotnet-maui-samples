@@ -25,6 +25,10 @@
                 <Setter Property="Padding" Value="{OnPlatform iOS={StaticResource ApplePadding}, Default={StaticResource DefaultPadding}}" />
             </Style>
 
+            <Style x:Key="Footer" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource Primary}}" />
+            </Style>
+
             <Style x:Key="Caption" TargetType="Label">
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LightGray}, Light={StaticResource DarkGray}}" />
             </Style>

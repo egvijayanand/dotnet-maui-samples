@@ -12,6 +12,7 @@
 
             <x:Double x:Key="ItemSpacing">5</x:Double>
 
+            <!--<Color x:Key="Primary">#03A9F4</Color>-->
             <Color x:Key="Primary">#3700B3</Color>
             <Color x:Key="White">White</Color>
             <Color x:Key="Black">Black</Color>
@@ -38,6 +39,10 @@
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource TextLight}}" />
                 <Setter Property="FontFamily" Value="{StaticResource AppFont}" />
                 <Setter Property="FontSize" Value="{StaticResource AppFontSize}" />
+            </Style>
+
+            <Style x:Key="Footer" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource Primary}}" />
             </Style>
 
             <Style x:Key="Caption" TargetType="Label">

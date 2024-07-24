@@ -36,6 +36,10 @@
         <PackageReference Include="Xamarin.Forms" Version="5.*" />
         <PackageReference Include="Xamarin.CommunityToolkit" Version="2.*" />
         <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="2.*" />
+		<PackageReference Include="PolySharp" Version="1.*">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
     </ItemGroup>
 
     <!-- .NET MAUI NuGet packages -->
