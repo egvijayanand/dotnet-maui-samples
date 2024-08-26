@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0-android</TargetFramework>
+        <OutputType>Exe</OutputType>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>EmbeddedAndroid</RootNamespace>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <MauiEnablePlatformUsings>true</MauiEnablePlatformUsings>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.embeddedandroid</ApplicationId>
+
+        <!-- App Version -->
+        <ApplicationVersion>1</ApplicationVersion>
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+
+        <!-- Target Platform Options -->
+        <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <!--
+    Enable full trimming in Release mode.
+    To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/trimming-options#trimming-granularity
+    -->
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <TrimMode>full</TrimMode>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    </ItemGroup>
+</Project>
