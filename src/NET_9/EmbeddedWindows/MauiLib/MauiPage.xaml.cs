@@ -1,10 +1,6 @@
-﻿namespace MauiLib
+﻿namespace MauiLib;
+
+public partial class MauiPage : ContentPage
 {
-    public partial class MauiPage : ContentPage
-    {
-        public MauiPage()
-        {
-            InitializeComponent();
-        }
-    }
+    public MauiPage() => InitializeComponent();
 }

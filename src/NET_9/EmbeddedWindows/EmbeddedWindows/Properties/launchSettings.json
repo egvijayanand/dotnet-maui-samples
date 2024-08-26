@@ -1,9 +1,6 @@
 {
   "profiles": {
-    "EmbeddedWindows (Package)": {
-      "commandName": "MsixPackage"
-    },
-    "EmbeddedWindows (Unpackaged)": {
+    "Windows Machine": {
       "commandName": "Project"
     }
   }
