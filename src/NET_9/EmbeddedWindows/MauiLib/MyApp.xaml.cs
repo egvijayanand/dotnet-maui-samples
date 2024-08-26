@@ -1,10 +1,6 @@
-﻿namespace MauiLib
+﻿namespace MauiLib;
+
+public partial class MyApp : Application
 {
-    public partial class MyApp : Application
-    {
-        public MyApp()
-        {
-            InitializeComponent();
-        }
-    }
+    public MyApp() => InitializeComponent();
 }

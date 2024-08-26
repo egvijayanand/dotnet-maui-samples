@@ -11,7 +11,7 @@
         <Grid>
             <Label
                 HorizontalOptions="Center"
-                Text=".NET MAUI Embedding is cool!!!"
+                Text=".NET MAUI Embedding is uber cool!!!"
                 VerticalOptions="Center" />
         </Grid>
     </ContentPage.Content>
