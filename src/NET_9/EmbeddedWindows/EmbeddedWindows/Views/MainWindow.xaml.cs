@@ -35,7 +35,7 @@ public sealed partial class MainWindow : Window
 
         // Platform-neutral - Windowless API
         Content = new MauiPage().ToPlatform(mauiContext);
-        // Updated Window inclusive API
+        // Updated Window-aware API
         Content = new MauiPage().ToPlatformEmbedded(mauiContext);
     }
 }
