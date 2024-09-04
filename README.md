@@ -30,8 +30,10 @@ Made available in the `src\NET_9\` directory:
 
 |Solution Title|Description|
 |:---:|:---|
+|`EmbeddedAndroid`|.NET MAUI Page embedded in a .NET 9 for Android App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
+|`EmbeddediOS`|.NET MAUI Page embedded in a .NET 9 for iOS App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
 |`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
-|`MapsApp`|.NET MAUI Maps embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample|
+|`MapsApp`|Using .NET MAUI [CommunityToolkit.Maui.Maps](https://www.nuget.org/packages/CommunityToolkit.Maui.Maps) embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample|
 |`HybridWebViewApp`|A sample .NET MAUI App showcasing the features of the new [HybridWebView](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#hybridwebview) control.|
 
 Made available in the the `src\` directory:
