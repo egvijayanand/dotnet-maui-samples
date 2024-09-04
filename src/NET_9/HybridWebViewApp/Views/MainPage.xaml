@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="HybridWebViewApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:HybridWebViewApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="HybridWebViewApp"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="Auto,*,40">
+                <HorizontalStackLayout
+                    Margin="0,20,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Entry
+                        x:Name="message"
+                        ClearButtonVisibility="WhileEditing"
+                        MaxLength="50"
+                        MinimumWidthRequest="200"
+                        Placeholder="Enter your message here"
+                        TextChanged="OnMessageChanged" />
+                    <Button
+                        x:Name="send"
+                        Clicked="OnSendClicked"
+                        IsEnabled="False"
+                        Text="Send to JS" />
+                </HorizontalStackLayout>
+                <HybridWebView
+                    x:Name="hwv"
+                    Grid.Row="1"
+                    RawMessageReceived="OnRawMessageReceived" />
+                <Grid
+                    Grid.Row="2"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                      Light={StaticResource Primary}}">
+
+                    <Label
+                        x:Name="VersionLabel"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
