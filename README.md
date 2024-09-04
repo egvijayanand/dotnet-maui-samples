@@ -27,10 +27,12 @@ Made available in the `src\NET_8\` directory:
   - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
 
 Made available in the `src\NET_9\` directory:
-* `EmbeddedWindows` - .NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 (`net9.0-windows10.0.19041.0`)
-  - Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample
-* `MapsApp` - .NET MAUI Maps embedded in a Native WinUI 3 App, targeting .NET 9 (`net9.0-windows10.0.19041.0`)
-  - Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample
+
+|Solution Title|Description|
+|:---:|:---|
+|`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
+|`MapsApp`|.NET MAUI Maps embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample|
+|`HybridWebViewApp`|A sample .NET MAUI App showcasing the features of the new [HybridWebView](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#hybridwebview) control.|
 
 Made available in the the `src\` directory:
 

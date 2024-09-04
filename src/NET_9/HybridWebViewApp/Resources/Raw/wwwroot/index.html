@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>HybridWebViewApp</title>
+    <base href="/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" href="data:,">
+    <script src="scripts/hwv.js"></script>
+    <script>
+        window.addEventListener(
+            "HybridWebViewMessageReceived",
+            function(e) {
+                var msgFromCS = document.getElementById("msgFromCS");
+                msgFromCS.value += e.detail.message + '\r\n';
+                msgFromCS.scrollTop = msgFromCS.scrollHeight;
+            });
+
+        function onChanged() {
+            var message = document.getElementById("message");
+            var send = document.getElementById("send");
+
+            if (message.value == '') {
+                send.disabled = true;
+            } else {
+                send.disabled = false;
+            }
+        }
+
+        function onSend() {
+            var message = document.getElementById("message");
+            var send = document.getElementById("send");
+            window.HybridWebView.SendRawMessage(message.value);
+            message.value = '';
+            send.disabled = true;
+            message.focus();
+        }
+    </script>
+</head>
+<body>
+    <h3>HybridWebView App!</h3>
+    <div style="margin-left: 10px;">
+        <input type="text" id="message" class="text-black" placeholder="Enter your message here" maxlength="50" oninput="onChanged();" />
+        <button type="button" id="send" class="btn btn-primary" onclick="onSend();" disabled>Send to .NET</button>
+    </div>
+    <div style="margin-top: 20px;">
+        Messages from .NET: <textarea readonly id="msgFromCS" style="width: 80%; height: 300px;"></textarea>
+    </div>
+</body>
+</html>
