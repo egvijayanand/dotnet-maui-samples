@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="WinUIBlazor.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:WinUIBlazor"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WinUIBlazor"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,40">
+            <BlazorWebView
+                x:Name="bwv"
+                HostPage="wwwroot/index.html"
+                StartPath="/counter">
+                <BlazorWebView.RootComponents>
+                    <RootComponent
+                        ComponentType="{x:Type local:Main}"
+                        Selector="#app" />
+                </BlazorWebView.RootComponents>
+            </BlazorWebView>
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                  Light={StaticResource Primary}}">
+                <Label
+                    x:Name="VersionLabel"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource White}"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
