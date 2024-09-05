@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <EnableDefaultCssItems>false</EnableDefaultCssItems>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>WinUIBlazor</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.*-*" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="VijayAnand.MauiBlazor.Markup" Version="4.*-preview*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\WinUIBlazor.RazorLib\WinUIBlazor.RazorLib.csproj" />
+    </ItemGroup>
+</Project>

@@ -6,35 +6,30 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog
 
 _Note: Samples are in the process of migrating to the latest framework version, so there would be a change in the directory structure. Kindly bear with this._
 
+### .NET MAUI 8 Samples
+
 Made available in the `src\NET_8\` directory:
-* `EmbeddedWindows` - .NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 8 (`net8.0-windows10.0.19041.0`)
-  - Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample
-* `MapsApp` - .NET MAUI Maps embedded in a Native WinUI 3 App, targeting .NET 8 (`net8.0-windows10.0.19041.0`)
-  - Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample
-* `ThemedApp` - Sample app for .NET MAUI App Theming
-  - Refer to this [article](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) for further details
-* `DateCalculator`
-  - MVVM Sample
-  - Xamarin Forms and .NET MAUI in a single solution
-  - WPF and WinUI projects to illustrate the reuse of ViewModels across UI frameworks
-  - WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too
-  - Shared business logic as a separate library project
-  - ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) NuGet package
-* `UnifiedDateCalculator`
-  - Shared class library sample
-  - UI, ViewModel, Model, and Business logic all from shared project
-  - Head projects serve as an app container
-  - Both Xamarin.Forms and .NET MAUI from a single project - `DateCalculator.UI`
+
+|Solution Title|Description|
+|:---:|:---|
+|`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI - Native Embedding](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) article for working with this sample|
+|`MapsApp`|.NET MAUI Maps embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI Community Toolkit Maps in WinUI 3 App](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) article for working with this sample|
+|`ThemedApp`|Sample app for .NET MAUI App Theming <br /> Refer to this [.NET MAUI - App Theming](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) article for further details|
+|`DateCalculator`|<ul><li>MVVM Sample</li><li>Xamarin Forms and .NET MAUI in a single solution</li><li>WPF and WinUI projects to illustrate the reuse of ViewModels across UI frameworks</li><li>WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too</li><li>Shared business logic as a separate library project</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li></ul>|
+|`UnifiedDateCalculator`|<ul><li>Shared class library sample</li><li>UI, ViewModel, Model, and Business logic all from shared project</li><li>Head projects serve as an app container</li><li>Both Xamarin.Forms and .NET MAUI UI definition from a single project - `DateCalculator.UI`</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li></ul>|
+
+### .NET MAUI 9 Samples
 
 Made available in the `src\NET_9\` directory:
 
 |Solution Title|Description|
 |:---:|:---|
-|`EmbeddedAndroid`|.NET MAUI Page embedded in a .NET 9 for Android App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
-|`EmbeddediOS`|.NET MAUI Page embedded in a .NET 9 for iOS App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
-|`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) for working with this sample|
-|`MapsApp`|Using .NET MAUI [CommunityToolkit.Maui.Maps](https://www.nuget.org/packages/CommunityToolkit.Maui.Maps) embedded in a Native WinUI 3 App, targeting .NET 9 <br /> Refer to this [article](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) for working with this sample|
+|`EmbeddedAndroid`|.NET MAUI Page embedded in a .NET 9 for Android App <br /> Refer to this [.NET MAUI - Native Embedding](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) article for working with this sample|
+|`EmbeddediOS`|.NET MAUI Page embedded in a .NET 9 for iOS App <br /> Refer to this [.NET MAUI - Native Embedding](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) article for working with this sample|
+|`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI - Native Embedding](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) article for working with this sample|
+|`MapsApp`|Using .NET MAUI [CommunityToolkit.Maui.Maps](https://www.nuget.org/packages/CommunityToolkit.Maui.Maps) embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI Community Toolkit Maps in WinUI 3 App](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) article for working with this sample|
 |`HybridWebViewApp`|A sample .NET MAUI App showcasing the features of the new [HybridWebView](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#hybridwebview) control.|
+|`WinUIBlazor`|.NET MAUI `BlazorWebView` embedded in a Native WinUI 3 App, making it as a Blazor Hybrid app <br /> Refer to this [.NET MAUI - Blazor Hybrid - WinUI 3](https://egvijayanand.in/2023/03/29/dotnet-maui-blazor-hybrid-winui-3/) article for working with this sample|
 
 Made available in the the `src\` directory:
 
@@ -63,6 +58,8 @@ Made available in the the `src\` directory:
 **Error message:**
 Unable to load DLL 'Microsoft.ui.xaml.dll' or one of its dependencies: The specified module could not be found. (0x8007007E)
 
+### .NET MAUI UI Challenge - C# Version
+
 * C# Samples - C# version of the [.NET MAUI UI Challenge](https://aka.ms/maui/UIChallenge) - [Awesome UIs](https://github.com/jsuarezruiz/dotnet-maui-showcase) without any XAML usage - Stay tuned for more samples ...
   - Made available under the [C#-Samples](/src/C%23-Samples/) folder
   - Design credit to their respective owners
@@ -86,6 +83,8 @@ Unable to load DLL 'Microsoft.ui.xaml.dll' or one of its dependencies: The speci
     * There's some issue in making use of FlexLayout as a BindableLayout in C# Markup hence replaced it with StackLayout and Grid on two of the pages
   - [MAUI Pets](https://github.com/BryanOroxon/MAUIPETS)
   - [SpaceX History](https://github.com/EduardoReisDev/SpaceXhistory)
+
+### .NET MAUI - F# Samples
 
 * F# Samples
   - Made available under the [F#-Samples](/src/F%23-Samples/) folder developed with Fabulous
