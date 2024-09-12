@@ -9,6 +9,6 @@
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
-            => new Window(new MainPage()) { Title = "HybridWebViewApp" };
+            => new MainWindow();
     }
 }

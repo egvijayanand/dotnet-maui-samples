@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" href="data:,">
     <script src="scripts/hwv.js"></script>
+</head>
+<body>
+    <h3>HybridWebView App!</h3>
+    <div style="margin-left: 10px;">
+        <input type="text" id="message" class="text-black" placeholder="Enter your message here" maxlength="50" />
+        <button type="button" id="send" class="btn btn-primary" disabled>Send to .NET</button>
+    </div>
+    <div style="margin-top: 20px;">
+        Messages from .NET: <textarea readonly id="msgFromCS" style="width: 80%; height: 300px;"></textarea>
+    </div>
     <script>
         window.addEventListener(
             "HybridWebViewMessageReceived",
@@ -19,35 +29,30 @@
                 msgFromCS.scrollTop = msgFromCS.scrollHeight;
             });
 
-        function onChanged() {
-            var message = document.getElementById("message");
-            var send = document.getElementById("send");
+        let message = document.getElementById("message");
+        let send = document.getElementById("send");
 
+        message.addEventListener("input", function() {
             if (message.value == '') {
                 send.disabled = true;
             } else {
                 send.disabled = false;
             }
-        }
+        });
 
-        function onSend() {
-            var message = document.getElementById("message");
-            var send = document.getElementById("send");
+        message.addEventListener("keypress", function(e) {
+            console.log(e.key);
+            if (e.key === "Enter") {
+                send.click();
+            }
+        });
+
+        send.addEventListener("click", function() {
             window.HybridWebView.SendRawMessage(message.value);
             message.value = '';
             send.disabled = true;
             message.focus();
-        }
+        });
     </script>
-</head>
-<body>
-    <h3>HybridWebView App!</h3>
-    <div style="margin-left: 10px;">
-        <input type="text" id="message" class="text-black" placeholder="Enter your message here" maxlength="50" oninput="onChanged();" />
-        <button type="button" id="send" class="btn btn-primary" onclick="onSend();" disabled>Send to .NET</button>
-    </div>
-    <div style="margin-top: 20px;">
-        Messages from .NET: <textarea readonly id="msgFromCS" style="width: 80%; height: 300px;"></textarea>
-    </div>
 </body>
 </html>

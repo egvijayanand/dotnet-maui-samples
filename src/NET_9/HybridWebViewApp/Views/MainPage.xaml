@@ -38,7 +38,7 @@
                                                       Light={StaticResource Primary}}">
 
                     <Label
-                        x:Name="VersionLabel"
+                        x:Name="versionLabel"
                         HorizontalOptions="Center"
                         TextColor="{StaticResource White}"
                         VerticalOptions="Center" />

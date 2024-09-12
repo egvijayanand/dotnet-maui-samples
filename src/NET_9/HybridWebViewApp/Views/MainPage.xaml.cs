@@ -7,16 +7,12 @@ namespace HybridWebViewApp.Views
         public MainPage()
         {
             InitializeComponent();
+            message.ReturnCommand = new Command(SendMessage);
             var version = typeof(MauiApp).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
-            VersionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
+            versionLabel.Text = $".NET MAUI ver. {version?[..version.IndexOf('+')]}";
         }
 
-        private void OnSendClicked(object sender, EventArgs e)
-        {
-            hwv.SendRawMessage(message.Text);
-            message.Text = string.Empty;
-            message.Focus();
-        }
+        private void OnSendClicked(object sender, EventArgs e) => SendMessage();
 
         private async void OnRawMessageReceived(object sender, HybridWebViewRawMessageReceivedEventArgs e)
         {
@@ -26,6 +22,13 @@ namespace HybridWebViewApp.Views
         private void OnMessageChanged(object sender, TextChangedEventArgs e)
         {
             send.IsEnabled = message.Text.Length > 0;
+        }
+
+        private void SendMessage()
+        {
+            hwv.SendRawMessage(message.Text);
+            message.Text = string.Empty;
+            message.Focus();
         }
     }
 }
