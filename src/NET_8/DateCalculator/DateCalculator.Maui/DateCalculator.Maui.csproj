@@ -19,6 +19,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>DateCalculator</RootNamespace>
         <WindowsPackageType>None</WindowsPackageType>
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
 
         <!-- Display name -->
         <ApplicationTitle>DateCalculator</ApplicationTitle>

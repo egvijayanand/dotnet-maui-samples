@@ -9,6 +9,7 @@
         <UseWinUI>true</UseWinUI>
         <EnableMsixTooling>true</EnableMsixTooling>
         <WindowsPackageType>None</WindowsPackageType>
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
 
         <!-- Project Options -->
         <Nullable>enable</Nullable>

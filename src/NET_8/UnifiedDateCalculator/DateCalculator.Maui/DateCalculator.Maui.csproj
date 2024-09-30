@@ -18,6 +18,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>DateCalculator.Maui</RootNamespace>
         <WindowsPackageType>None</WindowsPackageType>
+        <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
 
         <!-- Display name -->
         <ApplicationTitle>DateCalculator.Maui</ApplicationTitle>
