@@ -10,11 +10,35 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="Auto,*,40">
+            <Grid RowDefinitions="Auto,Auto,*,40">
                 <HorizontalStackLayout
+                    Margin="0,20,0,0"
+                    HorizontalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="JS Interop:"
+                        VerticalOptions="Center" />
+                    <Entry
+                        x:Name="operand1"
+                        Placeholder="Number 1"
+                        WidthRequest="100" />
+                    <Entry
+                        x:Name="operand2"
+                        Placeholder="Number 2"
+                        WidthRequest="100" />
+                    <Button
+                        Clicked="OnAddClicked"
+                        Text="Add" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
+                    Grid.Row="1"
                     Margin="0,20,0,0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Messaging:"
+                        VerticalOptions="Center" />
                     <Entry
                         x:Name="message"
                         ClearButtonVisibility="WhileEditing"
@@ -30,10 +54,10 @@
                 </HorizontalStackLayout>
                 <HybridWebView
                     x:Name="hwv"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     RawMessageReceived="OnRawMessageReceived" />
                 <Grid
-                    Grid.Row="2"
+                    Grid.Row="3"
                     BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
                                                       Light={StaticResource Primary}}">
 

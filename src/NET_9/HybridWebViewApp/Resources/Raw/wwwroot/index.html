@@ -21,6 +21,10 @@
         Messages from .NET: <textarea readonly id="msgFromCS" style="width: 80%; height: 300px;"></textarea>
     </div>
     <script>
+        function addNumbers(num1, num2) {
+            return num1 + num2;
+        }
+
         window.addEventListener(
             "HybridWebViewMessageReceived",
             function(e) {
