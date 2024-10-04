@@ -1,15 +1,8 @@
-﻿namespace HybridWebViewApp
-{
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+﻿namespace HybridWebViewApp;
 
-        public MainWindow(Page page) : base(page)
-        {
-            InitializeComponent();
-        }
-    }
+public partial class MainWindow : Window
+{
+    public MainWindow() => InitializeComponent();
+
+    public MainWindow(Page page) : base(page) => InitializeComponent();
 }
