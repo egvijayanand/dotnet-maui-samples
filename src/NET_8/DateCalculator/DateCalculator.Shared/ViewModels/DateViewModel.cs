@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿#define FIELDS
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DateCalculator.Extensions;
 using DateCalculator.Helpers;
@@ -10,6 +11,7 @@ namespace DateCalculator.ViewModels
 {
     public partial class DateViewModel : BaseViewModel
     {
+#if FIELDS
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(StartDate1))]
         //[TypeConverter(typeof(DateTimeOffsetConverter))]
@@ -53,6 +55,51 @@ namespace DateCalculator.ViewModels
 
         [ObservableProperty]
         private bool addMode = true;
+#else
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(StartDate1))]
+        //[TypeConverter(typeof(DateTimeOffsetConverter))]
+        public partial DateTimeOffset StartDate { get; set; } = DateTime.Today;
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(EndDate1))]
+        //[TypeConverter(typeof(DateTimeOffsetConverter))]
+        public partial DateTimeOffset EndDate { get; set; } = DateTime.Today;
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(DiffModeInverse))]
+        public partial bool DiffMode { get; set; } = true;
+
+        [ObservableProperty]
+        public partial int SelectedYear { get; set; }
+
+        [ObservableProperty]
+        public partial int SelectedMonth { get; set; }
+
+        [ObservableProperty]
+        public partial int SelectedWeek { get; set; }
+
+        [ObservableProperty]
+        public partial int SelectedDay { get; set; }
+
+        [ObservableProperty]
+        public partial string ResultCaption { get; set; } = "Difference";
+
+        [ObservableProperty]
+        public partial string DiffResult { get; set; } = string.Empty;
+
+        [ObservableProperty]
+        public partial string DiffInDays { get; set; } = string.Empty;
+
+        [ObservableProperty]
+        public partial int SelectedOption { get; set; }
+
+        [ObservableProperty]
+        public partial string? SelectedMode { get; set; }
+
+        [ObservableProperty]
+        public partial bool AddMode { get; set; } = true;
+#endif
 
         public DateViewModel()
         {
@@ -88,7 +135,7 @@ namespace DateCalculator.ViewModels
 
         public bool DiffModeInverse => !DiffMode;
 
-        // While using classic MVVM
+        #region Classic-MVVM
         /*
         public DateTimeOffset StartDate
         {
@@ -189,6 +236,7 @@ namespace DateCalculator.ViewModels
 
         public ICommand DiffCommand => new Command(FindTheDate);
         */
+        #endregion
 
         partial void OnDiffModeChanged(bool value)
         {

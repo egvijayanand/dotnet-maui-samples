@@ -15,6 +15,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <RootNamespace>DateCalculator.WinUI</RootNamespace>
 
         <!-- App Options -->
