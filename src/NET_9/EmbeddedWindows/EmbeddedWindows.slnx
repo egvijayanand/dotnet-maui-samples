@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="MauiLib\MauiLib.csproj" />
+  <Project Path="EmbeddedWindows\EmbeddedWindows.csproj">
+    <Deploy />
+    <Platform Project="x64" />
+  </Project>
+</Solution>

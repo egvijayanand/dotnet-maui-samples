@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUIBlazor", "WinUIBlazor\WinUIBlazor.csproj", "{B4FE125E-4AFF-44EB-A3B7-DC1793D7CBA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUIBlazor.MauiLib", "WinUIBlazor.MauiLib\WinUIBlazor.MauiLib.csproj", "{71F838CD-A4C9-48E4-ABA9-716FB160CBEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUIBlazor.RazorLib", "WinUIBlazor.RazorLib\WinUIBlazor.RazorLib.csproj", "{F427596A-19AA-4AC4-9F24-BCCF206EBBF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F427596A-19AA-4AC4-9F24-BCCF206EBBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F427596A-19AA-4AC4-9F24-BCCF206EBBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F427596A-19AA-4AC4-9F24-BCCF206EBBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F427596A-19AA-4AC4-9F24-BCCF206EBBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F838CD-A4C9-48E4-ABA9-716FB160CBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F838CD-A4C9-48E4-ABA9-716FB160CBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F838CD-A4C9-48E4-ABA9-716FB160CBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F838CD-A4C9-48E4-ABA9-716FB160CBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4FE125E-4AFF-44EB-A3B7-DC1793D7CBA6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B4FE125E-4AFF-44EB-A3B7-DC1793D7CBA6}.Debug|Any CPU.Build.0 = Debug|x86
+		{B4FE125E-4AFF-44EB-A3B7-DC1793D7CBA6}.Release|Any CPU.ActiveCfg = Release|x86
+		{B4FE125E-4AFF-44EB-A3B7-DC1793D7CBA6}.Release|Any CPU.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
