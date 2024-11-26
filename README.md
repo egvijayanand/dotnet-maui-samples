@@ -6,18 +6,6 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog
 
 _Note: Samples are in the process of migrating to the latest framework version, so there would be a change in the directory structure. Kindly bear with this._
 
-### .NET MAUI 8 Samples
-
-Made available in the `src\NET_8\` directory:
-
-|Solution Title|Description|
-|:---:|:---|
-|`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI - Native Embedding](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) article for working with this sample|
-|`MapsApp`|.NET MAUI Maps embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI Community Toolkit Maps in WinUI 3 App](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) article for working with this sample|
-|`ThemedApp`|Sample app for .NET MAUI App Theming <br /> Refer to this [.NET MAUI - App Theming](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) article for further details|
-|`DateCalculator`|<ul><li>MVVM Sample</li><li>Xamarin Forms and .NET MAUI in a single solution</li><li>WPF and WinUI projects to illustrate the reuse of ViewModels across UI frameworks</li><li>WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too</li><li>Shared business logic as a separate library project</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li><li>Consult the [MVVM - Made Easy](https://egvijayanand.in/category/mvvm/made-easy/) series of articles for guidance on working with this sample solution.</li></ul>|
-|`UnifiedDateCalculator`|<ul><li>Shared class library sample</li><li>UI, ViewModel, Model, and Business logic all from shared project</li><li>Head projects serve as an app container</li><li>Both Xamarin.Forms and .NET MAUI UI definition from a single project - `DateCalculator.UI`</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li></ul>|
-
 ### .NET MAUI 9 Samples
 
 Made available in the `src\NET_9\` directory:
@@ -30,6 +18,18 @@ Made available in the `src\NET_9\` directory:
 |`MapsApp`|Using .NET MAUI [CommunityToolkit.Maui.Maps](https://www.nuget.org/packages/CommunityToolkit.Maui.Maps) embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI Community Toolkit Maps in WinUI 3 App](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) article for working with this sample|
 |`HybridWebViewApp`|A sample .NET MAUI App showcasing the features of the new [HybridWebView](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#hybridwebview) control. <br /> Refer to this [Exploring .NET MAUI 9: HybridWebView Features](https://egvijayanand.in/2024/10/04/exploring-dotnet-maui-9-hybridwebview-features/) article for working with this sample|
 |`WinUIBlazor`|.NET MAUI `BlazorWebView` embedded in a Native WinUI 3 App, making it as a Blazor Hybrid app <br /> Refer to this [.NET MAUI - Blazor Hybrid - WinUI 3](https://egvijayanand.in/2023/03/29/dotnet-maui-blazor-hybrid-winui-3/) article for working with this sample|
+
+### .NET MAUI 8 Samples
+
+Made available in the `src\NET_8\` directory:
+
+|Solution Title|Description|
+|:---:|:---|
+|`EmbeddedWindows`|.NET MAUI Page embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI - Native Embedding](https://egvijayanand.in/2024/02/29/dotnet-maui-native-embedding/) article for working with this sample|
+|`MapsApp`|.NET MAUI Maps embedded in a Native WinUI 3 App <br /> Refer to this [.NET MAUI Community Toolkit Maps in WinUI 3 App](https://egvijayanand.in/2024/03/07/dotnet-maui-community-toolkit-maps-in-winui-3-app/) article for working with this sample|
+|`ThemedApp`|Sample app for .NET MAUI App Theming <br /> Refer to this [.NET MAUI - App Theming](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) article for further details|
+|`DateCalculator`|<ul><li>MVVM Sample</li><li>Xamarin Forms and .NET MAUI in a single solution</li><li>WPF and WinUI projects to illustrate the reuse of ViewModels across UI frameworks</li><li>WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too</li><li>Shared business logic as a separate library project</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li><li>Consult the [MVVM - Made Easy](https://egvijayanand.in/category/mvvm/made-easy/) series of articles for guidance on working with this sample solution.</li></ul>|
+|`UnifiedDateCalculator`|<ul><li>Shared class library sample</li><li>UI, ViewModel, Model, and Business logic all from shared project</li><li>Head projects serve as an app container</li><li>Both Xamarin.Forms and .NET MAUI UI definition from a single project - `DateCalculator.UI`</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li></ul>|
 
 Made available in the the `src\` directory:
 
