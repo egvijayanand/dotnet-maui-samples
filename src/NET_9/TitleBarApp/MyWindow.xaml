@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Window
+    x:Class="TitleBarApp.MyWindow"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vw="clr-namespace:TitleBarApp.Views"
+    Title="MyApp">
+    <Window.Page>
+        <vw:MainPage />
+    </Window.Page>
+    <Window.TitleBar>
+        <!-- Can also be defined separately and included here -->
+        <!--<vw:MyTitleBar />-->
+        <TitleBar
+            BackgroundColor="{StaticResource Primary}"
+            ForegroundColor="{StaticResource White}"
+            HeightRequest="48">
+            <!-- Customized Title and Subtitle -->
+            <TitleBar.LeadingContent>
+                <Grid
+                    Margin="20,0,0,0"
+                    ColumnDefinitions="Auto,Auto,Auto"
+                    ColumnSpacing="15"
+                    VerticalOptions="Center">
+                    <Image
+                        HeightRequest="16"
+                        Source="dotnet_bot.png"
+                        WidthRequest="16" />
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource AppTitle}"
+                        Text="MyApp" />
+                    <Label
+                        Grid.Column="2"
+                        Style="{StaticResource Title}"
+                        Text="Home" />
+                </Grid>
+            </TitleBar.LeadingContent>
+            <TitleBar.Content>
+                <SearchBar
+                    BackgroundColor="{StaticResource White}"
+                    HorizontalOptions="Fill"
+                    MaximumWidthRequest="300"
+                    Placeholder="Search"
+                    VerticalOptions="Center" />
+            </TitleBar.Content>
+            <TitleBar.TrailingContent>
+                <ImageButton
+                    Background="Transparent"
+                    BorderWidth="0"
+                    HeightRequest="36"
+                    WidthRequest="36">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            FontFamily="FAS"
+                            Glyph="&#xf013;"
+                            Size="18" />
+                    </ImageButton.Source>
+                </ImageButton>
+            </TitleBar.TrailingContent>
+        </TitleBar>
+    </Window.TitleBar>
+</Window>
