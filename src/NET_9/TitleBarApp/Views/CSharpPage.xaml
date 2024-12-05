@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="TitleBarApp.Views.CSharpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False">
+    <Grid>
+        <Label
+            Style="{StaticResource Title}"
+            Text="An inline definition of the Window's TitleBar."
+            TextColor="{AppThemeBinding Dark={StaticResource TextDark},
+                                        Light={StaticResource TextLight}}" />
+    </Grid>
+</ContentPage>
