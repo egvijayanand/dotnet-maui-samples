@@ -17,15 +17,8 @@ namespace TitleBarApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            // No TitleBar
-            Window.TitleBar = null;
-        }
-
-        protected override void OnNavigatedTo(NavigatedToEventArgs args)
-        {
-            base.OnNavigatedTo(args);
-            // No TitleBar
-            Window.TitleBar = null;
+            // Revert to default
+            Window.TitleBar = new TitleBar();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
