@@ -19,6 +19,7 @@ Made available in the `src\NET_9\` directory:
 |`HybridWebViewApp`|A sample app showcasing the features of the new [HybridWebView](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#hybridwebview) control. <br /> Refer to this [Exploring .NET MAUI 9: HybridWebView](https://egvijayanand.in/2024/10/04/exploring-dotnet-maui-9-hybridwebview-features/) article for working with this sample|
 |`WinUIBlazor`|.NET MAUI `BlazorWebView` embedded in a Native WinUI 3 App, making it as a Blazor Hybrid app <br /> Refer to this [.NET MAUI - Blazor Hybrid - WinUI 3](https://egvijayanand.in/2023/03/29/dotnet-maui-blazor-hybrid-winui-3/) article for working with this sample|
 |`TitleBarApp`|A sample app showcasing the features of the new [TitleBar](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#titlebar-for-windows) control. <br /> Refer to this [What's New in .NET MAUI 9: Window TitleBar](https://egvijayanand.in/2024/12/04/what-is-new-in-dotnet-maui-9-window-titlebar/) article for working with this sample|
+|`RatingApp`|A sample app showcasing the features of the new [RatingView](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/ratingview) control. <br /> Refer to this [Exploring the New RatingView Control in .NET MAUI Community Toolkit v11.2](https://egvijayanand.in/2025/03/28/exploring-the-new-ratingview-control-in-dotnet-maui-community-toolkit-v11/?utm_campaign=branding&utm_source=github&utm_medium=samples) article for working with this sample|
 
 ### .NET MAUI 8 Samples
 
