@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="RatingApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="RatingApp">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="*,40">
+                <VerticalStackLayout
+                    Padding="20"
+                    HorizontalOptions="Center"
+                    Spacing="30"
+                    VerticalOptions="Center">
+                    <Label
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MauiLabel}"
+                        Text=".NET MAUI Community Toolkit v11.2 RatingView Sample" />
+                    <VerticalStackLayout
+                        HorizontalOptions="Center"
+                        Spacing="20">
+                        <HorizontalStackLayout Spacing="30">
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Count"
+                                    VerticalOptions="Center" />
+                                <Picker
+                                    x:Name="ddlCount"
+                                    SelectedIndexChanged="OnCountChanged">
+                                    <Picker.Items>
+                                        <x:String>3</x:String>
+                                        <x:String>4</x:String>
+                                        <x:String>5</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Shape"
+                                    VerticalOptions="Center" />
+                                <Picker
+                                    x:Name="ddlShape"
+                                    SelectedIndexChanged="OnShapeChanged">
+                                    <Picker.Items>
+                                        <x:String>Star</x:String>
+                                        <x:String>Heart</x:String>
+                                        <x:String>Circle</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Size"
+                                    VerticalOptions="Center" />
+                                <Picker
+                                    x:Name="ddlSize"
+                                    SelectedIndexChanged="OnSizeChanged">
+                                    <Picker.Items>
+                                        <x:String>15</x:String>
+                                        <x:String>20</x:String>
+                                        <x:String>25</x:String>
+                                        <x:String>30</x:String>
+                                        <x:String>35</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </HorizontalStackLayout>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="30">
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="Fill Color"
+                                    VerticalOptions="Center" />
+                                <Picker
+                                    x:Name="ddlFillColor"
+                                    SelectedIndexChanged="OnFillColorChanged">
+                                    <Picker.Items>
+                                        <x:String>Red</x:String>
+                                        <x:String>Green</x:String>
+                                        <x:String>Blue</x:String>
+                                        <x:String>Yellow</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label
+                                    Text="ReadOnly?"
+                                    VerticalOptions="Center" />
+                                <CheckBox
+                                    x:Name="chkReadOnly"
+                                    CheckedChanged="OnReadOnlyChanged" />
+                            </HorizontalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                    <Entry
+                        x:Name="txtRating"
+                        HorizontalOptions="Center"
+                        IsEnabled="{Binding IsChecked, Source={x:Reference chkReadOnly}, x:DataType=CheckBox}"
+                        Keyboard="Numeric"
+                        Placeholder="Enter the rating value for readonly view"
+                        TextChanged="OnValueChanged"
+                        WidthRequest="200">
+                        <Entry.Behaviors>
+                            <mct:CharactersValidationBehavior
+                                CharacterType="Digit"
+                                Flags="ValidateOnValueChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        x:Name="lblValue"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MauiLabel}"
+                        Text="Value: 0" />
+                    <mct:RatingView
+                        x:Name="feedback"
+                        Padding="20"
+                        HorizontalOptions="Center"
+                        IsReadOnly="{Binding IsChecked, Source={x:Reference chkReadOnly}, x:DataType=CheckBox}"
+                        RatingChanged="OnRatingChanged" />
+                </VerticalStackLayout>
+                <Grid
+                    Grid.Row="1"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                                      Light={StaticResource Primary}}">
+
+                    <Label
+                        x:Name="lblVersion"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource White}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
