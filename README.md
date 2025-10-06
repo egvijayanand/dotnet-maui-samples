@@ -6,6 +6,14 @@ Join me on [**Developer Thoughts**](https://egvijayanand.in/), an exclusive blog
 
 _Note: Samples are in the process of migrating to the latest framework version, so there would be a change in the directory structure. Kindly bear with this._
 
+### .NET MAUI 10 Samples
+
+Made available in the `src\NET_10\` directory:
+
+|Solution Title|Description|
+|:---:|:---|
+|`UnifiedStartup`|Sample app for the [Integrated App Hosting Builder Method for .NET MAUI](https://egvijayanand.in/2025/09/29/integrated-app-hosting-builder-method-for-dotnet-maui-explained/) article|
+
 ### .NET MAUI 9 Samples
 
 Made available in the `src\NET_9\` directory:
@@ -20,6 +28,7 @@ Made available in the `src\NET_9\` directory:
 |`WinUIBlazor`|.NET MAUI `BlazorWebView` embedded in a Native WinUI 3 App, making it as a Blazor Hybrid app <br /> Refer to this [.NET MAUI - Blazor Hybrid - WinUI 3](https://egvijayanand.in/2023/03/29/dotnet-maui-blazor-hybrid-winui-3/) article for working with this sample|
 |`TitleBarApp`|A sample app showcasing the features of the new [TitleBar](https://learn.microsoft.com/en-us/dotnet/maui/whats-new/dotnet-9?view=net-maui-9.0#titlebar-for-windows) control. <br /> Refer to this [What's New in .NET MAUI 9: Window TitleBar](https://egvijayanand.in/2024/12/04/what-is-new-in-dotnet-maui-9-window-titlebar/) article for working with this sample|
 |`RatingApp`|A sample app showcasing the features of the new [RatingView](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/ratingview) control. <br /> Refer to this [Exploring the New RatingView Control in .NET MAUI Community Toolkit v11.2](https://egvijayanand.in/2025/03/28/exploring-the-new-ratingview-control-in-dotnet-maui-community-toolkit-v11/?utm_campaign=branding&utm_source=github&utm_medium=samples) article for working with this sample|
+|`UnifiedStartup`|Sample app for the [Integrated App Hosting Builder Method for .NET MAUI](https://egvijayanand.in/2025/09/29/integrated-app-hosting-builder-method-for-dotnet-maui-explained/) article|
 
 ### .NET MAUI 8 Samples
 
@@ -32,6 +41,7 @@ Made available in the `src\NET_8\` directory:
 |`ThemedApp`|Sample app for .NET MAUI App Theming <br /> Refer to this [.NET MAUI - App Theming](https://egvijayanand.in/2024/07/03/dotnet-maui-developer-tips-app-theming/) article for further details|
 |`DateCalculator`|<ul><li>MVVM Sample</li><li>Xamarin Forms and .NET MAUI in a single solution</li><li>WPF and WinUI projects to illustrate the reuse of ViewModels across UI frameworks</li><li>WinForms project to illustrate the reuse of ViewModels across non-XAML UI framework too</li><li>Shared business logic as a separate library project</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li><li>Consult the [MVVM - Made Easy](https://egvijayanand.in/category/mvvm/made-easy/) series of articles for guidance on working with this sample solution.</li></ul>|
 |`UnifiedDateCalculator`|<ul><li>Shared class library sample</li><li>UI, ViewModel, Model, and Business logic all from shared project</li><li>Head projects serve as an app container</li><li>Both Xamarin.Forms and .NET MAUI UI definition from a single project - `DateCalculator.UI`</li><li>ViewModels implemented with [CommunityToolkit.Mvvm](https://www.nuget.org/packages/CommunityToolkit.Mvvm) (aka Microsoft MVVM Toolkit) NuGet package</li></ul>|
+|`UnifiedStartup`|Sample app for the [Integrated App Hosting Builder Method for .NET MAUI](https://egvijayanand.in/2025/09/29/integrated-app-hosting-builder-method-for-dotnet-maui-explained/) article|
 
 Made available in the the `src\` directory:
 
