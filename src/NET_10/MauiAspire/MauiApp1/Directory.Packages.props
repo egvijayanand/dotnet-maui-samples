@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+        <MauiVersion>10.*-*</MauiVersion>
+    </PropertyGroup>
+</Project>

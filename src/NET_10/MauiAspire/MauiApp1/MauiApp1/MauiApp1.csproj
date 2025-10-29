@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net10.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-ios;net10.0-maccatalyst;net10.0-windows10.0.19041.0</TargetFrameworks>
+        <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-tizen</TargetFrameworks> -->
+        <TargetFrameworks>$(TargetFrameworks);net10.0</TargetFrameworks>
+        <OutputType Condition="'$(TargetFramework)' != 'net10.0'">Exe</OutputType>
+        <!-- <DefineConstants>$(DefineConstants);MauiAllowImplicitXmlnsDeclaration</DefineConstants> -->
+
+        <!-- .NET MAUI -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>preview</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>MauiApp1</RootNamespace>
+        <WindowsPackageType>None</WindowsPackageType>
+        <!-- <EnablePreviewFeatures>true</EnablePreviewFeatures> -->
+        <RoslynCompilerType>FrameworkPackage</RoslynCompilerType>
+
+        <!-- Display name -->
+        <ApplicationTitle>MauiApp1</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.companyname.mauiapp1</ApplicationId>
+
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+
+        <!-- Target Platform Options -->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+
+        <!-- Minimum Target OS Version for Windows Platform -->
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- App Icon -->
+        <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+        <!-- Splash Screen -->
+        <MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
+        <!-- Images -->
+        <MauiImage Include="Resources\Images\*" />
+        <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+        <!-- Custom Fonts -->
+        <MauiFont Include="Resources\Fonts\*" />
+        <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.*-*" Condition="'$(Configuration)' == 'Debug'" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="VijayAnand.MauiToolkit" Version="4.*" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+        <BundleResource Include="Platforms\iOS\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+        <BundleResource Include="Platforms\MacCatalyst\PrivacyInfo.xcprivacy" LogicalName="PrivacyInfo.xcprivacy" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\MauiApp1.Shared\MauiApp1.Shared.csproj" />
+    </ItemGroup>
+</Project>

@@ -13,6 +13,7 @@ Made available in the `src\NET_10\` directory:
 |Solution Title|Description|
 |:---:|:---|
 |`UnifiedStartup`|Sample app for the [Integrated App Hosting Builder Method for .NET MAUI](https://egvijayanand.in/2025/09/29/integrated-app-hosting-builder-method-for-dotnet-maui-explained/) article|
+|`MauiAspire`|Sample app for the [Integrating .NET MAUI with Aspire: A Comprehensive Guide](https://egvijayanand.in/2025/10/29/integrating-dotnet-maui-with-aspire-a-comprehensive-guide/) article|
 
 ### .NET MAUI 9 Samples
 

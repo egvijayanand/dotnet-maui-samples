@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="MauiApp1\MauiApp1.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="MauiApp1.Api\MauiApp1.Api.csproj" />
+  <Project Path="MauiApp1.Shared\MauiApp1.Shared.csproj" />
+  <Properties Name="Visual Studio">
+    <Property Name="OpenWith" Value="17" />
+  </Properties>
+</Solution>
