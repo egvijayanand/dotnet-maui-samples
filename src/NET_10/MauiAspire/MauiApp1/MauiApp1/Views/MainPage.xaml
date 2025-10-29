@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--#region Plain-->
+<ContentPage
+    x:Class="MauiApp1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MauiApp1"
+    x:DataType="MainViewModel"
+    ControlTemplate="{StaticResource VersionTemplate}"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Padding="20"
+                Spacing="25">
+
+                <Label
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Hello, World!" />
+
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                    SemanticProperties.HeadingLevel="Level1"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Welcome to .NET Multi-platform App UI" />
+
+                <!--<Label
+                    x:Name="counterLabel"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MauiLabel}"
+                    Text="Current count: 0" />-->
+
+                <Button
+                    Command="{Binding ForecastsCommand}"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Updates the weather forecast"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Get Forecast" />
+
+                <Grid
+                    ColumnDefinitions="Auto,Auto,Auto"
+                    ColumnSpacing="20"
+                    HorizontalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Date" />
+                    <Label
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        Text="Temperature (F)" />
+                    <Label
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        Text="Summary" />
+                </Grid>
+
+                <StackLayout
+                    BindableLayout.EmptyView="No forecasts available."
+                    BindableLayout.ItemsSource="{Binding Forecasts}"
+                    HorizontalOptions="Center">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="WeatherForecast">
+                            <Grid
+                                ColumnDefinitions="Auto,Auto,Auto"
+                                ColumnSpacing="20"
+                                RowSpacing="10">
+                                <Label Text="{Binding Date, StringFormat='{0:d}'}" />
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding TemperatureF}" />
+                                <Label
+                                    Grid.Column="2"
+                                    Text="{Binding Summary}" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+<!--#endregion-->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="MauiApp1.Views.VersionTemplate"
+    xmlns="http://schemas.microsoft.com/dotnet/maui/global"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/maui/global/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid RowDefinitions="*,40">
+        <ContentPresenter />
+        <Grid
+            Grid.Row="1"
+            BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
+                                              Light={StaticResource Primary}}">
+            <Label
+                HorizontalOptions="Center"
+                Text="{x:Static App.MauiVersion}"
+                TextColor="{StaticResource White}"
+                VerticalOptions="Center" />
+        </Grid>
+    </Grid>
+</ContentView>
