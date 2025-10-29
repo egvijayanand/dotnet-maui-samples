@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--#region Plain-->
 <ContentPage
     x:Class="MauiApp1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/maui/global"
@@ -31,14 +30,6 @@
                     Style="{StaticResource MauiLabel}"
                     Text="Welcome to .NET Multi-platform App UI" />
 
-                <!--<Label
-                    x:Name="counterLabel"
-                    FontAttributes="Bold"
-                    FontSize="18"
-                    HorizontalOptions="Center"
-                    Style="{StaticResource MauiLabel}"
-                    Text="Current count: 0" />-->
-
                 <Button
                     Command="{Binding ForecastsCommand}"
                     HorizontalOptions="Center"
@@ -46,33 +37,39 @@
                     Style="{StaticResource PrimaryAction}"
                     Text="Get Forecast" />
 
-                <Grid
-                    ColumnDefinitions="Auto,Auto,Auto"
-                    ColumnSpacing="20"
-                    HorizontalOptions="Center">
-                    <Label
-                        FontAttributes="Bold"
-                        Text="Date" />
-                    <Label
-                        Grid.Column="1"
-                        FontAttributes="Bold"
-                        Text="Temperature (F)" />
-                    <Label
-                        Grid.Column="2"
-                        FontAttributes="Bold"
-                        Text="Summary" />
-                </Grid>
-
-                <StackLayout
-                    BindableLayout.EmptyView="No forecasts available."
-                    BindableLayout.ItemsSource="{Binding Forecasts}"
-                    HorizontalOptions="Center">
-                    <BindableLayout.ItemTemplate>
+                <CollectionView
+                    HorizontalOptions="Center"
+                    ItemsSource="{Binding Forecasts}"
+                    WidthRequest="400">
+                    <!--<CollectionView.EmptyView>
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="No forecasts available."
+                            VerticalOptions="Center" />
+                    </CollectionView.EmptyView>-->
+                    <CollectionView.Header>
+                        <Grid
+                            ColumnDefinitions="*,*,*"
+                            ColumnSpacing="20">
+                            <Label
+                                FontAttributes="Bold"
+                                Text="Date" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                Text="Temperature (F)" />
+                            <Label
+                                Grid.Column="2"
+                                FontAttributes="Bold"
+                                Text="Summary" />
+                        </Grid>
+                    </CollectionView.Header>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="WeatherForecast">
                             <Grid
-                                ColumnDefinitions="Auto,Auto,Auto"
-                                ColumnSpacing="20"
-                                RowSpacing="10">
+                                Padding="0,20,0,0"
+                                ColumnDefinitions="*,*,*"
+                                ColumnSpacing="20">
                                 <Label Text="{Binding Date, StringFormat='{0:d}'}" />
                                 <Label
                                     Grid.Column="1"
@@ -82,10 +79,9 @@
                                     Text="{Binding Summary}" />
                             </Grid>
                         </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
-<!--#endregion-->
